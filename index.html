@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les pizzas de Fafa</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Arial,sans-serif;margin:0;background:#f3e7d3;color:#4a2f1b}
+header{background:#fbf5e9;border-bottom:4px solid #2f6b3a;text-align:center}
+header img{display:block;width:100%;max-width:1000px;height:auto;margin:0 auto}
+header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
+.filtres{padding:12px;max-width:800px;margin:auto}
+.filtres input{width:100%;padding:12px;font-size:16px;border:1px solid #c9b08a;background:#fffdf8;color:#4a2f1b;border-radius:8px;margin-bottom:8px}
+.bases button{padding:10px 16px;margin-right:6px;border:1px solid #2f6b3a;background:#fff;color:#2f6b3a;border-radius:20px;font-size:15px}
+.bases button.actif{background:#2f6b3a;color:#fff}
+#compteur{padding:0 12px;max-width:800px;margin:auto;color:#7a5a40;font-size:14px}
+#liste{max-width:800px;margin:auto;padding:12px}
+.carte{background:#fffdf8;border:1px solid #e6d6b8;border-radius:10px;padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(90,58,34,.2)}
+.carte h2{margin:0 0 4px;font-size:18px;color:#5a3a22}
+.etiquette{display:inline-block;font-size:12px;padding:2px 8px;border-radius:10px;color:#fff;margin-bottom:6px}
+.creme{background:#e8b830;color:#4a2f1b}
+.tomate{background:#b3261e}
+.carte p{margin:4px 0;font-size:15px}
+.cuisson{color:#6b4a30}
+.onglets{display:flex;gap:8px;max-width:800px;margin:12px auto 0;padding:0 12px}
+.onglets button{flex:1;padding:12px 4px;border:1px solid #2f6b3a;background:#fff;color:#2f6b3a;border-radius:10px;font-size:16px;font-weight:bold}
+.onglets button.actif{background:#2f6b3a;color:#fff}
+.pate{max-width:800px;margin:12px auto;padding:14px;background:#fffdf8;border:1px solid #e6d6b8;border-radius:10px}
+.pate h2{margin:0 0 4px;color:#5a3a22}
+.pate h3{margin:14px 0 4px;color:#b3261e}
+.pate .source{color:#7a5a40;font-size:14px;margin:0 0 8px}
+.pate a{color:#2f6b3a}
+.pate li{margin-bottom:6px}
+.calc .ligne{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0}
+.calc input{width:80px;padding:8px;font-size:16px;border:1px solid #c9b08a;border-radius:6px;background:#fffdf8;color:#4a2f1b;text-align:right}
+.calc table{width:100%;border-collapse:collapse;margin-top:8px}
+.calc th{text-align:left;color:#7a5a40;font-size:14px;padding:4px}
+.calc td{padding:6px 4px;border-top:1px solid #e6d6b8}
+.calc .phase td{background:#f3e7d3;font-weight:bold;color:#5a3a22}
+.calc td b{color:#b3261e;font-size:18px}
+.calc td:nth-child(2){text-align:right}
+.carte{position:relative;padding-right:68px}
+.fav{-webkit-appearance:none;appearance:none;position:absolute;top:50%;right:14px;transform:translateY(-50%);width:40px;height:40px;margin:0;border:3px solid #6b3f1d;border-radius:6px;background:#fffdf8;cursor:pointer}
+.fav:checked{background:#6b3f1d}
+@media(min-width:1000px){.carte{padding-right:14px}.fav{right:-64px}}
+
+.vide{color:#7a5a40;padding:12px}
+#compteur-fav{padding:12px 12px 0;max-width:800px;margin:auto;color:#7a5a40;font-size:14px}
+#liste-favoris{max-width:800px;margin:auto;padding:12px}
+.cadre{position:relative}
+.cadre::before{content:"";position:absolute;top:12px;bottom:12px;width:120px;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.3);background:linear-gradient(90deg,#009246 33.33%,#fff 33.33%,#fff 66.66%,#ce2b37 66.66%)}
+.cadre::before{left:calc(50% - 521px)}
+
+@media(max-width:1050px){.cadre::before{width:9px;left:0;top:0;height:100%;border-radius:0}}
+.etoiles{margin-top:6px}
+.etoiles button{background:none;border:0;padding:0 3px;font-size:30px;line-height:1;color:#d8c7a6;cursor:pointer}
+.etoiles button.on{color:#e8b830}
+</style>
+</head>
+<body>
+<header>
+<img id="banniere" src="banniere.jpg" alt="Pizza Fafa, mes recettes de pizza gourmandes !" onerror="this.remove();document.getElementById('titre').hidden=false">
+<h1 id="titre" hidden>🍕 Les pizzas de Fafa</h1>
+</header>
+<main class="cadre">
+<nav class="onglets">
+<button type="button" data-onglet="pizzas" class="actif">Pizzas</button>
+<button type="button" data-onglet="pate">Pâte</button>
+<button type="button" data-onglet="favoris">Mes favoris</button>
+</nav>
+<div id="vue-pizzas">
+<div class="filtres">
+<input id="recherche" type="search" placeholder="Cherche par nom ou par ingrédient (ex : chèvre, truffe, speck)">
+<div class="bases">
+<button data-base="toutes" class="actif">Toutes</button>
+<button data-base="creme">Base crème</button>
+<button data-base="tomate">Base tomate</button>
+</div>
+</div>
+<div id="compteur"></div>
+<div id="liste"></div>
+</div>
+<div id="vue-favoris" hidden>
+<div id="compteur-fav"></div>
+<div id="liste-favoris"></div>
+</div>
+<div id="vue-pate" hidden>
+<div class="pate">
+<p><a href="https://www.youtube.com/watch?v=0vnOSVStfjU">Pâte biga 100, hydratation 70 % (Olivier Poizat, YouTube)</a></p>
+<h3>Calcul des quantités</h3>
+<div class="calc">
+<div class="ligne"><span>Nombre de pâtons</span><input id="c-n" inputmode="decimal" value="3"><span>de</span><input id="c-p" inputmode="decimal" value="240"><span>g</span></div>
+<table>
+<tr class="phase"><td colspan="2">Phase 1 : biga</td></tr>
+<tr><td>Farine</td><td><b id="r-f1"></b></td></tr>
+<tr><td>Eau</td><td><b id="r-e1"></b></td></tr>
+<tr><td>Levure</td><td><b id="r-l1"></b></td></tr>
+<tr class="phase"><td colspan="2">Phase 2 : rafraîchi</td></tr>
+<tr><td>Eau</td><td><b id="r-e2"></b></td></tr>
+<tr><td>Sel</td><td><b id="r-s2"></b></td></tr>
+<tr><td>Levure</td><td><b id="r-l2"></b></td></tr>
+</table>
+</div>
+</div>
+</div>
+</main>
+<script src="recueil.js"></script>
+<script>
+const pizzas=[
+{nom:"La Zucca (Jordan Thomas)",base:"creme",avant:"Crème de courge, champignons cuisinés à l'ail et au persil",apres:"Pancetta, mozzarella di bufala, pousses d'épinards"},
+{nom:"Sorrente (Jordan Thomas)",base:"creme",avant:"Crème, pousses d'épinards, mozzarella fior di latte, poulet, chèvre",apres:"Cerneaux de noix, huile de noix"},
+{nom:"Firenze (Jordan Thomas)",base:"creme",avant:"Crème, champignons émincés, gorgonzola",apres:"Speck, mozzarella di bufala, roquette"},
+{nom:"Bolzano (Jordan Thomas)",base:"creme",avant:"Crème, crème de courge, scamorza",apres:"Speck, mozzarella di bufala, pousses d'épinards"},
+{nom:"Delicata (Jordan Thomas)",base:"creme",avant:"Crème, crème de courge, scamorza",apres:"Saumon fumé, mozzarella di bufala, tomates semi-séchées, basilic"},
+{nom:"Deliziosa (Jordan Thomas)",base:"creme",avant:"Crème, mozzarella fior di latte, poulet, chèvre",apres:"Crème de pistache, tomates semi-séchées"},
+{nom:"Mortadella (Jordan Thomas)",base:"creme",avant:"Crème, mozzarella fior di latte, chèvre",apres:"Mortadelle de Bologne, tomates semi-séchées, pesto à la Genovese"},
+{nom:"Diavola (Jordan Thomas)",base:"creme",avant:"Crème, mozzarella fior di latte, scamorza, spianata piquante, crème d'artichaut",apres:"Roquette, olives Riviera"},
+{nom:"Boscaiola (Jordan Thomas)",base:"creme",avant:"Crème, jambon blanc artisanal, champignons émincés, mozzarella fior di latte",apres:"Ricotta au basilic, pesto à la Genovese"},
+{nom:"Delfinato (Jordan Thomas)",base:"creme",avant:"Crème, jambon blanc artisanal, ravioles de Royans, mozzarella fior di latte, œuf",apres:""},
+{nom:"Nero Sublime (Jordan Thomas)",base:"creme",avant:"Crème, champignons émincés, crème de truffe noire et champignons",apres:"Jambon blanc truffé, burrata des Pouilles, lamelles de truffe d'été"},
+{nom:"Giovanna (Jordan Thomas)",base:"creme",avant:"Crème, mozzarella fior di latte, crème d'artichaut",apres:"Pancetta, burrata des Pouilles"},
+{nom:"Pistacchio (Jordan Thomas)",base:"creme",avant:"Crème, mozzarella fior di latte",apres:"Mortadelle de Bologne, burrata des Pouilles, crème de pistache"},
+{nom:"Fiume (Jordan Thomas)",base:"creme",avant:"Crème",apres:"Saumon fumé, burrata des Pouilles, roquette, tomates semi-séchées, pesto à la Genovese, tranche de citron"},
+{nom:"Tartufo (Jordan Thomas)",base:"creme",avant:"Crème, jambon blanc artisanal, crème de truffe noire et champignons",apres:"Mozzarella di bufala, pousses d'épinards, huile aromatisée à la truffe"},
+{nom:"Capra al miele (Jordan Thomas)",base:"creme",avant:"Crème, mozzarella fior di latte, chèvre",apres:"Miel, amandes effilées et torréfiées"},
+{nom:"Truffadoro (Jordan Thomas)",base:"creme",avant:"Crème, mozzarella fior di latte",apres:"Jambon blanc truffé"},
+{nom:"Marcellino (Jordan Thomas)",base:"creme",avant:"Crème, mozzarella fior di latte, poulet, Saint-Marcellin",apres:""},
+{nom:"Salmone (Jordan Thomas)",base:"creme",avant:"Crème, pousses d'épinards, mozzarella fior di latte",apres:"Saumon fumé, ricotta au basilic"},
+{nom:"La Dietalie (Fafa)",base:"creme",avant:"Crème de courge, mozzarella fior di latte, scamorza fumée, chiffonnade de mortadelle IGP, champignons de Paris, ciboulette, confit d'oignon, graines de courge au paprika fumé",apres:""},
+{nom:"La Lotalie (Fafa)",base:"creme",avant:"Mozzarella fior di latte, Taleggio DOP, magret séché, crème de cèpes, girolles, noisettes grillées",apres:""},
+{nom:"La Pistache (Fafa)",base:"creme",avant:"Mozzarella fior di latte, chiffonnade de mortadelle IGP, crème de pistache, burrata, pistaches grillées (version végé : aubergines)",apres:""},
+{nom:"La Tartufa (Fafa)",base:"creme",avant:"Crème de truffe, mozzarella fior di latte, jambon blanc Gran Biscotto, burrata, lamelles de truffe, noisettes grillées, huile de truffe",apres:""},
+{nom:"La Saumon (Fafa)",base:"creme",avant:"Base ricotta à l'encre de seiche, mozzarella fior di latte, saumon fumé, feta, zestes de citron, ciboulette, huile infusée au citron",apres:""},
+{nom:"Affumicata (Jordan Thomas)",base:"tomate",avant:"Tomate, jambon blanc artisanal cuit au bouillon, mozzarella fior di latte, spianata piquante, scamorza",apres:""},
+{nom:"Selvatica (Jordan Thomas)",base:"tomate",avant:"Tomate, champignons émincés, gorgonzola",apres:"Pancetta, Parmigiano Reggiano, tomates semi-séchées, persil plat"},
+{nom:"Pepata (Jordan Thomas)",base:"tomate",avant:"Tomate, mozzarella fior di latte, aubergines cuisinées",apres:"Pancetta, pecorino au poivre, tomates semi-séchées"},
+{nom:"Carnivora (Jordan Thomas)",base:"tomate",avant:"Tomate, jambon blanc artisanal, mozzarella fior di latte, poulet, spianata piquante",apres:""},
+{nom:"Parmigiana (Jordan Thomas)",base:"tomate",avant:"Tomate, jambon blanc artisanal, mozzarella fior di latte, aubergines cuisinées",apres:"Parmigiano Reggiano"},
+{nom:"10 Formaggi (Jordan Thomas)",base:"tomate",avant:"Tomate, mozzarella fior di latte, gorgonzola, chèvre, Saint-Marcellin, Taleggio, scamorza",apres:"Pecorino au poivre, mozzarella di bufala, ricotta au basilic, Parmigiano Reggiano"},
+{nom:"Verdura (Jordan Thomas)",base:"tomate",avant:"Tomate, aubergines et poivrons cuisinés, crème d'artichaut",apres:"Mozzarella di bufala, olives Riviera, basilic"},
+{nom:"Veggie (Jordan Thomas)",base:"tomate",avant:"Tomate, aubergines cuisinées",apres:"Tomates semi-séchées, burrata des Pouilles, pesto à la Genovese, Parmigiano Reggiano, huile d'olive vierge extra"},
+{nom:"Andria (Jordan Thomas)",base:"tomate",avant:"Tomate",apres:"Jambon de Parme, burrata des Pouilles, tomates semi-séchées, pesto à la Genovese, basilic, huile d'olive vierge extra"},
+{nom:"Maestro (Jordan Thomas)",base:"tomate",avant:"Tomate, gorgonzola, poulet",apres:"Roquette, mozzarella di bufala, tomates semi-séchées, crème de vinaigre balsamique, huile aromatisée à la truffe"},
+{nom:"Margherita (Jordan Thomas)",base:"tomate",avant:"Tomate",apres:"Mozzarella di bufala, basilic, huile d'olive vierge extra"},
+{nom:"Prosciutto (Jordan Thomas)",base:"tomate",avant:"Tomate",apres:"Jambon de Parme, roquette, mozzarella di bufala, Parmigiano Reggiano, tomates semi-séchées, crème de vinaigre balsamique"},
+{nom:"Regina (Jordan Thomas)",base:"tomate",avant:"Tomate, jambon blanc artisanal, champignons émincés, mozzarella fior di latte",apres:""},
+{nom:"4 Formaggi (Jordan Thomas)",base:"tomate",avant:"Tomate, mozzarella fior di latte, gorgonzola, ricotta au basilic",apres:"Parmigiano Reggiano, ricotta au basilic"},
+{nom:"Cotta (Jordan Thomas)",base:"tomate",avant:"Tomate, jambon blanc artisanal, mozzarella fior di latte",apres:""},
+{nom:"Bambino (Jordan Thomas)",base:"tomate",avant:"Tomate, jambon blanc artisanal, mozzarella fior di latte (ou tomate, double mozzarella fior di latte)",apres:""},
+{nom:"Napoli (Jordan Thomas)",base:"tomate",avant:"Tomate, mozzarella fior di latte, filet d'anchois",apres:"Olives Riviera"},
+{nom:"Piccante (Jordan Thomas)",base:"tomate",avant:"Tomate, mozzarella fior di latte, spianata piquante, poivrons cuisinés",apres:""},
+{nom:"Marinara (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, anchois, ail, origan, olives",apres:""},
+{nom:"Mezzo (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, 1/2 anchois, 1/2 emmental, olives",apres:""},
+{nom:"Massilia (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, emmental, olives",apres:""},
+{nom:"Margherita (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, mozzarella fior di latte",apres:""},
+{nom:"Jambon (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, jambon, mozzarella fior di latte",apres:""},
+{nom:"Spianata (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, chorizo, mozzarella fior di latte",apres:""},
+{nom:"Quattro (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, chèvre, gorgonzola DOP, emmental, mozzarella fior di latte, olives",apres:""},
+{nom:"Salsiccia (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, saucisse italienne, mozzarella fior di latte, oignons rouges",apres:""},
+{nom:"Regina Mozzarella (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, champignons frais, jambon, mozzarella",apres:""},
+{nom:"Calamar (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, calamars, persillade, tomates cerises, mozzarella fior di latte, olives",apres:""},
+{nom:"Arménienne (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, viande de bœuf hachée, poivrons, oignons, olives",apres:""},
+{nom:"Texane (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, viande de bœuf hachée, poivrons, oignons, sauce BBQ, chorizo, mozzarella fior di latte",apres:""},
+{nom:"Stracciatella (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, cœur de burrata, tomates cerises, pesto alla genovese ou basilic",apres:""},
+{nom:"Parmigiana (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, aubergines, parmigiano reggiano, pesto, mozzarella fior di latte",apres:""},
+{nom:"Sicilienne (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, anchois, parmigiano reggiano, câpres, ail, huile d'olive, olives",apres:""},
+{nom:"Verdura (Ludovic Bicchierai)",base:"tomate",avant:"Tomate, légumes du moment, mozzarella fior di latte, câpres, persillade",apres:""},
+{nom:"Gusto (Ludovic Bicchierai)",base:"tomate",avant:"Sauce tomate, roquette, speck IGP, tomates cerises, stracciatella, crème balsamique",apres:""},
+{nom:"Maradona (Ludovic Bicchierai)",base:"tomate",avant:"Sauce tomate, roquette, tomates confites, chèvre frais, pesto alla genovese",apres:""},
+{nom:"Calzone (Ludovic Bicchierai)",base:"tomate",avant:"Chausson garni de sauce tomate, champignon frais, jambon, mozzarella fior di latte, 1 œuf",apres:""},
+{nom:"Carbonara (Ludovic Bicchierai)",base:"creme",avant:"Crème, lardons, oignons confits au miel, œuf, mozzarella fior di latte, poivre",apres:""},
+{nom:"Regina Bianca (Ludovic Bicchierai)",base:"creme",avant:"Crème, champignons frais, jambon, mozzarella fior di latte",apres:""},
+{nom:"Quattro Bianca (Ludovic Bicchierai)",base:"creme",avant:"Crème, chèvre, gorgonzola DOP, mozzarella fior di latte",apres:""},
+{nom:"Montagna (Ludovic Bicchierai)",base:"creme",avant:"Crème, taleggio DOP, lardons, oignons rouges, pommes de terre, mozzarella",apres:""},
+{nom:"Président (Ludovic Bicchierai)",base:"creme",avant:"Crème, 1/2 camembert, speck IGP, mozzarella fior di latte",apres:""},
+{nom:"Forestière (Ludovic Bicchierai)",base:"creme",avant:"Crème, lardons, champignons frais, mozzarella fior di latte, oignons frits",apres:""},
+{nom:"Chèvre miel (Ludovic Bicchierai)",base:"creme",avant:"Crème, chèvre, mozzarella fior di latte, miel, romarin",apres:""},
+{nom:"Chicken (Ludovic Bicchierai)",base:"creme",avant:"Crème, poulet, mozzarella fior di latte (3 sortes : BBQ ou curry ou épices mexicaines)",apres:""},
+{nom:"Salmone (Ludovic Bicchierai)",base:"creme",avant:"Crème, mozzarella fior di latte, courgettes, chèvre, saumon aux agrumes",apres:""},
+{nom:"Tartufo (Ludovic Bicchierai)",base:"creme",avant:"Crème de truffe, roquette, tomates cerises, parmigiano reggiano, crème balsamique",apres:""},
+{nom:"Mi Amore (Ludovic Bicchierai)",base:"creme",avant:"Crème, roquette, speck IGP, chèvre frais, confiture de figues",apres:""},
+{nom:"Classique napolitaine, médaille d'or (Peppe Cutraro)",base:"tomate",avant:"Base de tomate rôtie, provola fumée, poivre concassé, tomate confite",apres:"Basilic frais, filet d'huile d'olive"},
+{nom:"Margherita (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, basilic frais, huile d'olive (végétarienne)",apres:""},
+{nom:"Impératrice (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, jambon, champignons de Paris, œuf, chorizo, poivrons",apres:""},
+{nom:"Reine (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, jambon, champignons de Paris, œuf",apres:""},
+{nom:"Duchesse (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, chèvre, miel",apres:""},
+{nom:"Reblochonne (Rodolphe Rivière)",base:"creme",avant:"Crème, pommes de terre, lardons, oignons, fromage à tartiflette, mozzarella",apres:""},
+{nom:"Quatre fromages (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, chèvre, gorgonzola, camembert (végétarienne)",apres:""},
+{nom:"Norvégienne (Rodolphe Rivière)",base:"creme",avant:"Crème, mozzarella, saumon",apres:""},
+{nom:"Napolitaine (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, câpres, anchois",apres:""},
+{nom:"Girolle (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, girolles, lardons",apres:""},
+{nom:"L'Escargot (Rodolphe Rivière)",base:"creme",avant:"Crème, mozzarella, champignons de Paris, chair d'escargot, beurre d'escargot, œuf",apres:""},
+{nom:"Bergère (Rodolphe Rivière)",base:"creme",avant:"Crème, mozzarella, pommes de terre, gésier de volaille, lardons",apres:""},
+{nom:"Pantoufle, pizza fermée (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, jambon, champignons de Paris, oignons, chorizo, œuf, olives",apres:""},
+{nom:"Pepperoni (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, spianata, poivrons",apres:""},
+{nom:"Végétarienne (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, artichauts, poivrons, champignons de Paris, olives (végétarienne)",apres:""},
+{nom:"Chicken (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, poulet, poivrons, chèvre",apres:""},
+{nom:"Capricciosa (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, jambon, champignons de Paris, chorizo, câpres, olives, anchois",apres:""},
+{nom:"Gourmande (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, bœuf égrené assaisonné, champignons de Paris, poivrons, oignons, reblochon, œuf",apres:""},
+{nom:"La Baronne (Rodolphe Rivière)",base:"creme",avant:"Crème, mozzarella, champignons de Paris, lardons, gorgonzola",apres:""},
+{nom:"Comtesse (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, jambon de Parme",apres:""},
+{nom:"Marquise (Rodolphe Rivière)",base:"tomate",avant:"Tomate, mozzarella, bœuf égrené assaisonné, merguez, jambon, poulet",apres:""},
+{nom:"Campione, championne du monde 2025, pizza fermée (Rodolphe Rivière)",base:"creme",avant:"Moutarde de Reims à l'ancienne crémée, scamorza fumée, effiloché de porc, champignons de Paris, oignons rouges poêlés et déglacés au vin",apres:""},
+{nom:"La Bologna (Rodolphe Rivière)",base:"creme",avant:"Base crème au pesto, mozzarella, mortadelle, burrata, éclats de pistaches",apres:"Basilic frais"},
+{nom:"La Panuozzo (Rodolphe Rivière)",base:"tomate",avant:"Tranches de mozzarella, tomates fraîches",apres:"Jambon de Parme, huile d'olive, basilic frais"},
+{nom:"La Salumi (Rodolphe Rivière)",base:"tomate",avant:"Base tomate, mozzarella",apres:"Coppa, jambon de Parme, mortadelle, burrata, huile d'olive, basilic frais"},
+{nom:"La Parme (Rodolphe Rivière)",base:"tomate",avant:"Base tomate, mozzarella",apres:"Roquette, jambon de Parme affiné, tomates cerise, copeaux de parmesan, huile d'olive, crème de basilic"},
+{nom:"La Tartufo, uniquement sur place (Rodolphe Rivière)",base:"creme",avant:"Crème de tartufo, mozzarella",apres:"Roquette, jambon blanc, burrata et carpaccio de truffe, copeaux de parmesan"},
+{nom:"Margherita Sbagliata (Franco Pepe)",base:"tomate",avant:"Mozzarella de bufflonne de Campanie DOP, passata de tomate riccio, réduction de basilic, huile d'olive",apres:""},
+{nom:"La Ritrovata (Franco Pepe)",base:"tomate",avant:"Passata de tomate San Marzano DOP, piennolo du Vésuve DOP, câpres déshydratées, poudre d'olives noires de Caiazzo, filets d'anchois de Cetara, huile à l'ail, basilic, origan",apres:""},
+{nom:"Scarpetta (Franco Pepe)",base:"tomate",avant:"Mozzarella de bufflonne de Campanie DOP, fondue de Grana Padano DOP 12 mois, compotée de tomate crue froide, pesto de basilic lyophilisé, copeaux de Grana Padano DOP 24 mois",apres:""},
+{nom:"Grana, Pepe e Fantasia (Franco Pepe)",base:"creme",avant:"Fondue de Grana Padano DOP 12 mois, scamorza fumée, jaune d'œuf pasteurisé, bacon fumé, pecorino romano sur le bord, chips de Grana Padano DOP 24 mois, poivre, zeste de lime",apres:""},
+{nom:"Mangiabufalo (Franco Pepe)",base:"creme",avant:"Fondue de fromage mou de bufflonne en croûte fleurie, fior di latte, pain grillé au vinaigre balsamique de Modène IGP, noix, bresaola de bufflonne, scarole frisée crue, huile d'olive",apres:""},
+{nom:"Bufala Profumata (Franco Pepe)",base:"creme",avant:"Mozzarella de bufflonne de Campanie DOP, bresaola de bufflonne, jus de lime, graines de sésame, huile à l'ail, lime, poivre noir, huile d'olive",apres:""},
+{nom:"Porkaserta (Franco Pepe)",base:"tomate",avant:"Tomate San Marzano, fior di latte, scamorza fumée, salami de porc de Caserte, origan, huile d'olive",apres:""},
+{nom:"Alletterata (Franco Pepe)",base:"creme",avant:"Crème d'oignons d'Alife, mozzarella de bufflonne de Campanie DOP, thon alletterato, céleri, huile d'olive",apres:""},
+{nom:"Nero Fumé (Franco Pepe)",base:"creme",avant:"Fior di latte fumé, tomate cerise confite, saucisse séchée de porc noir de Caserte, origan du Matese",apres:""},
+{nom:"Sfizio ai Pomodori (Franco Pepe)",base:"creme",avant:"Mozzarella de bufflonne de Campanie DOP, tomate datterino jaune, tomates séchées aromatisées, Grana Padano DOP 24 mois, huile d'olive",apres:""},
+{nom:"Vulcanica (Franco Pepe)",base:"tomate",avant:"Pâté d'olives noires de Caiazzo, passata de tomate Caiatino, tresse de mozzarella de bufflonne DOP effilochée, origan frais, huile d'olive",apres:"Câpres déshydratées"},
+{nom:"Il Sole nel Piatto (Franco Pepe)",base:"creme",avant:"Mozzarella de bufflonne de Campanie DOP, piennolo du Vésuve DOP, olives de Caiazzo, filets d'anchois de Cetara, origan, basilic, huile d'olive",apres:""},
+{nom:"Sapori del Cilento (Franco Pepe)",base:"creme",avant:"Mozzarella de bufflonne de Campanie DOP, ricotta de bufflonne de Campanie DOP, artichauts de Paestum à l'huile, huile d'olive",apres:""},
+{nom:"Selva Blu (Franco Pepe)",base:"creme",avant:"Guanciale de porc noir de Caserte, fromage bleu aromatisé aux myrtilles, miel mille fleurs, noix, huile d'olive",apres:""},
+{nom:"Viandante (Franco Pepe)",base:"creme",avant:"Mortadelle IGP, ricotta de bufflonne de Campanie DOP, pistaches, zeste de citron, huile d'olive",apres:""},
+{nom:"Zucca Conciata, de saison (Franco Pepe)",base:"creme",avant:"Velouté de potiron, potiron rôti aromatisé, haricot lanzariello frit, oignon d'Alife frit croustillant, Conciato Romano, persil",apres:""},
+{nom:"Salsiccia e Friarielli, de saison (Franco Pepe)",base:"creme",avant:"Fior di latte, saucisse séchée de porc noir de Caserte, friarielli, piment, stracciata de bufflonne, amandes croquantes, ail, huile d'olive",apres:""},
+{nom:"La Championne, pizza championne du monde (Yvan Cotta)",base:"tomate",avant:"Sauce tomate jaune, basilic, huile d'olive, jambon cru, pecorino, noisettes concassées, fleur de courgette",apres:""},
+{nom:"Marinara D.O.C. (Marc Possamai)",base:"tomate",avant:"Sauce tomate, anchois, fleurs de câpres, huile d'olive, origan, olives, basilic frais",apres:""},
+{nom:"Margherita (Marc Possamai)",base:"tomate",avant:"Sauce tomate, mozzarella, basilic frais",apres:""},
+{nom:"Napolitaine (Marc Possamai)",base:"tomate",avant:"Sauce tomate, mozzarella, anchois, fleurs de câpres, huile d'olive, origan, olives, basilic frais",apres:""},
+{nom:"Regina (Marc Possamai)",base:"tomate",avant:"Sauce tomate, mozzarella, champignons, jambon cuit",apres:""},
+{nom:"Vegetariana (Marc Possamai)",base:"tomate",avant:"Sauce tomate, tomates fraîches, mozzarella, poivrons, oignons, champignons, basilic frais",apres:""},
+{nom:"Picante (Marc Possamai)",base:"tomate",avant:"Sauce tomate, mozzarella, poivrons, spianata (saucisson italien piquant)",apres:""},
+{nom:"3 Formaggi (Marc Possamai)",base:"creme",avant:"Base blanche (ni sauce ni crème) : mozzarella, chèvre, gorgonzola",apres:""},
+{nom:"Label (Marc Possamai)",base:"tomate",avant:"Sauce tomate, mozzarella, viande hachée, aubergines grillées, Grana Padano, basilic frais",apres:""},
+{nom:"Pescatore (Marc Possamai)",base:"tomate",avant:"Thon, oignons, anchois, mozzarella, basilic frais",apres:""},
+{nom:"Calzone D.O.C. (Marc Possamai)",base:"tomate",avant:"Sauce tomate, ricotta, saucisson piquant, provola fumée",apres:""},
+{nom:"Verace (Marc Possamai)",base:"tomate",avant:"Tomates fraîches, mozzarella di bufala, basilic frais",apres:"Grana Padano râpé"},
+{nom:"Pulcinella (Marc Possamai)",base:"tomate",avant:"Mozzarella, tomates fraîches, ail, basilic frais (après cuisson), roquette, jambon cru, tomates cerises, copeaux de Grana Padano",apres:""},
+{nom:"Bianca (Marc Possamai)",base:"creme",avant:"Mozzarella, tomates fraîches, ricotta, jambon cuit, basilic frais",apres:""},
+{nom:"Montagna (Marc Possamai)",base:"creme",avant:"Crème, mozzarella, taleggio (fromage italien), pancetta fumée",apres:""},
+{nom:"Deliziosa (Marc Possamai)",base:"creme",avant:"Crème, mozzarella, provola fumée",apres:"Speck, tomates cerises, basilic frais"},
+{nom:"Capri (Marc Possamai)",base:"creme",avant:"Crème, chèvre, miel, noix",apres:""},
+{nom:"Golosa (Marc Possamai)",base:"creme",avant:"Crème, mozzarella, tomates fraîches, gorgonzola",apres:"Jambon cru"},
+{nom:"Tartufa (Marc Possamai)",base:"creme",avant:"Crème de truffe, mozzarella",apres:"Roquette, coppa, crème balsamique"},
+{nom:"Prosciutto e Funghi (Les Trucs à Mamy)",base:"tomate",avant:"Sauce tomate maison, mozzarella fior di latte, jambon cuit maison, champignons de Paris, origan",apres:""},
+{nom:"Quattro Formaggi (Les Trucs à Mamy)",base:"creme",avant:"Sauce crème maison, mozzarella fior di latte, gorgonzola, parmesan, taleggio, huile d'olive",apres:""},
+{nom:"Burrata & Rucola (Les Trucs à Mamy)",base:"tomate",avant:"Sauce tomate maison, mozzarella fior di latte, burrata crémeuse, roquette, tomates cerises, parmesan, huile d'olive extra vierge",apres:""}
+];
+if(typeof recueil!=="undefined")recueil.forEach(r=>{const i=pizzas.findIndex(p=>p.nom===r.nom);if(i>=0)pizzas[i]=r;else pizzas.push(r)});
+let base="toutes";
+const champ=document.getElementById("recherche");
+const liste=document.getElementById("liste");
+const compteur=document.getElementById("compteur");
+function norm(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+let favoris={};
+try{favoris=JSON.parse(localStorage.getItem("fafa_favoris")||"{}")}catch(e){favoris={}}
+function sauverFav(){try{localStorage.setItem("fafa_favoris",JSON.stringify(favoris))}catch(e){}}
+function afficherFavoris(){
+const f=pizzas.filter(p=>favoris[p.nom]);
+document.getElementById("compteur-fav").textContent=f.length+" favori"+(f.length>1?"s":"");
+document.getElementById("liste-favoris").innerHTML=f.length?f.map(carte).join(""):'<p class="vide">Coche la case devant une pizza pour la retrouver ici.</p>';
+}
+let notes={};
+try{notes=JSON.parse(localStorage.getItem("fafa_notes")||"{}")}catch(e){notes={}}
+function sauver(){try{localStorage.setItem("fafa_notes",JSON.stringify(notes))}catch(e){}}
+function etoiles(p){
+const n=notes[p.nom]||0;
+let h='<div class="etoiles" data-i="'+pizzas.indexOf(p)+'">';
+for(let i=1;i<=5;i++)h+='<button type="button" data-n="'+i+'" class="'+(i<=n?'on':'')+'" aria-label="'+i+' sur 5">★</button>';
+return h+'</div>';
+}
+function afficher(){
+const mots=norm(champ.value).split(/[ ,]+/).filter(Boolean);
+const res=pizzas.filter(p=>{
+if(base!=="toutes"&&p.base!==base)return false;
+const texte=norm(p.nom+" "+p.avant+" "+p.apres);
+return mots.every(m=>texte.includes(m));
+});
+compteur.textContent=res.length+" pizza"+(res.length>1?"s":"");
+liste.innerHTML=res.map(carte).join("");
+}
+function carte(p){
+const i=pizzas.indexOf(p);
+return '<div class="carte"><input type="checkbox" class="fav" data-i="'+i+'"'+(favoris[p.nom]?' checked':'')+' aria-label="Ajouter aux favoris"><h2>'+p.nom+'</h2>'+
+'<span class="etiquette '+p.base+'">'+(p.base==="creme"?"Base crème":"Base tomate")+'</span>'+
+'<p><b>Avant cuisson :</b> '+p.avant+'</p>'+
+(p.apres?'<p class="cuisson"><b>Après cuisson :</b> '+p.apres+'</p>':'')+
+etoiles(p)+'</div>';
+}
+document.addEventListener("click",e=>{
+const b=e.target.closest(".etoiles button");
+if(!b)return;
+const p=pizzas[+b.parentNode.dataset.i];
+const n=+b.dataset.n;
+if(notes[p.nom]===n)delete notes[p.nom];else notes[p.nom]=n;
+sauver();
+document.querySelectorAll('.etoiles[data-i="'+b.parentNode.dataset.i+'"] button').forEach(x=>x.classList.toggle("on",+x.dataset.n<=(notes[p.nom]||0)));
+});
+document.addEventListener("change",e=>{
+const c=e.target.closest(".fav");
+if(!c)return;
+const p=pizzas[+c.dataset.i];
+if(c.checked)favoris[p.nom]=1;else delete favoris[p.nom];
+sauverFav();
+document.querySelectorAll('.fav[data-i="'+c.dataset.i+'"]').forEach(x=>{x.checked=c.checked});
+afficherFavoris();
+});
+champ.addEventListener("input",afficher);
+document.querySelectorAll(".bases button").forEach(b=>{
+b.addEventListener("click",()=>{
+base=b.dataset.base;
+document.querySelectorAll(".bases button").forEach(x=>x.classList.remove("actif"));
+b.classList.add("actif");
+afficher();
+});
+});
+afficher();
+document.querySelectorAll(".onglets button").forEach(b=>b.addEventListener("click",()=>{
+document.querySelectorAll(".onglets button").forEach(x=>x.classList.toggle("actif",x===b));
+document.getElementById("vue-pizzas").hidden=b.dataset.onglet!=="pizzas";
+document.getElementById("vue-favoris").hidden=b.dataset.onglet!=="favoris";
+document.getElementById("vue-pate").hidden=b.dataset.onglet!=="pate";
+if(b.dataset.onglet==="favoris")afficherFavoris();
+}));
+function val(id){return parseFloat(String(document.getElementById(id).value).replace(",","."))||0}
+function calcul(){
+const base={f1:487,e1:214,l1:2.43,e2:127,s2:12,l2:1};
+const k=val("c-n")*val("c-p")/(3*280);
+[["f1",1],["e1",1],["l1",2],["e2",1],["s2",1],["l2",2]].forEach(([c,n])=>{
+document.getElementById("r-"+c).textContent=(base[c]*k).toLocaleString("fr-FR",{maximumFractionDigits:n})+" g";
+});
+}
+document.querySelectorAll(".calc input").forEach(i=>i.addEventListener("input",calcul));
+calcul();
+</script>
+</body>
+</html>
