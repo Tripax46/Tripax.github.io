@@ -29,6 +29,9 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .onglets { display: flex; gap: 8px; max-width: 800px; margin: 12px auto 0; padding: 0 12px; }
 .onglets button { flex: 1; padding: 12px 4px; border: 1px solid #2f6b3a; background: #fff; color: #2f6b3a; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; }
 .onglets button.actif { background: #2f6b3a; color: #fff; }
+.sous-onglets { display: flex; gap: 8px; max-width: 800px; margin: 12px auto 0; padding: 0 12px; }
+.sous-onglets button { flex: 1; padding: 12px 4px; border: 1px solid #2f6b3a; background: #fff; color: #2f6b3a; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; }
+.sous-onglets button.actif { background: #2f6b3a; color: #fff; }
 .pate { max-width: 800px; margin: 12px auto; padding: 14px; background: #fffdf8; border: 1px solid #e6d6b8; border-radius: 10px; }
 .pate h2 { margin: 0 0 4px; color: #5a3a22; }
 .pate h3 { margin: 14px 0 4px; color: #b3261e; }
@@ -106,11 +109,15 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <div id="liste-favoris"></div>
 </div>
 <div id="vue-pate" hidden>
-<div class="pate">
+<nav class="sous-onglets">
+<button type="button" data-sous="biga" class="actif">Biga</button>
+<button type="button" data-sous="napolitaine">Napolitaine</button>
+</nav>
+<div class="pate" id="pate-biga">
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/0vnOSVStfjU?si=DZ6eUNDZaihLpY0x&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
 <h3>Calcul des quantités</h3>
 <div class="calc">
-<div class="ligne"><span>Nombre de pâtons</span><input id="c-n" inputmode="decimal" value="3"><span>de</span><input id="c-p" inputmode="decimal" value="240"><span>g</span></div>
+<div class="ligne"><span>Nombre de pâtons</span><input id="c-n" inputmode="decimal" value="3"><span>de</span><input id="c-p" inputmode="decimal" value="244"><span>g</span></div>
 <table>
 <tr class="phase"><td colspan="2">Phase 1 : biga</td></tr>
 <tr><td>Farine</td><td><b id="r-f1"></b></td></tr>
@@ -120,6 +127,20 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <tr><td>Eau</td><td><b id="r-e2"></b></td></tr>
 <tr><td>Sel</td><td><b id="r-s2"></b></td></tr>
 <tr><td>Levure</td><td><b id="r-l2"></b></td></tr>
+</table>
+</div>
+</div>
+<div class="pate" id="pate-napolitaine" hidden>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/qI7dLt7IJ_8?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+<h3>Calcul des quantités</h3>
+<div class="calc">
+<div class="ligne"><span>Nombre de pâtons</span><input id="n-n" inputmode="decimal" value="3"><span>de</span><input id="n-p" inputmode="decimal" value="244"><span>g</span></div>
+<table>
+<tr class="phase"><td colspan="2">Pétrissage : pâte directe</td></tr>
+<tr><td>Farine</td><td><b id="r-nf"></b></td></tr>
+<tr><td>Eau</td><td><b id="r-ne"></b></td></tr>
+<tr><td>Sel</td><td><b id="r-ns"></b></td></tr>
+<tr><td>Levure fraîche</td><td><b id="r-nl"></b></td></tr>
 </table>
 </div>
 </div>
@@ -538,6 +559,23 @@ function calcul(){
 }
 document.querySelectorAll(".calc input").forEach(i=>i.addEventListener("input",calcul));
 calcul();
+
+function calculNapo(){
+    const base={f:471,e:264,s:13,l:0.8};
+    const k=val("n-n")*val("n-p")/(3*250);
+    [["f",1],["e",1],["s",1],["l",2]].forEach(([c,n])=>{
+        document.getElementById("r-n"+c).textContent=(base[c]*k).toLocaleString("fr-FR",{maximumFractionDigits:n})+" g";
+    });
+}
+document.querySelectorAll("#pate-napolitaine .calc input").forEach(i=>i.addEventListener("input",calculNapo));
+calculNapo();
+
+document.querySelectorAll(".sous-onglets button").forEach(b=>b.addEventListener("click",()=>{
+    pauseVideos();
+    document.querySelectorAll(".sous-onglets button").forEach(x=>x.classList.toggle("actif",x===b));
+    document.getElementById("pate-biga").hidden=b.dataset.sous!=="biga";
+    document.getElementById("pate-napolitaine").hidden=b.dataset.sous!=="napolitaine";
+}));
 </script>
 </body>
 </html>
