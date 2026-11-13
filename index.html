@@ -49,8 +49,8 @@ header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
 #compteur-fav{padding:12px 12px 0;max-width:800px;margin:auto;color:#7a5a40;font-size:14px}
 #liste-favoris{max-width:800px;margin:auto;padding:12px}
 .cadre{position:relative}
-.cadre::before{content:"";position:absolute;top:12px;bottom:12px;width:120px;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.3);background:linear-gradient(90deg,#009246 33.33%,#fff 33.33%,#fff 66.66%,#ce2b37 66.66%)}
-.cadre::before{left:calc(50% - 521px)}
+.cadre::before{content:"";position:absolute;top:12px;bottom:12px;width:99px;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.3);background:linear-gradient(90deg,#009246 33.33%,#fff 33.33%,#fff 66.66%,#ce2b37 66.66%)}
+.cadre::before{left:calc(50% - 500px)}
 
 @media(max-width:1050px){.cadre::before{width:9px;left:0;top:0;height:100%;border-radius:0}}
 .etoiles{margin-top:6px}
@@ -87,7 +87,7 @@ header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
 </div>
 <div id="vue-pate" hidden>
 <div class="pate">
-<p><a href="https://www.youtube.com/watch?v=0vnOSVStfjU">Pâte biga 100, hydratation 70 % (Olivier Poizat, YouTube)</a></p>
+<p><b>Vidéo préparation :</b> <a href="https://www.youtube.com/watch?v=0vnOSVStfjU">Pâte 100% BIGA, hydratation 70 % (Olivier Poizat)</a></p>
 <h3>Calcul des quantités</h3>
 <div class="calc">
 <div class="ligne"><span>Nombre de pâtons</span><input id="c-n" inputmode="decimal" value="3"><span>de</span><input id="c-p" inputmode="decimal" value="240"><span>g</span></div>
@@ -127,11 +127,11 @@ const pizzas=[
 {nom:"Truffadoro (Jordan Thomas)",base:"creme",avant:"Crème, mozzarella fior di latte",apres:"Jambon blanc truffé"},
 {nom:"Marcellino (Jordan Thomas)",base:"creme",avant:"Crème, mozzarella fior di latte, poulet, Saint-Marcellin",apres:""},
 {nom:"Salmone (Jordan Thomas)",base:"creme",avant:"Crème, pousses d'épinards, mozzarella fior di latte",apres:"Saumon fumé, ricotta au basilic"},
-{nom:"La Dietalie (Fafa)",base:"creme",avant:"Crème de courge, mozzarella fior di latte, scamorza fumée, chiffonnade de mortadelle IGP, champignons de Paris, ciboulette, confit d'oignon, graines de courge au paprika fumé",apres:""},
-{nom:"La Lotalie (Fafa)",base:"creme",avant:"Mozzarella fior di latte, Taleggio DOP, magret séché, crème de cèpes, girolles, noisettes grillées",apres:""},
-{nom:"La Pistache (Fafa)",base:"creme",avant:"Mozzarella fior di latte, chiffonnade de mortadelle IGP, crème de pistache, burrata, pistaches grillées (version végé : aubergines)",apres:""},
-{nom:"La Tartufa (Fafa)",base:"creme",avant:"Crème de truffe, mozzarella fior di latte, jambon blanc Gran Biscotto, burrata, lamelles de truffe, noisettes grillées, huile de truffe",apres:""},
-{nom:"La Saumon (Fafa)",base:"creme",avant:"Base ricotta à l'encre de seiche, mozzarella fior di latte, saumon fumé, feta, zestes de citron, ciboulette, huile infusée au citron",apres:""},
+{nom:"La Dietalie (Lotalie)",base:"creme",avant:"Crème de courge, mozzarella fior di latte, scamorza fumée",apres:"Chiffonnade de mortadelle IGP, champignons de Paris, ciboulette, confit d'oignon, graines de courge au paprika fumé"},
+{nom:"La Lotalie (Lotalie)",base:"creme",avant:"Mozzarella fior di latte, Taleggio DOP, magret séché",apres:"Crème de cèpes, girolles, noisettes grillées"},
+{nom:"La Pistache (Lotalie)",base:"creme",avant:"Mozzarella fior di latte",apres:"Chiffonnade de mortadelle IGP, crème de pistache, burrata, pistaches grillées (version végé : aubergines)"},
+{nom:"La Tartufa (Lotalie)",base:"creme",avant:"Crème de truffe, mozzarella fior di latte",apres:"Jambon blanc Gran Biscotto, burrata, lamelles de truffe, noisettes grillées, huile de truffe"},
+{nom:"La Saumon (Lotalie)",base:"creme",avant:"Base ricotta à l'encre de seiche, mozzarella fior di latte",apres:"Saumon fumé, feta, zeste de citron, ciboulette, huile infusée au citron"},
 {nom:"Affumicata (Jordan Thomas)",base:"tomate",avant:"Tomate, jambon blanc artisanal cuit au bouillon, mozzarella fior di latte, spianata piquante, scamorza",apres:""},
 {nom:"Selvatica (Jordan Thomas)",base:"tomate",avant:"Tomate, champignons émincés, gorgonzola",apres:"Pancetta, Parmigiano Reggiano, tomates semi-séchées, persil plat"},
 {nom:"Pepata (Jordan Thomas)",base:"tomate",avant:"Tomate, mozzarella fior di latte, aubergines cuisinées",apres:"Pancetta, pecorino au poivre, tomates semi-séchées"},
