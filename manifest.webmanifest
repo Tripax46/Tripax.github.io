@@ -1,0 +1,23 @@
+{
+  "name": "Les pizzas de Fafa",
+  "short_name": "Pizzas Fafa",
+  "description": "142 pizzas signatures — bases crème et tomate. Recherche, favoris, notes.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbf5e9",
+  "theme_color": "#2f6b3a",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
