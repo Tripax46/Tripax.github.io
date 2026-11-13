@@ -35,7 +35,7 @@ header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
 .pate a{color:#2f6b3a}
 .pate li{margin-bottom:6px}
 .pate a.lien-video{display:inline-flex;align-items:center;gap:12px;font-size:18px;font-weight:bold;text-decoration:none}
-.play{width:48px;height:48px;flex:none}
+.pate iframe{display:block;max-width:100%;height:auto;aspect-ratio:16/9;border:0}
 .calc .ligne{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0}
 .calc input{width:80px;padding:8px;font-size:16px;border:1px solid #c9b08a;border-radius:6px;background:#fffdf8;color:#4a2f1b;text-align:right}
 .calc table{width:100%;border-collapse:collapse;margin-top:8px}
@@ -69,9 +69,9 @@ header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
 </header>
 <main class="cadre">
 <nav class="onglets">
+<button type="button" data-onglet="favoris">Mes favoris</button>
 <button type="button" data-onglet="pizzas" class="actif">Pizzas</button>
 <button type="button" data-onglet="pate">Pâte</button>
-<button type="button" data-onglet="favoris">Mes favoris</button>
 </nav>
 <div id="vue-pizzas">
 <div class="filtres">
@@ -91,7 +91,7 @@ header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
 </div>
 <div id="vue-pate" hidden>
 <div class="pate">
-<p><a class="lien-video" href="https://www.youtube.com/watch?v=0vnOSVStfjU" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#b3261e"/><path d="M9.5 7v10l8-5z" fill="#fff"/></svg>Protocole 100% BIGA Hydratation 70%</a></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/0vnOSVStfjU?si=DZ6eUNDZaihLpY0x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
 <h3>Calcul des quantités</h3>
 <div class="calc">
 <div class="ligne"><span>Nombre de pâtons</span><input id="c-n" inputmode="decimal" value="3"><span>de</span><input id="c-p" inputmode="decimal" value="240"><span>g</span></div>
