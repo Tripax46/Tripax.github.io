@@ -25,6 +25,7 @@ header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
 .tomate{background:#b3261e}
 .carte p{margin:4px 0;font-size:15px}
 .cuisson{color:#6b4a30}
+#volume-bloc{display:flex;align-items:center;gap:10px;max-width:776px;margin:8px auto 0;padding:0 12px;color:#4a2f1b;font-size:15px}#volume-bloc input{flex:1;accent-color:#2f6b3a}
 .onglets{display:flex;gap:8px;max-width:800px;margin:12px auto 0;padding:0 12px}
 .onglets button{flex:1;padding:12px 4px;border:1px solid #2f6b3a;background:#fff;color:#2f6b3a;border-radius:10px;font-size:16px;font-weight:bold}
 .onglets button.actif{background:#2f6b3a;color:#fff}
@@ -67,6 +68,8 @@ header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
 <img id="banniere" src="banniere.jpg" alt="Pizza Fafa, mes recettes de pizza gourmandes !" onerror="this.remove();document.getElementById('titre').hidden=false">
 <h1 id="titre" hidden>🍕 Les pizzas de Fafa</h1>
 </header>
+<audio id="musique" preload="auto" autoplay loop><source src="musique.mp3"><source src="https://drive.google.com/uc?export=download&id=1dIHdvyeTKAZZoOEXYgMG8Nm9rkLd8bI3"></audio>
+<div id="volume-bloc"><label for="volume">🔊 Volume</label><input id="volume" type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume de la musique"></div>
 <main class="cadre">
 <nav class="onglets">
 <button type="button" data-onglet="favoris">Mes favoris</button>
@@ -91,7 +94,7 @@ header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
 </div>
 <div id="vue-pate" hidden>
 <div class="pate">
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/0vnOSVStfjU?si=DZ6eUNDZaihLpY0x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/0vnOSVStfjU?si=DZ6eUNDZaihLpY0x&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
 <h3>Calcul des quantités</h3>
 <div class="calc">
 <div class="ligne"><span>Nombre de pâtons</span><input id="c-n" inputmode="decimal" value="3"><span>de</span><input id="c-p" inputmode="decimal" value="240"><span>g</span></div>
@@ -320,7 +323,37 @@ afficher();
 });
 });
 afficher();
+/* Musique : volume réglable, coupée automatiquement quand une autre source média joue */
+const musique=document.getElementById("musique"),curseur=document.getElementById("volume");
+const autres=new Set();      /* sources média (hors musique) actuellement en lecture */
+let voulue=true;             /* la musique doit jouer quand rien d'autre ne joue */
+try{const v=parseFloat(localStorage.getItem("fafa_volume"));if(!isNaN(v)){curseur.value=v}}catch(e){}
+musique.volume=parseFloat(curseur.value);
+curseur.addEventListener("input",()=>{musique.volume=parseFloat(curseur.value);try{localStorage.setItem("fafa_volume",curseur.value)}catch(e){}});
+function majMusique(){
+if(autres.size){musique.pause()}
+else if(voulue){musique.play().catch(()=>{})}
+}
+/* Balises audio/video HTML (les événements play/pause/ended ne remontent pas : capture) */
+["play","playing"].forEach(t=>document.addEventListener(t,e=>{if(e.target instanceof HTMLMediaElement&&e.target!==musique){autres.add(e.target);majMusique()}},true));
+["pause","ended"].forEach(t=>document.addEventListener(t,e=>{if(e.target instanceof HTMLMediaElement&&e.target!==musique){autres.delete(e.target);majMusique()}},true));
+/* Lecteur YouTube (API disponible seulement via http/https) */
+if(/^https?:$/.test(location.protocol)){
+window.onYouTubeIframeAPIReady=()=>{document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach(f=>new YT.Player(f,{events:{onStateChange:ev=>{
+const S=YT.PlayerState;
+if(ev.data===S.PLAYING||ev.data===S.BUFFERING)autres.add(f);
+else if(ev.data===S.PAUSED||ev.data===S.ENDED||ev.data===S.CUED)autres.delete(f);
+majMusique()}}}))};
+const apiYT=document.createElement("script");apiYT.src="https://www.youtube.com/iframe_api";document.head.appendChild(apiYT);
+}
+/* Si le navigateur bloque l'autoplay, on démarre à la première interaction */
+function demarrer(){majMusique();if(!musique.paused||autres.size)["pointerdown","keydown","touchstart"].forEach(t=>document.removeEventListener(t,demarrer))}
+["pointerdown","keydown","touchstart"].forEach(t=>document.addEventListener(t,demarrer));
+musique.play().catch(()=>{});
+/* Met en pause la vidéo YouTube (la musique reprend toute seule via onStateChange) */
+function pauseVideos(){document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach(f=>{try{f.contentWindow.postMessage(JSON.stringify({event:"command",func:"pauseVideo",args:[]}),"https://www.youtube.com")}catch(e){}})}
 document.querySelectorAll(".onglets button").forEach(b=>b.addEventListener("click",()=>{
+if(b.dataset.onglet!=="pate")pauseVideos();
 document.querySelectorAll(".onglets button").forEach(x=>x.classList.toggle("actif",x===b));
 document.getElementById("vue-pizzas").hidden=b.dataset.onglet!=="pizzas";
 document.getElementById("vue-favoris").hidden=b.dataset.onglet!=="favoris";
