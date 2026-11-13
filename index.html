@@ -25,7 +25,7 @@ header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
 .tomate{background:#b3261e}
 .carte p{margin:4px 0;font-size:15px}
 .cuisson{color:#6b4a30}
-#volume-bloc{display:flex;align-items:center;gap:10px;max-width:776px;margin:8px auto 0;padding:0 12px;color:#4a2f1b;font-size:15px}#volume-bloc input{flex:1;accent-color:#2f6b3a}
+#musique{display:block;width:calc(100% - 24px);max-width:776px;margin:8px auto 0}
 .onglets{display:flex;gap:8px;max-width:800px;margin:12px auto 0;padding:0 12px}
 .onglets button{flex:1;padding:12px 4px;border:1px solid #2f6b3a;background:#fff;color:#2f6b3a;border-radius:10px;font-size:16px;font-weight:bold}
 .onglets button.actif{background:#2f6b3a;color:#fff}
@@ -68,8 +68,7 @@ header h1{margin:0;padding:16px;font-size:22px;color:#b3261e}
 <img id="banniere" src="banniere.jpg" alt="Pizza Fafa, mes recettes de pizza gourmandes !" onerror="this.remove();document.getElementById('titre').hidden=false">
 <h1 id="titre" hidden>🍕 Les pizzas de Fafa</h1>
 </header>
-<audio id="musique" src="https://raw.githubusercontent.com/Tripax46/Tripax.github.io/main/Pizzaiolo%20et%20Mozzarel%20-%20G%C3%A9n%C3%A9rique.mp3" preload="auto" autoplay loop></audio>
-<div id="volume-bloc"><label for="volume">🔊 Volume</label><input id="volume" type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume de la musique"></div>
+<audio id="musique" src="https://raw.githubusercontent.com/Tripax46/Tripax.github.io/main/Pizzaiolo%20et%20Mozzarel%20-%20G%C3%A9n%C3%A9rique.mp3" autoplay loop controls></audio>
 <main class="cadre">
 <nav class="onglets">
 <button type="button" data-onglet="favoris">Mes favoris</button>
@@ -323,38 +322,27 @@ afficher();
 });
 });
 afficher();
-/* Musique : volume réglable, coupée automatiquement quand une autre source média joue */
-const musique=document.getElementById("musique"),curseur=document.getElementById("volume");
-const autres=new Set();      /* sources média (hors musique) actuellement en lecture */
-let voulue=true;             /* la musique doit jouer quand rien d'autre ne joue */
-try{const v=parseFloat(localStorage.getItem("fafa_volume"));if(!isNaN(v)){curseur.value=v}}catch(e){}
-musique.volume=parseFloat(curseur.value);
-curseur.addEventListener("input",()=>{musique.volume=parseFloat(curseur.value);try{localStorage.setItem("fafa_volume",curseur.value)}catch(e){}});
-function majMusique(){
-if(autres.size){musique.pause()}
-else if(voulue){musique.play().catch(()=>{})}
-}
-/* Balises audio/video HTML (les événements play/pause/ended ne remontent pas : capture) */
-["play","playing"].forEach(t=>document.addEventListener(t,e=>{if(e.target instanceof HTMLMediaElement&&e.target!==musique){autres.add(e.target);majMusique()}},true));
-["pause","ended"].forEach(t=>document.addEventListener(t,e=>{if(e.target instanceof HTMLMediaElement&&e.target!==musique){autres.delete(e.target);majMusique()}},true));
-/* Lecteur YouTube (API disponible seulement via http/https) */
+/* Coupe la musique dès qu'une autre source média se met à jouer */
+const musique=document.getElementById("musique");let musiqueMiseEnPause=false,ytEnLecture=false;
+function autreSourceEnLecture(){return ytEnLecture||[...document.querySelectorAll("audio,video")].some(m=>m!==musique&&!m.paused&&!m.ended)}
+document.addEventListener("play",e=>{if(e.target instanceof HTMLMediaElement&&e.target!==musique)musique.pause()},true);
 if(/^https?:$/.test(location.protocol)){
 window.onYouTubeIframeAPIReady=()=>{document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach(f=>new YT.Player(f,{events:{onStateChange:ev=>{
-const S=YT.PlayerState;
-if(ev.data===S.PLAYING||ev.data===S.BUFFERING)autres.add(f);
-else if(ev.data===S.PAUSED||ev.data===S.ENDED||ev.data===S.CUED)autres.delete(f);
-majMusique()}}}))};
+if(ev.data===YT.PlayerState.PLAYING){ytEnLecture=true;musique.pause()}
+else if(ev.data===YT.PlayerState.PAUSED||ev.data===YT.PlayerState.ENDED)ytEnLecture=false}}}))};
 const apiYT=document.createElement("script");apiYT.src="https://www.youtube.com/iframe_api";document.head.appendChild(apiYT);
 }
-/* Si le navigateur bloque l'autoplay, on démarre à la première interaction */
-function demarrer(){majMusique();if(!musique.paused||autres.size)["pointerdown","keydown","touchstart"].forEach(t=>document.removeEventListener(t,demarrer))}
-["pointerdown","keydown","touchstart"].forEach(t=>document.addEventListener(t,demarrer));
-musique.play().catch(()=>{});
+/* Démarrage de la musique : si le navigateur bloque l'autoplay, on la lance au premier clic/toucher/touche */
+const ACTIONS=["click","touchend","keydown"];
+musique.play().catch(()=>{const d=()=>{ACTIONS.forEach(t=>document.removeEventListener(t,d,true));if(musique.paused&&!autreSourceEnLecture())musique.play().catch(()=>{})};ACTIONS.forEach(t=>document.addEventListener(t,d,true))});
+/* Adresse de secours si le fichier ne se charge pas */
+musique.addEventListener("error",()=>{if(musique.dataset.secours)return;musique.dataset.secours="1";musique.src="https://tripax46.github.io/Pizzaiolo%20et%20Mozzarel%20-%20G%C3%A9n%C3%A9rique.mp3";musique.play().catch(()=>{})});
 document.querySelectorAll(".onglets button").forEach(b=>b.addEventListener("click",()=>{
 document.querySelectorAll(".onglets button").forEach(x=>x.classList.toggle("actif",x===b));
 document.getElementById("vue-pizzas").hidden=b.dataset.onglet!=="pizzas";
 document.getElementById("vue-favoris").hidden=b.dataset.onglet!=="favoris";
 document.getElementById("vue-pate").hidden=b.dataset.onglet!=="pate";
+if(b.dataset.onglet==="pate"){if(!musique.paused){musique.pause();musiqueMiseEnPause=true}}else if(musiqueMiseEnPause){musiqueMiseEnPause=false;if(!autreSourceEnLecture())musique.play().catch(()=>{})}
 if(b.dataset.onglet==="favoris")afficherFavoris();
 }));
 function val(id){return parseFloat(String(document.getElementById(id).value).replace(",","."))||0}
