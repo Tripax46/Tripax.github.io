@@ -165,6 +165,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <h3>Calcul des quantités</h3>
 <div class="calc">
 <div class="ligne"><span>Nombre de pâtons</span><input id="t-n" inputmode="decimal" value="1"><span>de</span><input id="t-p" inputmode="decimal" value="600"><span>g</span></div>
+<div class="ligne"><span>Dimension de la plaque</span><span>longueur</span><input id="t-L" inputmode="decimal" placeholder="40"><span>cm ×</span><span>largeur</span><input id="t-l" inputmode="decimal" placeholder="30"><span>cm → pâton :</span><b id="t-pp">—</b></div>
 <table>
 <tr class="phase"><td colspan="2">Pétrissage : pâte directe</td></tr>
 <tr><td>Farine</td><td><b id="r-tf"></b></td></tr>
@@ -599,12 +600,17 @@ document.querySelectorAll(".onglets button").forEach(b=>b.addEventListener("clic
     if(b.dataset.onglet==="favoris")afficherFavoris();
 }));
 
+function fmtG(v,n){
+    const g=Math.round(v*Math.pow(10,n))/Math.pow(10,n);
+    if(g>=1000)return (g/1000).toLocaleString("fr-FR",{maximumFractionDigits:3})+" kg";
+    return g.toLocaleString("fr-FR",{maximumFractionDigits:n})+" g";
+}
 function val(id){return parseFloat(String(document.getElementById(id).value).replace(",","."))||0}
 function calcul(){
     const base={f1:487,e1:214,l1:2.43,e2:127,s2:12,l2:1};
     const k=val("c-n")*val("c-p")/(3*280);
     [["f1",1],["e1",1],["l1",2],["e2",1],["s2",1],["l2",2]].forEach(([c,n])=>{
-        document.getElementById("r-"+c).textContent=(base[c]*k).toLocaleString("fr-FR",{maximumFractionDigits:n})+" g";
+        document.getElementById("r-"+c).textContent=fmtG(base[c]*k,n);
     });
 }
 document.querySelectorAll(".calc input").forEach(i=>i.addEventListener("input",calcul));
@@ -614,7 +620,7 @@ function calculNapo(){
     const base={f:471,e:264,s:13,l:0.8};
     const k=val("n-n")*val("n-p")/(3*250);
     [["f",1],["e",1],["s",1],["l",2]].forEach(([c,n])=>{
-        document.getElementById("r-n"+c).textContent=(base[c]*k).toLocaleString("fr-FR",{maximumFractionDigits:n})+" g";
+        document.getElementById("r-n"+c).textContent=fmtG(base[c]*k,n);
     });
 }
 document.querySelectorAll("#pate-napolitaine .calc input").forEach(i=>i.addEventListener("input",calculNapo));
@@ -624,11 +630,33 @@ function calculTeglia(){
     const base={f:329,e:256,l:0.16,s:8,h:7};
     const k=val("t-n")*val("t-p")/600;
     [["f",1],["e",1],["l",2],["s",1],["h",1]].forEach(([c,n])=>{
-        document.getElementById("r-t"+c).textContent=(base[c]*k).toLocaleString("fr-FR",{maximumFractionDigits:n})+" g";
+        document.getElementById("r-t"+c).textContent=fmtG(base[c]*k,n);
     });
 }
 document.querySelectorAll("#pate-teglia .calc input").forEach(i=>i.addEventListener("input",calculTeglia));
 calculTeglia();
+let ratioPlaque=4/3;
+function poidsPaton(){
+    const L=val("t-L"),l=val("t-l");
+    const out=document.getElementById("t-pp");
+    if(L>0&&l>0){
+        ratioPlaque=L/l;
+        const w=Math.round(L*l/2);
+        out.textContent=fmtG(w,0);
+        document.getElementById("t-p").value=w;
+        calculTeglia();
+    }else out.textContent="—";
+}
+["t-L","t-l"].forEach(id=>document.getElementById(id).addEventListener("input",poidsPaton));
+document.getElementById("t-p").addEventListener("input",()=>{
+    const p=val("t-p");
+    if(p>0){
+        const aire=p*2;
+        document.getElementById("t-L").value=Math.round(Math.sqrt(aire*ratioPlaque));
+        document.getElementById("t-l").value=Math.round(Math.sqrt(aire/ratioPlaque));
+        document.getElementById("t-pp").textContent=fmtG(p,0);
+    }
+});
 
 document.querySelectorAll(".sous-onglets button").forEach(b=>b.addEventListener("click",()=>{
     pauseVideos();
