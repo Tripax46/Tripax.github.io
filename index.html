@@ -17,7 +17,8 @@ header img { display: block; width: 100%; max-width: 1000px; height: auto; margi
 header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .filtres { padding: 12px; max-width: 800px; margin: auto; }
 .filtres input { width: 100%; padding: 12px; font-size: 16px; border: 1px solid #c9b08a; background: #fffdf8; color: #4a2f1b; border-radius: 8px; margin-bottom: 8px; }
-.bases button { padding: 10px 16px; margin-right: 6px; border: 1px solid #2f6b3a; background: #fff; color: #2f6b3a; border-radius: 20px; font-size: 15px; cursor: pointer; }
+.bases { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.bases button { width: 100%; padding: 12px 8px; border: 1px solid #2f6b3a; background: #fff; color: #2f6b3a; border-radius: 20px; font-size: 16px; cursor: pointer; }
 .bases button.actif { background: #2f6b3a; color: #fff; }
 #compteur { width: fit-content; max-width: 800px; margin: 14px auto; padding: 4px 20px 6px; border: 3px solid #b3261e; border-radius: 14px; box-shadow: 0 0 0 3px #fff, 0 0 0 6px #009246; color: #b3261e; font-family: "Pacifico", "Segoe Script", "Brush Script MT", "Apple Chancery", cursive; font-size: 32px; font-weight: normal; letter-spacing: 1px; text-shadow: 1px 1px 0 #fffdf8, 2px 2px 3px rgba(90,58,34,.35); }
 #liste { max-width: 800px; margin: auto; padding: 12px; }
@@ -101,9 +102,9 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <input id="recherche" type="search" placeholder="Cherche par nom ou par ingrédient (ex : chèvre, truffe, speck)">
 <div class="bases">
 <button data-base="toutes" class="actif">Toutes</button>
+<button data-base="vege">Végé</button>
 <button data-base="creme">Base crème</button>
 <button data-base="tomate">Base tomate</button>
-<button data-base="vege">Végé</button>
 </div>
 </div>
 <div id="compteur"></div>
