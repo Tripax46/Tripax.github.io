@@ -52,6 +52,9 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .pate a.lien-video { display: inline-flex; align-items: center; gap: 12px; font-size: 18px; font-weight: bold; text-decoration: none; }
 .pate iframe { display: block; max-width: 100%; height: auto; aspect-ratio: 16/9; border: 0; }
 .calc .ligne { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+.calc .ligne.plaque { flex-wrap: nowrap; gap: 4px; white-space: nowrap; font-size: clamp(11px, 3.4vw, 16px); }
+.calc .ligne.plaque input { width: clamp(38px, 11vw, 80px); min-width: 0; padding: 6px 4px; }
+.calc .ligne.plaque b { font-size: clamp(13px, 4vw, 18px); }
 .calc input { width: 80px; padding: 8px; font-size: 16px; border: 1px solid #c9b08a; border-radius: 6px; background: #fffdf8; color: #4a2f1b; text-align: right; }
 .calc table { width: 100%; border-collapse: collapse; margin-top: 8px; }
 .calc th { text-align: left; color: #7a5a40; font-size: 14px; padding: 4px; }
@@ -165,7 +168,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <h3>Calcul des quantités</h3>
 <div class="calc">
 <div class="ligne"><span>Nombre de pâtons</span><input id="t-n" inputmode="decimal" value="1"><span>de</span><input id="t-p" inputmode="decimal" value="600"><span>g</span></div>
-<div class="ligne"><span>Dimension de la plaque</span><span>longueur</span><input id="t-L" inputmode="decimal" placeholder="40"><span>cm ×</span><span>largeur</span><input id="t-l" inputmode="decimal" placeholder="30"><span>cm → pâton :</span><b id="t-pp">—</b></div>
+<div class="ligne plaque"><span>Dim. Plaque</span><span>L</span><input id="t-L" inputmode="decimal" placeholder="40"><span>cm ×</span><span>l</span><input id="t-l" inputmode="decimal" placeholder="30"><span>cm → pâton :</span><b id="t-pp">—</b></div>
 <table>
 <tr class="phase"><td colspan="2">Pétrissage : pâte directe</td></tr>
 <tr><td>Farine</td><td><b id="r-tf"></b></td></tr>
