@@ -1879,6 +1879,12 @@
   "apresVege": "Girolles, champignons de Paris, ciboulette, confit d'oignon, graines de courges au paprika fumé"
  },
  {
+  "nom": "La dietalie x LM Diet (Lotalie)",
+  "base": "creme",
+  "avant": "Crème de petit pois, mozzarella fior di latte",
+  "apres": "Jambon blanc Gran Biscotto, pickles d'oignon rouge, tomates cerises confites, roquettes, noisettes grillées"
+ },
+ {
   "nom": "La lotalie (Lotalie)",
   "base": "creme",
   "avant": "Mozzarella fior di latte, Taleggio DOP",
