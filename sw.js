@@ -1,11 +1,26 @@
 // Service worker des pizzas de Fafa : fonctionne hors ligne.
 // Augmente le numéro de version à chaque modification des fichiers.
-const VERSION = 'fafa-v4';
+const VERSION = 'fafa-v8';
 const FICHIERS = [
   './', 'index.html', 'pizzas.json', 'banniere.jpg', 'manifest.webmanifest',
+  'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'favicon.ico',
   'images/favicon-32.png', 'images/apple-touch-icon.png', 'images/accueil.png',
-  'images/fond-accueil.jpg', 'images/logo-signature.png', 'images/picto-camion.png', 'images/picto-vege.png', 'images/logo-ooni.png'
+  'images/fond-accueil.jpg', 'images/logo-signature.png', 'images/picto-camion.png', 'images/picto-vege.png', 'images/logo-ooni.png', 'images/affiche-merci.jpg', 'musique.mp3'
 ];
+
+// Lecture audio depuis le cache : Safari demande des morceaux (en-tête Range)
+function reponsePartielle(req, rep) {
+  const m = /bytes=(\d+)-(\d*)/.exec(req.headers.get('range') || '');
+  if (!m) return rep;
+  return rep.arrayBuffer().then(buf => {
+    const deb = +m[1], fin = m[2] ? Math.min(+m[2], buf.byteLength - 1) : buf.byteLength - 1;
+    const part = buf.slice(deb, fin + 1);
+    return new Response(part, { status: 206, statusText: 'Partial Content', headers: {
+      'Content-Type': rep.headers.get('Content-Type') || 'audio/mpeg',
+      'Content-Range': 'bytes ' + deb + '-' + fin + '/' + buf.byteLength,
+      'Content-Length': part.byteLength } });
+  });
+}
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c =>
@@ -23,6 +38,11 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
+  if (req.headers.has('range')) {
+    // médias (musique) : servis depuis le cache s'ils y sont, sinon directement depuis le réseau
+    e.respondWith(caches.match(req.url).then(r => r ? reponsePartielle(req, r) : fetch(req)));
+    return;
+  }
   const frais = req.mode === 'navigate' || /\.(json|html)$/.test(new URL(req.url).pathname);
   if (frais) {
     // page et données : réseau d'abord (toujours à jour), cache en secours hors ligne

@@ -1,439 +1,2629 @@
 [
-  {"nom": "Alsacienne (Camion Jaune)", "base": "creme", "avant": "crème, oignons, lardons", "apres": ""},
-  {"nom": "Épinards (Camion Jaune)", "base": "creme", "avant": "crème, épinards, ail, chèvre bûche, fromage", "apres": ""},
-  {"nom": "Bacon (Camion Jaune)", "base": "creme", "avant": "crème, bacon, chèvre, fromage", "apres": ""},
-  {"nom": "Savoyarde (Camion Jaune)", "base": "creme", "avant": "crème, pommes de terre, oignons, lardons, reblochon, fromage", "apres": ""},
-  {"nom": "Botox (Francesco Capece — Confine, Milan)", "base": "creme", "avant": "fondue de caciocavallo affiné en grotte, fior di latte, blue de bufala au lait cru, provolone de Gragnano", "apres": "chips de Parmigiano Reggiano, confiture de figues de Campanie, basilic, huile d'olive extra vierge Leccino"},
-  {"nom": "Scarola in concerto (Francesco Capece — Confine, Milan)", "base": "creme", "avant": "fondue de Parmigiano Reggiano, fior di latte, scarole frisée assaisonnée au vinaigre de miel, saucisse crue de scottona de Benevento", "apres": "copeaux de Parmigiano Reggiano 36 mois, glaçage de Concierto (liqueur traditionnelle de la côte amalfitaine), huile d'olive extra vierge Chianti Classico DOP"},
-  {"nom": "Zucchine alla capece / zucchini capece-style (Francesco Capece — Confine, Milan)", "base": "creme", "avant": "crème de courgettes, provola", "apres": "fleurs de courgettes, vinaigre balsamique vieilli 20 ans, provolone de Gragnano, mayonnaise à la menthe, chips de courgettes, huile d'olive extra vierge Carpellese"},
-  {"nom": "Calzone scarola (Francesco Capece — Confine, Milan)", "base": "creme", "avant": "scarole, colatura d'anchois, anchois de Cetara, huile au piment, noix de Sorrente, poudre d'olives noires de Caiazzane, câpres de Salina, tomates datterino semi-séchées, huile à l'ail, provola fumée", "apres": "huile d'olive extra vierge Itrana"},
-  {"nom": "Salsiccia e friarielli (Francesco Capece — Confine, Milan)", "base": "creme", "avant": "provola, saucisse de porc", "apres": "friarielli (brocolis-raves napolitains) sautés à l'ail, à l'huile et au piment, poivron crusco Sciuscillone de Teggiano, huile d'olive extra vierge Itrana"},
-  {"nom": "Pistadella (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "creme", "avant": "fior di latte d'Agerola", "apres": "mortadella Favola, pesto de pistache de Sicile, huile d'olive extra vierge"},
-  {"nom": "Sfogliata (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "creme", "avant": "pommes de terre en fines couches rôties, provola d'Agerola, beurre, sauge, Grana Padano", "apres": "porchetta de porc"},
-  {"nom": "Baccarina (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "creme", "avant": "crème de poivrons jaunes, fior di latte d'Agerola, cabillaud", "apres": "olives Taggiasche, câpres de Pantelleria, poivrons aigres-doux, basilic riccio napolitain"},
-  {"nom": "Paprika, carote e 'nduja (Roberto Davanzo — BOB Alchimia a Spicchi, Calabre)", "base": "creme", "avant": "pâte/focaccia à la paprika", "apres": "crème de carottes et 'nduja, carottes fumées, crème fraîche acidulée, fruit de la passion"},
-  {"nom": "Gold but old (Roberto Davanzo — BOB Alchimia a Spicchi, Calabre)", "base": "creme", "avant": "format cubique, crevette, blette, oursins, battuto de crevette violette", "apres": "crème de blettes, émulsion d'oursins, or alimentaire"},
-  {"nom": "Scarpetta (Franco Pepe — Pepe in Grani, Caiazzo)", "base": "creme", "avant": "mozzarella di bufala Campana DOP, fondue de Grana Padano DOP 12 mois", "apres": "composée froide de tomate, pesto de basilic lyophilisé, copeaux de Grana Padano DOP 24 mois, huile d'olive extra vierge"},
-  {"nom": "Calgyoza (Francesco Capece — Confine, Milan; calzone)", "base": "creme", "avant": "chou chinois glacé à la sauce soja, poitrine de porc marinée, crevette rouge méditerranéenne, lime noire", "apres": ""},
-  {"nom": "Zucca arrabbiata (Enzo Coccia — La Notizia, Naples)", "base": "creme", "avant": "crème de courge, salami de porc piquant, provola de bufflonne, pecorino râpé", "apres": "basilic"},
-  {"nom": "Profumo d'inverno (Enzo Coccia — La Notizia, Naples)", "base": "creme", "avant": "provola de bufflonne, brocolis friarielli", "apres": "lard de porc noir de Parme, tomates semi-séchées, pecorino râpé"},
-  {"nom": "Salsiccia e friarielli nel futuro (Enzo Coccia — La Notizia, Naples)", "base": "creme", "avant": "crème de friarielli, saucisse piquante", "apres": "stracciata de bufflonne"},
-  {"nom": "Coccia special (Enzo Coccia — La Notizia, Naples)", "base": "creme", "avant": "fior di latte d'Agerola, crème de cèpes", "apres": "truffe blanche, huile d'olive extra vierge"},
-  {"nom": "Salsiccia e stracchino (Simone Padoan — I Tigli, San Bonifacio)", "base": "creme", "avant": "mozzarella, saucisse fraîche, stracchino", "apres": ""},
-  {"nom": "Carbonara di capesante (Simone Padoan — I Tigli, San Bonifacio)", "base": "creme", "avant": "noix de Saint-Jacques", "apres": "chanterelles, mayonnaise de corail"},
-  {"nom": "Fior dì (Giuseppe Pignalosa — Le Parùle)", "base": "creme", "avant": "fior di latte, ricotta de fuscella", "apres": "fleurs de courgettes cuites et crues, anchois à l'huile"},
-  {"nom": "Ortolana fresca fresca (Giuseppe Pignalosa — Le Parùle)", "base": "creme", "avant": "courgettes rôties, aubergines à la napolitaine", "apres": "poivrons verts de rivière frits, stracciata de bufflonne, fleurs de courgettes crues"},
-  {"nom": "Oshirase (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "creme", "avant": "fior di latte, filet de bœuf mariné à la sauce soja et aux épices orientales", "apres": "sauce chili verte, huile d'olive extra vierge Gaudenzi"},
-  {"nom": "Fresella (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "creme", "avant": "mozzarella di bufala Campana DOP, cubes de fior di latte cru", "apres": "concassé de tomate biologique, stracciata de bufflonne, pain croustillant aromatisé, basilic, huile d'olive extra vierge Sincero di Viola"},
-  {"nom": "Oceano (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "creme", "avant": "fior di latte, ricotta de bufflonne aux algues nori, dulse et laitue de mer", "apres": "sériole fumée, poivre rose, zeste de citron, huile d'olive extra vierge Moraiolo de Felsina"},
-  {"nom": "Terramare (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "creme", "avant": "fior di latte, crème d'aubergines frites marinées aux épices japonaises", "apres": "oignon rouge en osmose, thon à l'huile d'olive, céleri croquant, huile d'olive extra vierge Moraiolo de Felsina"},
-  {"nom": "Costiera (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "creme", "avant": "fior di latte", "apres": "anchois frais marinés au vermouth blanc Mulassano, salade de citron de la côte, persil concassé, jus d'anchois, huile d'olive extra vierge Ortice"},
-  {"nom": "Artichauts et lardons (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "creme", "avant": "fior di latte d'Agerola, artichauts de Paestum au naturel, pancetta roulée de porc blanc XXL", "apres": "Ragusano DOP râpé, huile d'olive extra vierge Sant'Arcangelo, basilic"},
-  {"nom": "Nduja et verzin (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "creme", "avant": "fior di latte d'Agerola, nduja calabraise, fromage bleu Verzin au lait de vache", "apres": "huile d'olive extra vierge Titolo d'Elena Fucci, basilic"},
-  {"nom": "Maialata (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "creme", "avant": "pomme de terre cuite sous la cendre assaisonnée d'huile au citron, ciboulette, sauge, menthe, fior di latte", "apres": "porchetta maison, basilic, huile d'olive extra vierge Moraiolo Felsina"},
-  {"nom": "4 Fromages (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "creme", "avant": "fior di latte, OL Sciur de zola de chèvre affiné aux fruits rouges et roses, caciotta de chèvre mi-affinée de Bagnoli Irpino, provolone affiné", "apres": "robiola de chèvre et de vache, huile d'olive extra vierge Titolo d'Elena Fucci"},
-  {"nom": "Calzone frit (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "creme", "avant": "ricotta de bufflonne, mozzarella de bufflonne fumée de Campanie, grattons napolitains, poivre rouge foncé de Sarawak", "apres": ""},
-  {"nom": "Profumo di costiera (Francesco et Salvatore Salvo — Pizzeria Salvo, Naples)", "base": "creme", "avant": "base blanche, fior di latte", "apres": "pecorino di fossa, petite salade de citrons de la côte amalfitaine, anchois marinés quelques minutes au vermouth blanc Mulassano, battuto de persil et colatura d'anchois"},
-  {"nom": "Le 7 consistenze della cipolla con ostrica (Francesco Martucci — I Masanielli, Caserte)", "base": "creme", "avant": "fior di latte, préparation d'oignon en crème, fermentée, croquante, brûlée, mayonnaise d'oignon (sans œufs, au lait de soja), gel d'oignon et confiture d'oignon", "apres": "granita d'huîtres"},
-  {"nom": "Abra-ciami (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "creme", "avant": "provola fumée, pâte à double croustillant (ou base crunchy)", "apres": "carpaccio d'Angus fumé, mayonnaise à la braise, roquette, paprika doux, fleur de sel"},
-  {"nom": "Che cavolo (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "creme", "avant": "crème de chou noir (cavolo nero)", "apres": "anchois fumés de la mer Cantabrique, noix à la curcuma, feuilles de chou noir frites"},
-  {"nom": "Colpo di testa (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "creme", "avant": "fiordilatte, poireaux au beurre, poivre Cuvée", "apres": "coppa di testa, crème de papaccelle (poivrons napolitains)"},
-  {"nom": "Rio nerano (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "creme", "avant": "crème de courgettes, fiordilatte", "apres": "chips de courgettes, jambon cuit à l'eau de mer, copeaux de Grana Padano, huile d'olive extra vierge"},
-  {"nom": "Le 3 m (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "creme", "avant": "crème d'aubergines avec soja, tahini et miso, provola dei Monti", "apres": "aubergines frites, aubergines à l'huile, tomates cerises semi-séchées, menthe, huile d'olive extra vierge du Cilento DOP"},
-  {"nom": "Buttergine (Christopher Pacaud — Strada Pizza, La Couronne; Champion de France 2026, catégorie classique)", "base": "creme", "avant": "velouté de carottes, saucisse Pérugine maison (fenouil, ail, persil, cognac), graines de fenouil", "apres": "carpaccio de fenouil et carotte mariné aux agrumes puis fumé, billes de carottes glacées au piment d’Espelette, sauce diable au persil, zestes de citron"},
-  {"nom": "Antica mortadella (Julien Serri — scrocchiarella romana, Le Cirque, Paris)", "base": "creme", "avant": "mozzarella fior di latte", "apres": "mortadelle, crème de pistache, pistache concassée, huile infusée au citron"},
-  {"nom": "Morteau de fame (Julien Serri — scrocchiarella romana, Le Cirque, Paris)", "base": "creme", "avant": "mozzarella fumée, saucisse de Morteau, pommes de terre rôties", "apres": "oignon frit"},
-  {"nom": "Carbonara du bougnat (Julien Serri — scrocchiarella romana, Le Cirque, Paris)", "base": "creme", "avant": "mozzarella fior di latte, guanciale, sauce carbonara au Cantal, poivre de Kampot", "apres": ""},
-  {"nom": "Daniela (Antoine Voilqué — création de concours, Castellino, Châteauvillain)", "base": "creme", "avant": "compotée de citron, noix de pétoncles, carottes, parmesan, pistaches", "apres": ""},
-  {"nom": "Breizh hatao (Cyrille Auffret & Jérôme Gourmelen — création Pizza a Due, championne de France 2026)", "base": "creme", "avant": "base maïs agrémentée de sarrasin, pigeonneau des Monts d’Arrée élevé à la farine de châtaigne, topinambours, navets boule d’or", "apres": "agrumes japonais, huile de ponzu"},
-  {"nom": "Pizza concours 2025 de jimmy pestel (Jimmy Pestel — Giacomo; Champion de France de pizza 2025)", "base": "creme", "avant": "base butternut, fenouil croquant et condiment de fenouil desséché au pastis normand, condiment de piment doux, kumquat infusé à la badiane et au poivre long, noix de macadamia torréfiées, zestes de combava", "apres": "saumon fumé maison"},
-  {"nom": "Moltobella (Cheffe Amale — IMPRONTA, Paris)", "base": "creme", "avant": "base ricotta, fior di latte, mortadella artisanale de veau", "apres": "stracciatella, éclats de pistaches, crème de pistache"},
-  {"nom": "Tanto formaggi (Cheffe Amale — IMPRONTA, Paris)", "base": "creme", "avant": "crème de ricotta, gorgonzola, fior di latte, provola fumée", "apres": "crème de parmesan, miel et amandes torréfiées (option)"},
-  {"nom": "Truffe (Cheffe Amale — IMPRONTA, Paris)", "base": "creme", "avant": "crème de truffe à la ricotta, parmesan, fior di latte", "apres": "stracciatella, carpaccio de truffe"},
-  {"nom": "Pizza zucca (Cheffe Amale — IMPRONTA, Paris)", "base": "creme", "avant": "crème de potimarron maison, fior di latte, dés de potimarron rôtis au zaatar, shiitakés poêlés", "apres": ""},
-  {"nom": "Dolce vittoria (Peppe Cutraro — Campionato Pizza DOC 2025, catégorie Gourmet)", "base": "creme", "avant": "montanara frite puis passée au four, crème de mascarpone et ricotta, zestes de citron", "apres": "chocolat noir, pomme caramélisée, basilic"},
-  {"nom": "The golden smoke (Luca Cusimano — Grano Lab, Royaume-Uni; Pizza Chef of the Year 2026)", "base": "creme", "avant": "crème de potimarron rôti, provola fumée, gorgonzola doux, pepperoni, bacon fumé", "apres": "amandes grillées, amaretti émiettés, sauge fraîche"},
-  {"nom": "Appely ever after (Lewis Jennings — Village Pizza Kitchen, Royaume-Uni; PAPA Industry Awards 2026)", "base": "creme", "avant": "pommes Bramley, cannelle, caramel, pâte fine et croustillante style romain", "apres": "crème Chantilly"},
-  {"nom": "Tropical paneer (Matty Ryles — The Watch House, Royaume-Uni; PAPA Industry Awards 2026)", "base": "creme", "avant": "paneer grillé aux épices allspice, salsa de mangue et piment, pois chiches croustillants", "apres": "yaourt au citron vert"},
-  {"nom": "The Marco (Ooni)", "base": "creme", "avant": "crème de pistache, pecorino râpé, mozzarella fior di latte égouttée coupée en fines lanières, filet d'huile d'olive", "apres": "prosciutto crudo, zeste de citron, pistaches concassées"},
-  {"nom": "Pizza Dough & Behold Signature, margherita à la burrata (Ooni)", "base": "tomate", "avant": "sauce tomate, fior di latte, huile d'olive, sel marin au piment", "apres": "tomates cerises marinées au basilic et à l'estragon, burrata, huile d'olive, sel au piment"},
-  {"nom": "Pizza donair canadienne (Ooni)", "base": "creme", "avant": "mozzarella, tomates, oignons, viande donair (bœuf et agneau), za'atar", "apres": "sauce donair"},
-  {"nom": "Pizza au jambon glacé au miel (Ooni)", "base": "creme", "avant": "crème fraîche, mozzarella, gouda, oignons rôtis, jambon, ananas rôti", "apres": ""},
-  {"nom": "Pizza Quattro Formaggi d'Attilio Bachetti (Ooni)", "base": "creme", "avant": "huile d'olive extra vierge, ricotta, gorgonzola, fior di latte, pecorino romano", "apres": "basilic frais"},
-  {"nom": "Pizza Diavola d'Attilio Bachetti (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella fior di latte, salami piquant napolitain, olives noires de Gaeta, pecorino romano, parmigiano reggiano, basilic, huile d'olive extra vierge", "apres": "feuilles de basilic frais"},
-  {"nom": "Pizza Capricciosa d'Attilio Bachetti (Ooni)", "base": "tomate", "avant": "tomates pelées écrasées, mozzarella fior di latte, jambon cuit (prosciutto cotto), olives noires de Gaeta, champignons cremini frais", "apres": ""},
-  {"nom": "Pizza courge butternut, ricotta et sauge frite (Ooni)", "base": "creme", "avant": "purée de courge butternut, mozzarella fraîche", "apres": "ricotta fouettée au poivre noir, feuilles de sauge frites"},
-  {"nom": "Pizza au poulet rôti à l'harissa (Ooni)", "base": "tomate", "avant": "sauce tomate, poulet rôti à l'harissa, tomates séchées, mozzarella, parmigiano reggiano, piment roquito, basilic, huile d'olive", "apres": ""},
-  {"nom": "Pizza franco-belge poulet, pommes de terre, asperges et sauce Samouraï (Ooni)", "base": "tomate", "avant": "tomates concassées, mozzarella, poulet, pommes de terre", "apres": "sauce Samouraï, asperges"},
-  {"nom": "Pizza Philly Cheesesteak, version revisitée (Ooni)", "base": "creme", "avant": "crème fraîche, ail, mozzarella, entrecôte émincée, provolone, poivron vert, oignon, parmesan", "apres": ""},
-  {"nom": "Pizza à l'aubergine parmigiana déconstruite (Ooni)", "base": "tomate", "avant": "tomates concassées, mozzarella fraîche, aubergine frite, ricotta, parmesan", "apres": "basilic frais, huile d'olive"},
-  {"nom": "Pizza Pickle Lady (Ooni)", "base": "creme", "avant": "crème double à l'aneth, taleggio", "apres": "conserva de ventre de saumon, relish aux cornichons, oignon rouge émincé, herbes hachées, parmesan"},
-  {"nom": "Pizza bratwurst, chutney de rhubarbe et roquette (Ooni)", "base": "creme", "avant": "ricotta, mozzarella, saucisse bratwurst", "apres": "chutney de rhubarbe, roquette"},
-  {"nom": "Pizzette alla Benno de Nancy Silverton, speck et ananas (Ooni)", "base": "tomate", "avant": "passata de tomate, mozzarella, ananas, jalapeños", "apres": "speck, huile d'olive, sel en flocons, ciboulette"},
-  {"nom": "Pizza kouign-amann et andouille (Ooni)", "base": "creme", "avant": "crème fraîche, parmesan, oignons", "apres": "andouille, salicorne"},
-  {"nom": "Pizza salade aux herbes (Ooni)", "base": "creme", "avant": "mozzarella", "apres": "laitues mélangées, menthe, aneth, persil plat, fenouil émincé, radis, ciboulette, sauce au yaourt à l'ail et au citron, filet de citron"},
-  {"nom": "Pizza nordique saumon, aneth et crème fraîche (Ooni)", "base": "creme", "avant": "crème fraîche, aneth, zeste de citron, poivre rose, mozzarella", "apres": "saumon fumé, aneth"},
-  {"nom": "Pizza à la carbonara (Ooni)", "base": "creme", "avant": "crème double, parmesan, mozzarella fior di latte, bucatini cuits, pancetta, basilic", "apres": "jaunes d'œuf battus au parmesan, parmesan, poivre noir moulu"},
-  {"nom": "Pizza New York au fromage (Ooni)", "base": "tomate", "avant": "sauce tomate à l'origan, mozzarella, parmesan", "apres": ""},
-  {"nom": "Pizza hespenrolletjes met witloof, jambon et endives (Ooni)", "base": "creme", "avant": "béchamel, endives, jambon, emmental", "apres": "citron"},
-  {"nom": "Pizza épicée et sucrée aux saucisses et poivrons (Ooni)", "base": "creme", "avant": "saucisse crue, poivrons, oignons, tomates, mozzarella, pecorino romano, ail, flocons de piment, origan", "apres": ""},
-  {"nom": "Pizza supreme ultime (Ooni)", "base": "tomate", "avant": "tomates concassées, mozzarella fraîche, pepperoni, poivrons et oignons rôtis, champignons rôtis, olives vertes tranchées, parmesan", "apres": ""},
-  {"nom": "Pizza blanche aux quatre fromages et épinards sautés à l'ail, façon Real Clever Food (Ooni)", "base": "creme", "avant": "huile d'olive, provolone, mozzarella, ricotta, épinards sautés à l'ail", "apres": "pecorino romano râpé"},
-  {"nom": "Pizza au haddock fumé, épinards, ricotta, cheddar et oignons nouveaux (Ooni)", "base": "creme", "avant": "ricotta, épinards, haddock fumé, cheddar, oignons nouveaux, poivre noir, sel de mer, huile d'olive extra vierge", "apres": ""},
-  {"nom": "Pizza épique aux pommes de terre de Santa Barbara Baker (Ooni)", "base": "creme", "avant": "purée de pommes de terre à la ricotta, oignons caramélisés, pommes de terre rôties au romarin, cheddar blanc affiné, mozzarella fraîche", "apres": "ciboulette"},
-  {"nom": "Pizza Tét vietnamienne, poitrine de porc, haricots mungo et floss de crevettes (Ooni)", "base": "creme", "avant": "pistou asiatique au basilic thaï, coriandre et cacahuètes, porchetta vietnamienne à la poitrine de porc", "apres": "chapelure de haricots mungo, floss de crevettes séchées, huile aux oignons verts, sauce hoisin"},
-  {"nom": "Le Vegan Hum-Bo : houmous et olives noires (Ooni)", "base": "tomate", "avant": "sauce tomate, houmous maison à l'ail rôti, olives noires, thym frais", "apres": "huile d'olive extra vierge, sel, poivre noir"},
-  {"nom": "Pizza merguez, feta fouettée à l'abricot et oignons rouges marinés (Ooni)", "base": "creme", "avant": "feta fouettée à l'abricot, mozzarella fraîche, merguez, oignons rouges marinés, pignons de pin grillés", "apres": "menthe fraîche hachée"},
-  {"nom": "Pizza au foie gras confit et aux cèpes de Manon Santini (Ooni)", "base": "creme", "avant": "sauce albufera, mozzarella fior di latte, parmesan", "apres": "cèpes rôtis, épinards, stracciatella, foie gras, fleurs d'ail, fleur de sel, poivre, huile d'olive"},
-  {"nom": "Pizza au dip chaud au crabe (Ooni)", "base": "creme", "avant": "mozzarella fraîche, dip au crabe", "apres": "échalotes frites, ciboulette"},
-  {"nom": "Pizza gratinée aux choux de Bruxelles (Ooni)", "base": "creme", "avant": "crème fraîche, gruyère, mozzarella, échalotes, lardons, choux de Bruxelles, cheddar, huile d'olive, sel", "apres": ""},
-  {"nom": "Pizza à la patate douce et à la harissa (Ooni)", "base": "tomate", "avant": "sauce tomate à la harissa, patate douce, piment serrano, ail", "apres": "oignons rouges marinés, pignons de pin toastés, persil"},
-  {"nom": "Pizza champignons, tomates et crème d'artichaut de Thierry Graffagnino (Ooni)", "base": "creme", "avant": "crème d'artichaut, mozzarella, champignons de Paris, tomates cerises, artichauts grillés", "apres": "roquette, fleurs comestibles, tomates séchées, filet d'huile d'olive"},
-  {"nom": "Pizza courge acorn et quesillo, huile de piment habanero (Ooni)", "base": "creme", "avant": "quesillo, courge acorn rôtie, oignons rouges marinés", "apres": "coriandre fraîche, huile de piment habanero"},
-  {"nom": "Pizza araignée aux olives, sauce vodka (Ooni)", "base": "tomate", "avant": "sauce vodka, mozzarella, olives noires", "apres": ""},
-  {"nom": "Pizza maïs doux et 'nduja (Ooni)", "base": "creme", "avant": "crème fraîche, mozzarella, maïs, 'nduja", "apres": "oignons nouveaux, basilic"},
-  {"nom": "Pizza ananas mariné et chorizo (Ooni)", "base": "tomate", "avant": "tomates concassées, mozzarella fraîche, oignon rouge, chorizo espagnol, ananas mariné, parmesan", "apres": ""},
-  {"nom": "Pizza ananas caramélisé, pepperoni et jalapeños (Ooni)", "base": "tomate", "avant": "tomates concassées, mozzarella fraîche, pepperoni, ananas caramélisé, jalapeños au vinaigre, parmesan", "apres": "sauce ranch"},
-  {"nom": "Pizza myrtilles marinées et camembert (Ooni)", "base": "creme", "avant": "camembert, gruyère, thym, myrtilles marinées", "apres": "zeste de citron"},
-  {"nom": "Pizza jarret de jambon, chou braisé et pommes de terre rôties des Dough Bros (Ooni)", "base": "creme", "avant": "sauce crème au persil, mozzarella, jarret de jambon effiloché, pommes de terre rôties, chou braisé au miso, jus de cuisson du chou", "apres": ""},
-  {"nom": "Pizza betterave et feta (Ooni)", "base": "creme", "avant": "sauce à la betterave, feta", "apres": ""},
-  {"nom": "Pizza Pineapple Express (Ooni)", "base": "tomate", "avant": "sauce tomate, basilic, parmigiano reggiano, fior di latte, pepperoni, jalapeños confits, morceaux d'ananas", "apres": ""},
-  {"nom": "Pizza Currywurst (Ooni)", "base": "tomate", "avant": "sauce curry, bratwurst tranchée", "apres": "frites"},
-  {"nom": "Pizza lasagne (Ooni)", "base": "tomate", "avant": "ragù de bœuf haché, béchamel", "apres": ""},
-  {"nom": "Pizza à la pistache inspirée de Chris Bianco (Ooni)", "base": "creme", "avant": "oignon rouge, romarin, Piave Vecchio, huile d'olive, pistaches", "apres": "miel au thym et citron Meyer"},
-  {"nom": "Pizza Welsh Rarebit (Ooni)", "base": "creme", "avant": "sauce au cheddar à la bière, moutarde de Dijon, sauce Worcestershire, cheddar", "apres": "poivre noir fraîchement moulu"},
-  {"nom": "Pizza topinambours et choux de Bruxelles, huile d'herbes à l'ail (Ooni)", "base": "creme", "avant": "purée de topinambours rôtis, ail, choux de Bruxelles émincés, échalotes émincées, gros sel", "apres": "huile d'herbes, huile d'olive extra vierge, fleur de sel, poivre vert frais moulu"},
-  {"nom": "Pizza chanterelles et patate douce, sauce tomate acidulée et beurre de graines de courge (Ooni)", "base": "creme", "avant": "beurre de graines de courge, crème fraîche végétale, pommes de terre, échalotes, chanterelles", "apres": "sauce tomate acidulée"},
-  {"nom": "Pizza pommes de terre rôties croustillantes, truffe, brie et sauge (Ooni)", "base": "creme", "avant": "huile de truffe, brie, pommes de terre rôties, feuilles de sauge, fior di latte, truffe noire conservée", "apres": "réduction balsamique"},
-  {"nom": "Pizza au pepperoni de dinde et miel piquant de Tariq Trotter (Ooni)", "base": "tomate", "avant": "sauce tomate, pepperoni de dinde, mozzarella", "apres": "miel piquant, pecorino, flocons de piment rouge, basilic frais"},
-  {"nom": "Pizza Panna de Dan Richer (Razza) (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, crème épaisse, sel de mer", "apres": "roquette, parmigiano reggiano"},
-  {"nom": "Pizza Di Natale de Dan Richer (Razza) (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, olives noires, pignons de pin, raisins secs, ail, huile d'olive", "apres": "basilic, huile pimentée"},
-  {"nom": "Pizza au poulet Buffalo, croûte badigeonnée épicée (Ooni)", "base": "creme", "avant": "poulet effiloché, mayonnaise à l'ail, sauce piquante, mozzarella, oignon rouge, jalapeños, gorgonzola", "apres": "sauce piquante"},
-  {"nom": "Pizza patate douce façon casserole (Ooni)", "base": "creme", "avant": "purée de patate douce au beurre et à la cannelle, noix de pécan concassées, mini guimauves", "apres": ""},
-  {"nom": "Pizza Margherita (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella", "apres": "basilic frais"},
-  {"nom": "Pizza Pepperoni (Ooni)", "base": "tomate", "avant": "sauce tomate à l'ail, mozzarella, pepperoni", "apres": ""},
-  {"nom": "Pizza Saint-Jacques, lardons, ciboulette et parmesan (Ooni)", "base": "creme", "avant": "oignons caramélisés, lardons, Saint-Jacques, parmesan, ciboulette", "apres": "huile d'olive extra vierge"},
-  {"nom": "Pizza blanche asperges, champignons bruns et thym (Ooni)", "base": "creme", "avant": "oignons, asperges, champignons bruns, mozzarella, thym, huile d'olive, sel, poivre noir", "apres": "huile d'olive"},
-  {"nom": "Pizza à la croûte de chou-fleur sans gluten (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella", "apres": "basilic frais"},
-  {"nom": "Pizza Marinara (Ooni)", "base": "tomate", "avant": "sauce tomate San Marzano, ail, basilic, origan, huile d'olive extra vierge", "apres": ""},
-  {"nom": "Pizza turque à l'agneau (Ooni)", "base": "tomate", "avant": "agneau haché, tomates cerises, poivron rouge rôti, concentré de tomate, flocons de piment, paprika fumé, cannelle, sumac, cumin, échalote, coriandre fraîche, huile d'olive", "apres": "citron grillé, persil frais, origan frais, sel, poivre"},
-  {"nom": "Pizza Bar Style (Ooni)", "base": "creme", "avant": "fromage, pepperoni, saucisse", "apres": "ricotta pochée, origan séché, huile d'ail"},
-  {"nom": "Pizza tomate et ricotta (Ooni)", "base": "tomate", "avant": "ricotta, tomates cerises", "apres": ""},
-  {"nom": "Pizza blanche aux moules (Ooni)", "base": "creme", "avant": "béchamel, moules, pignons de pin", "apres": "basilic frais, poivre noir fraîchement moulu"},
-  {"nom": "Pizza avocat, noix de coco et crevettes façon goane (Ooni)", "base": "tomate", "avant": "crevettes façon goane, sauce balchão, mozzarella", "apres": "avocat, noix de coco toastée, coriandre"},
-  {"nom": "Pizza salami au fenouil et brocoli rabe à la napolitaine (Ooni)", "base": "creme", "avant": "huile au citron, brocoli rabe, salami au fenouil, fior di latte, scamorza", "apres": ""},
-  {"nom": "Pizza feta rôtie, citron et figue (Ooni)", "base": "creme", "avant": "sauce feta au citron, figues fraîches, tapenade figue-menthe-olive", "apres": "citron confit haché, miel, noix hachées"},
-  {"nom": "Pizza au poulet BBQ, croûte de bretzel (Ooni)", "base": "creme", "avant": "sauce barbecue, poulet, fromage à la bière, gros sel", "apres": ""},
-  {"nom": "Pizza façon French Dip (Ooni)", "base": "creme", "avant": "béchamel, rosbif fin, oignon caramélisé, emmental râpé", "apres": "thym, jus de bœuf pour tremper"},
-  {"nom": "Pizza ricotta vegan, piments confits et sauce à la courge rôtie (Ooni)", "base": "creme", "avant": "sauce à la courge rôtie, ricotta vegan, piments confits, sirop de piment", "apres": "feuilles de sauge frites croustillantes"},
-  {"nom": "Pizza citrouille et oignons balsamiques, sauge et pignons (Ooni)", "base": "creme", "avant": "fior di latte, courge butternut rôtie, oignons au vinaigre balsamique, huile d'olive", "apres": "pignons grillés, sauge émincée, fromage bleu émietté (facultatif)"},
-  {"nom": "Pizza deli italienne épicée (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, salami milano, provolone", "apres": "rosettes de mortadelle, poivrons marinés, cornichon, roquette, filet de vinaigre balsamique"},
-  {"nom": "Pizza dinde rôtie, camembert et canneberges (Ooni)", "base": "creme", "avant": "sauce aux canneberges, camembert, dinde rôtie, mozzarella", "apres": "sauce aux canneberges, thym, parmesan, poivre noir"},
-  {"nom": "Pizza pommes de terre, fromage bleu et oignons rouges balsamiques (Ooni)", "base": "creme", "avant": "mozzarella, pommes de terre, fromage bleu, oignons rouges au vinaigre balsamique", "apres": "thym, huile d'olive"},
-  {"nom": "Pizza à la farce des restes (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, farce maison, sauce aux canneberges, feuilles de sauge", "apres": "sel, poivre"},
-  {"nom": "Pizza pomme, bacon, sauge et cheddar (Ooni)", "base": "creme", "avant": "cheddar, bacon, pomme, feuilles de sauge", "apres": "sel de mer, poivre"},
-  {"nom": "Pizza citrouille, épices et tout le reste (Ooni)", "base": "creme", "avant": "purée de citrouille, mozzarella, pepperoni, piment rouge", "apres": "flocons de piment"},
-  {"nom": "Pizza betteraves épicées, ail noir et stracciatella à la pistache (Ooni)", "base": "creme", "avant": "huile d'ail, grana padano, mozzarella, purée de betteraves, pistaches", "apres": "stracciatella di bufala, pistaches, huile de piment"},
-  {"nom": "Pizza ricotta, anchois siciliens et fleurs de courgette (Ooni)", "base": "creme", "avant": "ricotta, fleurs de courgette, anchois siciliens, fior di latte, huile d'olive extra vierge", "apres": ""},
-  {"nom": "Pizza courge butternut rôtie, ricotta, piment et sauge (Ooni)", "base": "creme", "avant": "mozzarella, courge butternut rôtie, feuilles de sauge", "apres": "ricotta, flocons de piment, filet d'huile d'olive"},
-  {"nom": "Pizza de Noël, tout y est (Ooni)", "base": "tomate", "avant": "sauce tomate au basilic et à l'origan, brie, dinde, saucisses enrobées de lard", "apres": "sauce aux canneberges, farce"},
-  {"nom": "Pizza marrons rôtis, oignons caramélisés et stilton (Ooni)", "base": "creme", "avant": "huile d'olive, stilton, oignons caramélisés, marrons rôtis, poivre noir concassé", "apres": "stilton, thym frais"},
-  {"nom": "Pizza Miracle on 34th St (Ooni)", "base": "creme", "avant": "mozzarella fraîche, saucisses cocktail, jambon de Parme ou speck, lard croustillant, huile d'ail", "apres": "réduction balsamique aux canneberges, poivre noir"},
-  {"nom": "Pizza plateau de fromages (Ooni)", "base": "creme", "avant": "huile à l'ail, mozzarella fraîche, fromage de chèvre, brie, grana padano", "apres": "salade de chou rouge, réduction balsamique aux canneberges, poivre noir, chutney d'oignon rouge"},
-  {"nom": "Pizza à croûte protéinée, potiron, thym et ricotta (Ooni)", "base": "creme", "avant": "purée de potiron, ricotta, parmesan, ail, huile d'olive, flocons de piment rouge, thym, mozzarella, graines de courge grillées", "apres": ""},
-  {"nom": "Pizza double cheeseburger au bacon (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, cheddar, bœuf haché, bacon, cornichon", "apres": "laitue, sauce burger"},
-  {"nom": "Pizza courgettes flambées et tomates cerises (Ooni)", "base": "tomate", "avant": "sauce tomate, fior di latte, courgettes grillées, tomates cerises", "apres": "sel, poivre noir"},
-  {"nom": "Pizza citrouille, courgette et piment (Ooni)", "base": "creme", "avant": "purée de potiron, huile d'olive, ail, courgette, piment, pignons de pin", "apres": "huile d'olive, sel, poivre"},
-  {"nom": "Pizza citron, chèvre et courgette (Ooni)", "base": "creme", "avant": "citrons caramélisés, courgette en rubans, mozzarella, fromage de chèvre, huile d'olive", "apres": "piment rouge haché, ciboulette hachée, zeste de citron"},
-  {"nom": "Pizza patate douce, asperges et feta (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, asperges, patate douce", "apres": "feta émiettée"},
-  {"nom": "Pizza au poulet BBQ (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, poulet effiloché, maïs, poivron rouge, oignon rouge", "apres": "sauce barbecue"},
-  {"nom": "Pizza chou-fleur Buffalo (Ooni)", "base": "creme", "avant": "fromage bleu, ailes de chou-fleur Buffalo coupées en deux, sauce buffalo", "apres": "céleri émincé, poivre"},
-  {"nom": "Pizza Bloody Mary à la vodka (Ooni)", "base": "tomate", "avant": "sauce marinara à la vodka, lardons, ail, basilic, tabasco, sauce Worcestershire", "apres": "copeaux de céleri, poivre noir fraîchement moulu"},
-  {"nom": "Pizza aux quatre fromages, sauce tomate (Ooni)", "base": "tomate", "avant": "sauce tomate, cheddar, mozzarella, fromage bleu, feta", "apres": "poivre noir moulu"},
-  {"nom": "Pizza protéinée courge butternut, lardons et oignons caramélisés (Ooni)", "base": "creme", "avant": "ricotta, parmesan, huile d'olive, ail, piment rouge, mozzarella, courge butternut, lardons, oignons caramélisés, feuilles de sauge", "apres": "glaçage balsamique"},
-  {"nom": "Pizza petit-déjeuner ultime (Ooni)", "base": "tomate", "avant": "sauce tomate, bacon, champignons, tomates cerises, mozzarella, œuf", "apres": "persil frais, sriracha, avocat"},
-  {"nom": "Pizza au poulet Buffalo (Ooni)", "base": "creme", "avant": "fromage bleu émietté, poulet façon ailes buffalo, sauce buffalo", "apres": "céleri émincé en rubans"},
-  {"nom": "Pizza Pigs in Blankets (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, mini saucisses enrobées de bacon, oignon rouge, sauce aux canneberges", "apres": "poivre noir moulu"},
-  {"nom": "Pizza champignons au bourbon et trois fromages (Ooni)", "base": "creme", "avant": "champignons au bourbon, mozzarella, cheddar, fromage bleu, huile d'olive", "apres": "thym frais"},
-  {"nom": "Pizza betterave rôtie, noix et fromage de chèvre (Ooni)", "base": "creme", "avant": "huile de noix, betterave, fromage de chèvre, noix", "apres": "origan frais, poivre noir moulu, miel"},
-  {"nom": "Pizza rubans de courgette, ciboules et beurre à l'ail (Ooni)", "base": "creme", "avant": "beurre à l'ail, mozzarella, rubans de courgette, ciboules", "apres": "zeste de citron, sel fumé, flocons de piment rouge"},
-  {"nom": "Pizza porcini et provolone (Ooni)", "base": "creme", "avant": "huile d'olive, provolone, mascarpone, cèpes, pecorino ou parmesan, persil, poivre noir", "apres": ""},
-  {"nom": "Pizza new-yorkaise inspirée de Falco (Ooni)", "base": "tomate", "avant": "mozzarella, parmesan, huile d'olive, sauce tomate, piment, origan", "apres": "huile à l'ail, basilic frais"},
-  {"nom": "Pizza Hot Diablo (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, pepperoni, jambon de Parme, boulettes de viande épicées, piment frais émincé, sauce piquante", "apres": "poivre noir fraîchement moulu"},
-  {"nom": "Tarte à la tomate du New Jersey (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella", "apres": "pecorino, origan, flocons de piment, basilic, huile d'ail"},
-  {"nom": "Pizza Tex-Mex (Ooni)", "base": "tomate", "avant": "sauce tomate, poudre de chili, cumin, fromage râpé, oignon rouge émincé, haricots", "apres": "laitue hachée, avocat en tranches"},
-  {"nom": "Pizza bacon, poireau et crème (Ooni)", "base": "creme", "avant": "crème fraîche, bacon, poireau caramélisé", "apres": "crème fraîche"},
-  {"nom": "Pizza chorizo et ananas infusé au citron vert (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, chorizo, ananas infusé au citron vert", "apres": "coriandre fraîche"},
-  {"nom": "Pizza hawaïenne (Ooni)", "base": "tomate", "avant": "sauce tomate, jambon, ananas", "apres": ""},
-  {"nom": "Pizza hawaïenne épicée (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, jambon, pepperoni épicé, ananas, jalapeños marinés", "apres": "sauce piquante"},
-  {"nom": "Pizza tapas espagnole (Ooni)", "base": "tomate", "avant": "sauce tomate, manchego, olives, oignon rouge, poivron rouge, persil frais", "apres": "sel, poivre"},
-  {"nom": "Pizza cocktail de crevettes (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, laitue romaine, crevettes", "apres": "sauce cocktail, avocat"},
-  {"nom": "Pizza au crab dip du Maryland (Ooni)", "base": "creme", "avant": "béchamel, mozzarella, cheddar, chair de crabe", "apres": "assaisonnement pour crabe, persil séché"},
-  {"nom": "Pizza salami milano et roquette (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella fraîche, salami milano", "apres": "roquette fraîche, glaçage balsamique, sel, poivre"},
-  {"nom": "Pizza pesto vert et fromage de chèvre (Ooni)", "base": "creme", "avant": "pesto au basilic, fromage de chèvre, pignons de pin grillés", "apres": "cresson, fleurs comestibles"},
-  {"nom": "Pizza asperges, feta et lardons (Ooni)", "base": "creme", "avant": "huile d'olive à l'ail, asperges, lardons, feta", "apres": "glaçage balsamique, poivre noir concassé"},
-  {"nom": "Pizza kale, haricots verts, aubergine et chou-fleur (Ooni)", "base": "tomate", "avant": "sauce tomate, kale, haricots verts, aubergine, chou-fleur, tomates cerises, piment rouge", "apres": "huile d'olive"},
-  {"nom": "Pizza blanche salami, chèvre et miel piquant (Ooni)", "base": "creme", "avant": "huile d'olive à l'ail, mozzarella, salami au poivre noir, fromage de chèvre, feuilles de sauge", "apres": "miel piquant, pomme verte"},
-  {"nom": "Pizza scandinave au saumon et fromage à la crème (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, saumon fumé, aneth", "apres": "fromage à la crème, citron, poivre noir"},
-  {"nom": "Pizza poulet, champignons et pesto (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, champignons, pesto, poulet", "apres": "basilic frais"},
-  {"nom": "Pizza boulettes, ricotta et basilic (Ooni)", "base": "tomate", "avant": "sauce tomate, boulettes de viande, mozzarella de bufflonne, ricotta, basilic", "apres": ""},
-  {"nom": "Pizza pêche, prosciutto et basilic (Ooni)", "base": "creme", "avant": "pêche, mozzarella, prosciutto, huile d'olive à l'ail, sel de mer", "apres": "feuilles de basilic"},
-  {"nom": "Pizza prosciutto, figues et ricotta (Ooni)", "base": "creme", "avant": "mozzarella, ricotta, prosciutto, huile d'olive", "apres": "figues, roquette, sel, poivre, miel"},
-  {"nom": "Pizza bacon, épinards et tomates (Ooni)", "base": "creme", "avant": "huile d'ail, mozzarella, épinards, bacon caramélisé, tomate en dés", "apres": "sel, poivre"},
-  {"nom": "Pizza Philly Cheesesteak classique (Ooni)", "base": "tomate", "avant": "sauce tomate, oignons, provolone, mozzarella, bœuf, poivron vert, poivre noir", "apres": "huile d'olive"},
-  {"nom": "Pizza épinards et œuf (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, épinards, huile d'olive, œuf", "apres": "sel, poivre, huile d'olive"},
-  {"nom": "Pizza Diablo au pepperoni (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, pepperoni, saucisse de Francfort, chorizo, piment rouge", "apres": "basilic frais"},
-  {"nom": "Pizza olives, tomates séchées et roquette (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, olives, tomates séchées", "apres": "parmesan, roquette, poivre noir concassé, huile d'olive"},
-  {"nom": "Pizza satay au poulet (Ooni)", "base": "creme", "avant": "sauce satay", "apres": "poulet effiloché, carotte râpée, concombre émincé, cacahuètes concassées, coriandre, basilic thaï, sauce chili douce, quartiers de citron vert"},
-  {"nom": "Pizza butternut, pesto et burrata (Ooni)", "base": "creme", "avant": "pesto, courge butternut, pignons de pin, graines de courge", "apres": "burrata, roquette, flocons de piment, huile d'olive"},
-  {"nom": "Pizza au miel et à la sriracha (Ooni)", "base": "creme", "avant": "sriracha, tofu frit en dés, oignon vert, graines de sésame", "apres": "miel, coriandre fraîche"},
-  {"nom": "Pizza steak, fromage bleu et oignon rouge (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, steak, fromage bleu, oignon rouge", "apres": "huile d'olive"},
-  {"nom": "La pizza Millennial (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, lardons", "apres": "avocat écrasé, feta émiettée, sriracha"},
-  {"nom": "Pizza ricotta vegan, épinards et oignons caramélisés (Ooni)", "base": "tomate", "avant": "sauce tomate, ricotta vegan aux amandes, épinards, oignons caramélisés, tomates séchées", "apres": ""},
-  {"nom": "Pizza salami, piment vert et olives (Ooni)", "base": "tomate", "avant": "miel, graines de sésame noir et blanc, sauce tomate, mozzarella, salami, olives vertes, piments verts", "apres": ""},
-  {"nom": "Pizza pêche, brie et balsamique (Ooni)", "base": "creme", "avant": "huile d'olive, mozzarella, brie", "apres": "pêches, feuilles de basilic, glaçage balsamique"},
-  {"nom": "Pizza nduja et brocoli (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, brocoli, nduja", "apres": "huile d'olive, parmesan"},
-  {"nom": "Pizza œuf, pancetta et basilic (Ooni)", "base": "creme", "avant": "mozzarella, pancetta, œuf, huile d'olive", "apres": "basilic frais, huile d'olive, poivre noir moulu"},
-  {"nom": "Pizza saumon, fromage à la crème, aneth et câpres (Ooni)", "base": "creme", "avant": "fromage à la crème, saumon fumé, câpres", "apres": "aneth, quartiers de citron"},
-  {"nom": "Pizza steak grillé, emmental et moutarde (Ooni)", "base": "creme", "avant": "beurre fondu, moutarde, mozzarella, steak émincé, emmental, jambon de la Forêt-Noire, cornichons à l'aneth", "apres": ""},
-  {"nom": "Pizza jalapeños marinés, oignons caramélisés et crème de cajou à l'ail (Ooni)", "base": "creme", "avant": "huile à l'ail, jalapeños marinés", "apres": "oignons caramélisés, coriandre, jus de citron vert, poivre noir, crème de cajou à l'ail"},
-  {"nom": "Pizza végétarienne à la nduja végétale et à la courge (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, courge butternut rôtie, nduja végétale, oignon rouge", "apres": "pignons de pin, sauce à l'ail et aux herbes"},
-  {"nom": "Pizza mozzarella, tomates semi-séchées et salade fraîche (Ooni)", "base": "tomate", "avant": "sauce tomate", "apres": "mozzarella, tomates semi-séchées, feuilles de salade, parmesan, mayonnaise au citron et à l'ail, glaçage balsamique à l'ail noir et miso"},
-  {"nom": "Pizza sauté de bœuf (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella, bœuf, piment rouge", "apres": "miel, graines de sésame, concombre"},
-  {"nom": "Pizza choux de Bruxelles et confiture pomme-bacon (Ooni)", "base": "creme", "avant": "ricotta, mascarpone, poivre noir, mozzarella, choux de Bruxelles, ail, confiture pomme-bacon", "apres": "filet d'huile d'olive"},
-  {"nom": "Pizza betterave, chèvre et oignons caramélisés (Ooni)", "base": "creme", "avant": "oignons caramélisés, fromage de chèvre, betterave", "apres": "basilic, poivre noir, huile d'olive extra vierge"},
-  {"nom": "Pizza poitrine de bœuf braisée, cornichons et moutarde (Ooni)", "base": "tomate", "avant": "sauce tomate, poitrine de bœuf braisée, mozzarella, cornichons", "apres": "roquette, moutarde, huile d'olive, poivre noir, parmesan"},
-  {"nom": "Pizza patate douce, dattes, piment vert et feta (Ooni)", "base": "tomate", "avant": "sauce tomate, patate douce rôtie écrasée, feta émiettée, dattes, piments verts, huile d'olive", "apres": "basilic frais"},
-  {"nom": "Pizza blanche gorgonzola, burrata et huile à l'ail (Ooni)", "base": "creme", "avant": "mozzarella, gorgonzola, tomates semi-séchées, parmesan", "apres": "burrata, pignons de pin grillés, huile à l'ail, basilic frais"},
-  {"nom": "Pizza-baguette corse (Ooni)", "base": "tomate", "avant": "pulpe de tomate (ou tomates San Marzano écrasées à la main), feuilles de myrte (ou herbes de Provence), tomme corse de brebis (ou cheddar fort), pancetta corse", "apres": "coppa, roquette"},
-  {"nom": "Pizza au poulet BBQ, maïs, oignon, bacon et coriandre (Ooni)", "base": "creme", "avant": "sauce barbecue, mozzarella fraîche, oignon rouge, poulet cuit, lardons de bacon fumé, maïs", "apres": "sauce barbecue, coriandre fraîche"},
-  {"nom": "Pizza Saint-Valentin en forme de cœur (Ooni)", "base": "tomate", "avant": "sauce tomate San Marzano, ail finement tranché infusé à l'huile d'olive, origan séché, basilic, huile pimentée (facultatif)", "apres": "basilic frais, piment en flocons, poivre noir concassé"},
-  {"nom": "Pizza squelette d'Halloween (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella à pizza râpée ou fior di latte finement coupé", "apres": "olive farcie au piment doux, olives dénoyautées coupées en deux, mozzarella ou parmesan en carrés (pour les dents), prosciutto di Parma, mortadelle"},
-  {"nom": "Pizza soppressata (Ooni)", "base": "tomate", "avant": "sauce tomate, soppressata, oignon, mozzarella", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Pizza étoile à croûte farcie, margherita (Ooni)", "base": "tomate", "avant": "sauce tomate, mozzarella râpée, mozzarella fraîche", "apres": "parmesan, basilic"},
-  {"nom": "Tomate fromage (Camion Jaune)", "base": "tomate", "avant": "tomate, fromage", "apres": ""},
-  {"nom": "Jambon fromage (Camion Jaune)", "base": "tomate", "avant": "jambon, fromage", "apres": ""},
-  {"nom": "Moules (OIGNONS) FROMAGE (Camion Jaune)", "base": "tomate", "avant": "moules, oignons, fromage", "apres": ""},
-  {"nom": "Calamars fromage (Camion Jaune)", "base": "tomate", "avant": "calamars, fromage", "apres": ""},
-  {"nom": "Anchois fromage (Camion Jaune)", "base": "tomate", "avant": "anchois, fromage", "apres": ""},
-  {"nom": "Sicilienne (Camion Jaune)", "base": "tomate", "avant": "anchois, oignons, fromage", "apres": ""},
-  {"nom": "Canarienne (Camion Jaune)", "base": "tomate", "avant": "ail, thon, câpres, fromage", "apres": ""},
-  {"nom": "Roquefort fromage (Camion Jaune)", "base": "tomate", "avant": "roquefort, fromage", "apres": ""},
-  {"nom": "Végétarienne (Camion Jaune)", "base": "tomate", "avant": "champignons, oignons, poivrons, fromage", "apres": ""},
-  {"nom": "Royale (Camion Jaune)", "base": "tomate", "avant": "jambon, champignons, fromage", "apres": ""},
-  {"nom": "Stromboli (Camion Jaune)", "base": "tomate", "avant": "jambon, chorizo, fromage", "apres": ""},
-  {"nom": "Chorizo poivrons dite « chp » (Camion Jaune)", "base": "tomate", "avant": "chorizo, poivrons, fromage", "apres": ""},
-  {"nom": "Thaï (Camion Jaune)", "base": "tomate", "avant": "lardons, ananas, gingembre, fromage", "apres": ""},
-  {"nom": "L.a.o. (Camion Jaune)", "base": "tomate", "avant": "lardons, artichauts, oignons, fromage", "apres": ""},
-  {"nom": "Napo (Camion Jaune)", "base": "tomate", "avant": "tomate, fraîche, mozzarella, basilic, parmesan", "apres": ""},
-  {"nom": "Fruits de mer (Camion Jaune)", "base": "tomate", "avant": "moules, calamars, crevettes, ail, persil, fromage", "apres": ""},
-  {"nom": "Olp (Camion Jaune)", "base": "tomate", "avant": "oignons, lardons, pommes de terre, fromage", "apres": ""},
-  {"nom": "Causses (Camion Jaune)", "base": "tomate", "avant": "bleu, pommes de terre, fromage", "apres": ""},
-  {"nom": "Campagne (Camion Jaune)", "base": "tomate", "avant": "champignons, pommes de terre, persil, ail, fromage", "apres": ""},
-  {"nom": "Provençale (Camion Jaune)", "base": "tomate", "avant": "thon, ail, courgette, basilic, fromage", "apres": ""},
-  {"nom": "Quatre fromages (Camion Jaune)", "base": "tomate", "avant": "mozzarella, chèvre, bleu d’Auvergne, parmesan", "apres": ""},
-  {"nom": "Quercynoise (Camion Jaune)", "base": "tomate", "avant": "cabécous (4), asperges, fromage", "apres": ""},
-  {"nom": "Margherita sbagliata (Franco Pepe — Pepe in Grani, Caiazzo)", "base": "tomate", "avant": "mozzarella di bufala Campana DOP, huile d'olive extra vierge", "apres": "passata de tomate Riccio de Caiazzo, réduction de basilic, huile d'olive extra vierge"},
-  {"nom": "La ritrovata di mastro stefano (Franco Pepe — Pepe in Grani, Caiazzo)", "base": "tomate", "avant": "tomate San Marzano DOP, tomate Piennolo du Vésuve, anchois de Cetara, câpres déshydratées", "apres": "poudre d'olives noires de Caiazzane, basilic, huile à l'ail, origan"},
-  {"nom": "Futuro di marinara (Francesco Martucci — I Masanielli, Caserte)", "base": "tomate", "avant": "pâte napolitaine, crème de tomate rôtie", "apres": "olives de Caiazzane, anchois, pesto d'ail des ours, câpres de Salina, origan"},
-  {"nom": "Assoluto di pomodoro (Francesco Martucci — I Masanielli, Caserte)", "base": "tomate", "avant": "crème de tomate cerise rôtie, tomate Piennolo sautée, tomate jaune de conservation sautée", "apres": "mousse de tomate San Marzano DOP, tomate Piennolo séchée, tuile de tomate datterino rouge, confiture de tomate Piennolo, huile d'olive extra vierge"},
-  {"nom": "Marinara secondo francesco (Francesco Capece — Confine, Milan)", "base": "tomate", "avant": "tomate San Marzano DOP, câpres de Pantelleria, anchois de Cetara", "apres": "poudre d'olives noires Leccino, colatura d'anchois de Cetara, origan de Salina, huile à l'ail, huile d'olive extra vierge Leccino"},
-  {"nom": "Carminuccio state of mind (Francesco Capece — Confine, Milan)", "base": "tomate", "avant": "tomate San Marzano DOP, battuto de pancetta avec origan, ail rouge, piment serpentino de Teggiano", "apres": "Parmigiano Reggiano 36 mois, basilic, huile d'olive extra vierge Carpellese"},
-  {"nom": "Margherita di bufala (Francesco Capece — Confine, Milan)", "base": "tomate", "avant": "tomate San Marzano DOP", "apres": "mozzarella di bufala Campana DOP, Parmigiano Reggiano, basilic, huile d'olive extra vierge des Collines Salernitaines"},
-  {"nom": "Margherinara (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "tomate", "avant": "tomate San Marzano DOP, fior di latte d'Agerola, Grana Padano", "apres": "tomate Piennolo rouge du Vésuve, origan du Matese, basilic riccio napolitain, huile d'olive extra vierge"},
-  {"nom": "Margherita storica (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "tomate", "avant": "tomate, fior di latte", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "4 Casi campani (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "tomate", "avant": "caciocavallo podolico, blue de bufala, pecorino de Carmasciano, fior di latte d'Agerola", "apres": "tomates cerises semi-séchées, crumble de pain multicéréales, basilic riccio napolitain, huile de céleri"},
-  {"nom": "La margherita di gino sorbillo (Gino Sorbillo — Sorbillo, Naples)", "base": "tomate", "avant": "tomate biologique, mozzarella di bufala Campana, fior di latte", "apres": "ricotta di bufala salée et affinée râpée sur le cornicione, huile d'olive extra vierge, basilic"},
-  {"nom": "Casa sorbillo (Gino Sorbillo — Sorbillo, Naples)", "base": "tomate", "avant": "tomate, fior di latte", "apres": "capocollo de Martina Franca, stracciatella de lait de vache, basilic, huile d'olive extra vierge"},
-  {"nom": "Margherita gialla « massimo bottura » (Gino Sorbillo — Sorbillo, Naples)", "base": "tomate", "avant": "tomates jaunes Pacchetelle du Vésuve, provola fumée, Conciato Romano", "apres": "basilic frais, huile d'olive extra vierge"},
-  {"nom": "'Nduja, burrata, bergamotto (Roberto Davanzo — BOB Alchimia a Spicchi, Calabre)", "base": "tomate", "avant": "tomate à la 'nduja", "apres": "burrata glacée, huile de basilic, bergamote"},
-  {"nom": "Supermarinizia / burro e pomodoro (Roberto Davanzo — BOB Alchimia a Spicchi, Calabre)", "base": "tomate", "avant": "tomate, anchois, ail, basilic, câpres, origan, olives, réglisse", "apres": "crème de tomates cerises fumées, ajo blanco, crème de basilic, anchois en sauce ponzu, câpres croustillantes, origan, chocolat d'olives et réglisse"},
-  {"nom": "Cosacca (Enzo Coccia — La Notizia, Naples)", "base": "tomate", "avant": "tomate San Marzano DOP, pecorino râpé", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Dop provola e pepe (Enzo Coccia — La Notizia, Naples)", "base": "tomate", "avant": "tomate San Marzano DOP, provola de bufflonne, pecorino râpé, poivre noir", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Filetto (Enzo Coccia — La Notizia, Naples)", "base": "tomate", "avant": "tomates pelées en tranches, provola de bufflonne, Parmigiano Reggiano", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Piennolo (Enzo Coccia — La Notizia, Naples)", "base": "tomate", "avant": "tomates Piennolo rouges et jaunes du Vésuve DOP, mozzarella de bufflonne, pecorino râpé", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Diavola (Enzo Coccia — La Notizia, Naples)", "base": "tomate", "avant": "tomate San Marzano DOP, fior di latte d'Agerola, salami piquant", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "San daniele (Enzo Coccia — La Notizia, Naples)", "base": "tomate", "avant": "mozzarella de bufflonne", "apres": "jambon San Daniele, copeaux de Parmigiano Reggiano 36 mois, basilic, huile d'olive extra vierge"},
-  {"nom": "Cilentana (Enzo Coccia — La Notizia, Naples)", "base": "tomate", "avant": "tomates Piennolo DOP du Vésuve, sauce tomate San Marzano DOP, cacioricotta du Cilento, poivre noir", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Procidana (Enzo Coccia — La Notizia, Naples)", "base": "tomate", "avant": "tomates Piennolo du Vésuve grillées, scamorza des monts Lattari, ail, persil, origan", "apres": "basilic"},
-  {"nom": "Santa lucia (Enzo Coccia — La Notizia, Naples)", "base": "tomate", "avant": "tomates Piennolo rouges et jaunes, anchois de Cetara DOP, olives noires de Gaeta, persil, ail, origan", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Capricciosa evoluta (Ciro Salvo — 50 Kalò, Naples)", "base": "tomate", "avant": "tomate San Marzano DOP, fior di latte, jambon cuit, champignons sautés, olives noires Itrana, artichauts violets de Brindisi", "apres": "huile d'olive extra vierge Itrana"},
-  {"nom": "Carrettiera (Gino Sorbillo — Sorbillo Gourmand, Bologne)", "base": "tomate", "avant": "saucisse de porc fraîche, friarielli sautés au piment, provola", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Vesuvio (Gino Sorbillo — Sorbillo Gourmand, Bologne)", "base": "tomate", "avant": "tomate Piennolo DOP du Vésuve, provola fumée des monts Lattari, Parmigiano Reggiano DOP Malandrone 1477", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Napoli (Gino Sorbillo — Sorbillo Gourmand, Bologne)", "base": "tomate", "avant": "fior di latte, tomates biologiques, câpres, anchois de Cetara, origan", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Capricciosa (Gino Sorbillo — Sorbillo Gourmand, Bologne)", "base": "tomate", "avant": "tomate biologique, fior di latte, jambon cuit Villani, champignons, artichauts, olives noires", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Marinara (Gino Sorbillo — Sorbillo, Naples)", "base": "tomate", "avant": "tomate, ail de la vallée de l'Ufita, origan sauvage", "apres": "basilic, huile d'olive extra vierge"},
-  {"nom": "Margherita (Ciro Salvo — 50 Kalò, Naples)", "base": "tomate", "avant": "tomate biologique, mozzarella, basilic", "apres": "huile d'olive extra vierge de Campanie"},
-  {"nom": "Cosacca (Ciro Salvo — 50 Kalò, Naples)", "base": "tomate", "avant": "tomate, pecorino râpé", "apres": "huile d'olive extra vierge, basilic"},
-  {"nom": "Capricciosa (Giuseppe Pignalosa — Le Parùle)", "base": "tomate", "avant": "tomate San Marzano DOP, fior di latte campano, salame Napoli, jambon cuit rôti, cèpes sautés, petits artichauts de Pertosa, olives caiazzane, huile d'olive extra vierge du Cilento", "apres": "basilic frais"},
-  {"nom": "Provola e pepe (Giuseppe Pignalosa — Le Parùle)", "base": "tomate", "avant": "tomate San Marzano DOP, provola, poivre noir", "apres": "huile d'olive extra vierge du Cilento DOP, basilic"},
-  {"nom": "Pizza al pomodoro — sei pomodori (Francesco et Salvatore Salvo, avec Salvatore Bianco)", "base": "tomate", "avant": "tomate de Corbara, tomate San Marzano DOP, datterino séchée au four, tomate grillée, crème de tomate fumée, tomate Piennolo marinée", "apres": "basilic, huile d'olive extra vierge Valli Trapanesi DOP"},
-  {"nom": "Scarpariello (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "tomate", "avant": "tomate de Gragnano Valle dei Mulini, tomates cerises grillées, concassé de tomate biologique, huile à l'ail, persil et piment", "apres": "Tuma Persa sicilienne râpée, Pecorino Toscano Gran Riserva râpé, basilic"},
-  {"nom": "Nonna rosa (Francesco et Salvatore Salvo, avec Peppe Guida)", "base": "tomate", "avant": "fior di latte, boulettes de viande, sauce tomate à la viande", "apres": "crème de ricotta froide, basilic, huile d'olive extra vierge 89/93 de Gaudenzi"},
-  {"nom": "Pulled pork (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "tomate", "avant": "sauce tomate fumée, Pecorino Romano DOP, Parmigiano Reggiano 24 mois, fior di latte, pulled pork maison", "apres": "mayonnaise au chipotle, huile d'olive extra vierge Moraiolo Felsina"},
-  {"nom": "Super diable (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "tomate", "avant": "tomate de Corbara, pezzente épicé de la montagne materana, saucisse fraîche épicée, fior di latte mélangé à la provola fumée, ventriciana épicée de Vasto", "apres": "basilic, huile d'olive extra vierge Titolo d'Elena Fucci"},
-  {"nom": "Marinara 4.0 (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "tomate", "avant": "sauce tomate marinée aux agrumes et au gingembre", "apres": "mayonnaise aux anchois, origan frais, poudre d'ail noir, anchois crus, jus d'anchois, huile à l'ail, basilic"},
-  {"nom": "Capricciosa (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "tomate", "avant": "tomate San Marzano DOP, salami d'Agerola, artichauts naturels de Paestum, anchois de Cetara sous huile, olives noires de Gaeta, fior di latte d'Agerola", "apres": "basilic, huile d'olive extra vierge Jannia"},
-  {"nom": "Provola e pepe (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "tomate", "avant": "tomate de Gragnano Valle dei Mulini, provola fumée", "apres": "poivres Timut, noir et or de Sarawak, huile d'olive extra vierge Roboris de San Comaio"},
-  {"nom": "Cosacca (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "tomate", "avant": "tomate de Corbara, pecorino bagnolese", "apres": "huile d'olive extra vierge Colline dell'Ufita, basilic"},
-  {"nom": "Montanara classique (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "tomate", "avant": "pâte frite, sauce tomate Piennolo del Vesuvio DOP", "apres": "copeaux de caciocavallo podolico irpin, basilic"},
-  {"nom": "Farci au four (Francesco et Salvatore Salvo — Pizzeria Salvo)", "base": "tomate", "avant": "ricotta de bufflonne, fior di latte d'Agerola, salami d'Agerola, poivre rouge foncé de Sarawak, tomate San Marzano DOP pelée", "apres": "huile d'olive extra vierge Zahir de San Comaio"},
-  {"nom": "Saturnia (Francesco Martucci — I Masanielli, Caserte)", "base": "tomate", "avant": "crème de tomate rôtie, mozzarella di bufala Campana DOP", "apres": "mousse d'ail noir fermenté à la sauce soja, poudre d'olives de Caiazzane, poudre de câpres de Salina, oignon croquant, bottarga de thon rouge, huile d'olive extra vierge Fontana Lupo"},
-  {"nom": "Marinara sbagliata (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "tomate", "avant": "tomate San Marzano DOP, confiture de tomates cannellini des Campi Flegrei", "apres": "pesto d'ail des ours, origano du Monte Saro, huile d'olive extra vierge fruitée intense"},
-  {"nom": "Conciaciccia (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "tomate", "avant": "tomates jaunes du Piennolo du Vésuve, fiordilatte (ou provola selon les versions), ventricina/salami piquant, cacioricotta cilentano", "apres": "basilic riccio napolitain, huile d'olive extra vierge"},
-  {"nom": "Cor e' peperone (Diego Vitagliano — 10 Diego Vitagliano, Naples)", "base": "tomate", "avant": "double cuisson ; crème de poivron jaune, bœuf haché, ail et poivron (garniture de base rapportée)", "apres": "olives Taggiasche, pecorino romano, persil, fondue de provola dei Monti"},
-  {"nom": "Pepperoni au miel (Julien Serri — scrocchiarella romana, Le Cirque, Paris)", "base": "tomate", "avant": "mozzarella fior di latte, saucisse piquante italienne, pimentón de la Vera IGP", "apres": "miel d’acacia"},
-  {"nom": "Pizza signature bella ciao (Joseph Sicorello — Bella Ciao, Le Grand-Lemps; recette présentée au Championnat de France 2024)", "base": "tomate", "avant": "aubergines, artichauts, jambon de Parme", "apres": "roquette, burrata, filet d’huile de truffe"},
-  {"nom": "Green & yellow (Axel Pau-Cros — La Planque, Sainte-Maxime)", "base": "tomate", "avant": "base de tomate cerise jaune, mozzarella fior di latte, tomates cerises rôties, jambon de Parme affiné 24 mois (ou jambon cru de l’Aubrac en version habituelle), pesto, piments torréfiés", "apres": "stracciatella"},
-  {"nom": "Omaggio al sud (Peppe Cutraro — Gruppo Peppe)", "base": "tomate", "avant": "tomate San Marzano, mozzarella fior di latte, spianata calabraise, ricotta de bufflonne, poivron doux crusco séché au soleil, oignons confits", "apres": "pousses de basilic, huile d’olive extra vierge"},
-  {"nom": "Mare nostrum (Tonino Cogliano & Simone Lombardi — IMperfetto, Puteaux)", "base": "tomate", "avant": "tomates jaunes siciliennes, fior di latte, thon de Cetara, confiture d’oignons et de mûres, olives taggiasche", "apres": "basilic, huile d’olive au citron"},
-  {"nom": "Piccantina (Cheffe Amale — IMPRONTA, Paris)", "base": "tomate", "avant": "sauce tomate italienne, fior di latte, parmesan, spianata premium", "apres": "marmelade de poivrons « Coup de Cœur »"},
-  {"nom": "Stracotto d’agnello (Cheffe Amale — IMPRONTA, Paris)", "base": "tomate", "avant": "fior di latte, agneau stracotto longuement mijoté, pomarola", "apres": ""},
-  {"nom": "Polpette di manzo (Cheffe Amale — IMPRONTA, Paris)", "base": "tomate", "avant": "sauce tomate italienne, fior di latte, boulettes de bœuf à l’italienne, parmesan, épices", "apres": ""},
-  {"nom": "Senza filtri (Michele Rutigliano — Due, Royaume-Uni; PAPA Industry Awards 2026)", "base": "tomate", "avant": "sauce tomate, anchois, ail, origan", "apres": "basilic, huile d’olive extra vierge"},
-  {"nom": "The calabrese comet (Alon Fuks — Born and Raised, Hamilton, Canada; Chef of the Year 2026)", "base": "tomate", "avant": "purée d’ail confit, salami calabrais, poivrons doux péruviens, oignon rouge, mozzarella de bufflonne, Parmigiano Reggiano", "apres": "miel au habanero"},
-  {"nom": "La zucca (Jordan Thomas)", "base": "creme", "avant": "Crème de courge, champignons cuisinés à l'ail et au persil", "apres": "Pancetta, mozzarella di bufala, pousses d'épinards"},
-  {"nom": "Sorrente (Jordan Thomas)", "base": "creme", "avant": "Crème, pousses d'épinards, mozzarella fior di latte, poulet, chèvre", "apres": "Cerneaux de noix, huile de noix"},
-  {"nom": "Firenze (Jordan Thomas)", "base": "creme", "avant": "Crème, champignons émincés, gorgonzola", "apres": "Speck, mozzarella di bufala, roquette"},
-  {"nom": "Bolzano (Jordan Thomas)", "base": "creme", "avant": "Crème, crème de courge, scamorza", "apres": "Speck, mozzarella di bufala, pousses d'épinards"},
-  {"nom": "Delicata (Jordan Thomas)", "base": "creme", "avant": "Crème, crème de courge, scamorza", "apres": "Saumon fumé, mozzarella di bufala, tomates semi-séchées, basilic"},
-  {"nom": "Deliziosa (Jordan Thomas)", "base": "creme", "avant": "Crème, mozzarella fior di latte, poulet, chèvre", "apres": "Crème de pistache, tomates semi-séchées"},
-  {"nom": "Mortadella (Jordan Thomas)", "base": "creme", "avant": "Crème, mozzarella fior di latte, chèvre", "apres": "Mortadelle de Bologne, tomates semi-séchées, pesto à la Genovese"},
-  {"nom": "Diavola (Jordan Thomas)", "base": "creme", "avant": "Crème, mozzarella fior di latte, scamorza, spianata piquante, crème d'artichaut", "apres": "Roquette, olives Riviera"},
-  {"nom": "Boscaiola (Jordan Thomas)", "base": "creme", "avant": "Crème, jambon blanc artisanal, champignons émincés, mozzarella fior di latte", "apres": "Ricotta au basilic, pesto à la Genovese"},
-  {"nom": "Delfinato (Jordan Thomas)", "base": "creme", "avant": "Crème, jambon blanc artisanal, ravioles de Royans, mozzarella fior di latte, œuf", "apres": ""},
-  {"nom": "Nero sublime (Jordan Thomas)", "base": "creme", "avant": "Crème, champignons émincés, crème de truffe noire et champignons", "apres": "Jambon blanc truffé, burrata des Pouilles, lamelles de truffe d'été"},
-  {"nom": "Giovanna (Jordan Thomas)", "base": "creme", "avant": "Crème, mozzarella fior di latte, crème d'artichaut", "apres": "Pancetta, burrata des Pouilles"},
-  {"nom": "Pistacchio (Jordan Thomas)", "base": "creme", "avant": "Crème, mozzarella fior di latte", "apres": "Mortadelle de Bologne, burrata des Pouilles, crème de pistache"},
-  {"nom": "Fiume (Jordan Thomas)", "base": "creme", "avant": "Crème", "apres": "Saumon fumé, burrata des Pouilles, roquette, tomates semi-séchées, pesto à la Genovese, tranche de citron"},
-  {"nom": "Tartufo (Jordan Thomas)", "base": "creme", "avant": "Crème, jambon blanc artisanal, crème de truffe noire et champignons", "apres": "Mozzarella di bufala, pousses d'épinards, huile aromatisée à la truffe"},
-  {"nom": "Capra al miele (Jordan Thomas)", "base": "creme", "avant": "Crème, mozzarella fior di latte, chèvre", "apres": "Miel, amandes effilées et torréfiées"},
-  {"nom": "Truffadoro (Jordan Thomas)", "base": "creme", "avant": "Crème, mozzarella fior di latte", "apres": "Jambon blanc truffé"},
-  {"nom": "Marcellino (Jordan Thomas)", "base": "creme", "avant": "Crème, mozzarella fior di latte, poulet, Saint-Marcellin", "apres": ""},
-  {"nom": "Salmone (Jordan Thomas)", "base": "creme", "avant": "Crème, pousses d'épinards, mozzarella fior di latte", "apres": "Saumon fumé, ricotta au basilic"},
-  {"nom": "La dietalie (Lotalie)", "base": "creme", "avant": "Crème de courge, mozzarella fior di latte, scamorza fumée", "apres": "Chiffonnade de mortadelle IGP, champignons de Paris, ciboulette, confit d'oignon, graines de courges au paprika fumé", "apresVege": "Girolles, champignons de Paris, ciboulette, confit d'oignon, graines de courges au paprika fumé"},
-  {"nom": "La lotalie (Lotalie)", "base": "creme", "avant": "Mozzarella fior di latte, Taleggio DOP", "apres": "Magret séché, crème de cèpes, girolles, noisettes grillées", "apresVege": "Artichauts, crème de cèpes, girolles, noisettes grillées"},
-  {"nom": "La pistache (Lotalie)", "base": "creme", "avant": "Mozzarella fior di latte", "apres": "Chiffonnade de mortadelle IGP, crème de pistache, burrata, pistaches grillées", "apresVege": "Aubergines, crème de pistache, burrata, pistaches grillées"},
-  {"nom": "La tartufa (Lotalie)", "base": "creme", "avant": "Crème de truffe, mozzarella fior di latte", "apres": "Jambon blanc Gran Biscotto, burrata, lamelles de truffes, noisettes grillées, huile de truffe", "apresVege": "Artichaut, champignons, burrata, lamelles de truffes, noisettes grillées, huile de truffe"},
-  {"nom": "La saumon (Lotalie)", "base": "creme", "avant": "Base ricotta à l'encre de seiche, mozzarella fior di latte", "apres": "Saumon fumé, feta, zeste de citron, ciboulette, huile infusée au citron"},
-  {"nom": "La margherita (Lotalie)", "base": "tomate", "avant": "Tomate San Marzano", "apres": "Mozzarella fior di latte, basilic"},
-  {"nom": "La 5 fromages (Lotalie)", "base": "creme", "avant": "Mozzarella fior di latte, Gorgonzola DOP, scamorza fumée, Taleggio DOP", "apres": "Copeaux de parmesan, poivre noir"},
-  {"nom": "La regina (Lotalie)", "base": "tomate", "avant": "Tomate San Marzano, mozzarella fior di latte", "apres": "Jambon blanc Gran Biscotto, champignons de Paris, basilic"},
-  {"nom": "La parma (Lotalie)", "base": "tomate", "avant": "Tomate San Marzano, mozzarella fior di latte", "apres": "Jambon de Parme affiné 24 mois, basilic"},
-  {"nom": "La diavola (Lotalie)", "base": "tomate", "avant": "Tomate San Marzano, mozzarella fior di latte, chorizo (maison Mas)", "apres": "Confit d'oignons, piment, basilic"},
-  {"nom": "La chèvre miel (Lotalie)", "base": "creme", "avant": "Mozzarella fior di latte, cabécous, sablécou (parmesan de chèvre), miel", "apres": "Noix, ciboulette"},
-  {"nom": "La vegan (Lotalie)", "base": "creme", "avant": "Crème de courge, aubergines, artichauts, girolles", "apres": "Confit d'oignons, graines de courges au paprika fumé"},
-  {"nom": "La jambon burrata (Lotalie)", "base": "tomate", "avant": "Tomate San Marzano, mozzarella fior di latte, scamorza, burrata", "apres": "Jambon de Parme affiné 24 mois, copeaux de parmesan, confiture de figues, basilic", "apresVege": "Aubergines, copeaux de parmesan, confiture de figues, basilic"},
-  {"nom": "Affumicata (Jordan Thomas)", "base": "tomate", "avant": "Tomate, jambon blanc artisanal cuit au bouillon, mozzarella fior di latte, spianata piquante, scamorza", "apres": ""},
-  {"nom": "Selvatica (Jordan Thomas)", "base": "tomate", "avant": "Tomate, champignons émincés, gorgonzola", "apres": "Pancetta, Parmigiano Reggiano, tomates semi-séchées, persil plat"},
-  {"nom": "Pepata (Jordan Thomas)", "base": "tomate", "avant": "Tomate, mozzarella fior di latte, aubergines cuisinées", "apres": "Pancetta, pecorino au poivre, tomates semi-séchées"},
-  {"nom": "Carnivora (Jordan Thomas)", "base": "tomate", "avant": "Tomate, jambon blanc artisanal, mozzarella fior di latte, poulet, spianata piquante", "apres": ""},
-  {"nom": "Parmigiana (Jordan Thomas)", "base": "tomate", "avant": "Tomate, jambon blanc artisanal, mozzarella fior di latte, aubergines cuisinées", "apres": "Parmigiano Reggiano"},
-  {"nom": "10 Formaggi (Jordan Thomas)", "base": "tomate", "avant": "Tomate, mozzarella fior di latte, gorgonzola, chèvre, Saint-Marcellin, Taleggio, scamorza", "apres": "Pecorino au poivre, mozzarella di bufala, ricotta au basilic, Parmigiano Reggiano"},
-  {"nom": "Verdura (Jordan Thomas)", "base": "tomate", "avant": "Tomate, aubergines et poivrons cuisinés, crème d'artichaut", "apres": "Mozzarella di bufala, olives Riviera, basilic"},
-  {"nom": "Veggie (Jordan Thomas)", "base": "tomate", "avant": "Tomate, aubergines cuisinées", "apres": "Tomates semi-séchées, burrata des Pouilles, pesto à la Genovese, Parmigiano Reggiano, huile d'olive vierge extra"},
-  {"nom": "Andria (Jordan Thomas)", "base": "tomate", "avant": "Tomate", "apres": "Jambon de Parme, burrata des Pouilles, tomates semi-séchées, pesto à la Genovese, basilic, huile d'olive vierge extra"},
-  {"nom": "Maestro (Jordan Thomas)", "base": "tomate", "avant": "Tomate, gorgonzola, poulet", "apres": "Roquette, mozzarella di bufala, tomates semi-séchées, crème de vinaigre balsamique, huile aromatisée à la truffe"},
-  {"nom": "Margherita (Jordan Thomas)", "base": "tomate", "avant": "Tomate", "apres": "Mozzarella di bufala, basilic, huile d'olive vierge extra"},
-  {"nom": "Prosciutto (Jordan Thomas)", "base": "tomate", "avant": "Tomate", "apres": "Jambon de Parme, roquette, mozzarella di bufala, Parmigiano Reggiano, tomates semi-séchées, crème de vinaigre balsamique"},
-  {"nom": "Regina (Jordan Thomas)", "base": "tomate", "avant": "Tomate, jambon blanc artisanal, champignons émincés, mozzarella fior di latte", "apres": ""},
-  {"nom": "4 Formaggi (Jordan Thomas)", "base": "tomate", "avant": "Tomate, mozzarella fior di latte, gorgonzola, ricotta au basilic", "apres": "Parmigiano Reggiano, ricotta au basilic"},
-  {"nom": "Cotta (Jordan Thomas)", "base": "tomate", "avant": "Tomate, jambon blanc artisanal, mozzarella fior di latte", "apres": ""},
-  {"nom": "Bambino (Jordan Thomas)", "base": "tomate", "avant": "Tomate, jambon blanc artisanal, mozzarella fior di latte (ou tomate, double mozzarella fior di latte)", "apres": ""},
-  {"nom": "Napoli (Jordan Thomas)", "base": "tomate", "avant": "Tomate, mozzarella fior di latte, filet d'anchois", "apres": "Olives Riviera"},
-  {"nom": "Piccante (Jordan Thomas)", "base": "tomate", "avant": "Tomate, mozzarella fior di latte, spianata piquante, poivrons cuisinés", "apres": ""},
-  {"nom": "Marinara (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, anchois, ail, origan, olives", "apres": ""},
-  {"nom": "Mezzo (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, 1/2 anchois, 1/2 emmental, olives", "apres": ""},
-  {"nom": "Massilia (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, emmental, olives", "apres": ""},
-  {"nom": "Margherita (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, mozzarella fior di latte", "apres": ""},
-  {"nom": "Jambon (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, jambon, mozzarella fior di latte", "apres": ""},
-  {"nom": "Spianata (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, chorizo, mozzarella fior di latte", "apres": ""},
-  {"nom": "Quattro (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, chèvre, gorgonzola DOP, emmental, mozzarella fior di latte, olives", "apres": ""},
-  {"nom": "Salsiccia (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, saucisse italienne, mozzarella fior di latte, oignons rouges", "apres": ""},
-  {"nom": "Regina mozzarella (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, champignons frais, jambon, mozzarella", "apres": ""},
-  {"nom": "Calamar (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, calamars, persillade, tomates cerises, mozzarella fior di latte, olives", "apres": ""},
-  {"nom": "Arménienne (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, viande de bœuf hachée, poivrons, oignons, olives", "apres": ""},
-  {"nom": "Texane (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, viande de bœuf hachée, poivrons, oignons, sauce BBQ, chorizo, mozzarella fior di latte", "apres": ""},
-  {"nom": "Stracciatella (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, cœur de burrata, tomates cerises, pesto alla genovese ou basilic", "apres": ""},
-  {"nom": "Parmigiana (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, aubergines, parmigiano reggiano, pesto, mozzarella fior di latte", "apres": ""},
-  {"nom": "Sicilienne (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, anchois, parmigiano reggiano, câpres, ail, huile d'olive, olives", "apres": ""},
-  {"nom": "Verdura (Ludovic Bicchierai)", "base": "tomate", "avant": "Tomate, légumes du moment, mozzarella fior di latte, câpres, persillade", "apres": ""},
-  {"nom": "Gusto (Ludovic Bicchierai)", "base": "tomate", "avant": "Sauce tomate, roquette, speck IGP, tomates cerises, stracciatella, crème balsamique", "apres": ""},
-  {"nom": "Maradona (Ludovic Bicchierai)", "base": "tomate", "avant": "Sauce tomate, roquette, tomates confites, chèvre frais, pesto alla genovese", "apres": ""},
-  {"nom": "Calzone (Ludovic Bicchierai)", "base": "tomate", "avant": "Chausson garni de sauce tomate, champignon frais, jambon, mozzarella fior di latte, 1 œuf", "apres": ""},
-  {"nom": "Carbonara (Ludovic Bicchierai)", "base": "creme", "avant": "Crème, lardons, oignons confits au miel, œuf, mozzarella fior di latte, poivre", "apres": ""},
-  {"nom": "Regina bianca (Ludovic Bicchierai)", "base": "creme", "avant": "Crème, champignons frais, jambon, mozzarella fior di latte", "apres": ""},
-  {"nom": "Quattro bianca (Ludovic Bicchierai)", "base": "creme", "avant": "Crème, chèvre, gorgonzola DOP, mozzarella fior di latte", "apres": ""},
-  {"nom": "Montagna (Ludovic Bicchierai)", "base": "creme", "avant": "Crème, taleggio DOP, lardons, oignons rouges, pommes de terre, mozzarella", "apres": ""},
-  {"nom": "Président (Ludovic Bicchierai)", "base": "creme", "avant": "Crème, 1/2 camembert, speck IGP, mozzarella fior di latte", "apres": ""},
-  {"nom": "Forestière (Ludovic Bicchierai)", "base": "creme", "avant": "Crème, lardons, champignons frais, mozzarella fior di latte, oignons frits", "apres": ""},
-  {"nom": "Chèvre miel (Ludovic Bicchierai)", "base": "creme", "avant": "Crème, chèvre, mozzarella fior di latte, miel, romarin", "apres": ""},
-  {"nom": "Chicken (Ludovic Bicchierai)", "base": "creme", "avant": "Crème, poulet, mozzarella fior di latte (3 sortes : BBQ ou curry ou épices mexicaines)", "apres": ""},
-  {"nom": "Salmone (Ludovic Bicchierai)", "base": "creme", "avant": "Crème, mozzarella fior di latte, courgettes, chèvre, saumon aux agrumes", "apres": ""},
-  {"nom": "Tartufo (Ludovic Bicchierai)", "base": "creme", "avant": "Crème de truffe, roquette, tomates cerises, parmigiano reggiano, crème balsamique", "apres": ""},
-  {"nom": "Mi amore (Ludovic Bicchierai)", "base": "creme", "avant": "Crème, roquette, speck IGP, chèvre frais, confiture de figues", "apres": ""},
-  {"nom": "Classique napolitaine, médaille d'or (Peppe Cutraro)", "base": "tomate", "avant": "Base de tomate rôtie, provola fumée, poivre concassé, tomate confite", "apres": "Basilic frais, filet d'huile d'olive"},
-  {"nom": "Margherita (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, basilic frais, huile d'olive (végétarienne)", "apres": ""},
-  {"nom": "Impératrice (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, jambon, champignons de Paris, œuf, chorizo, poivrons", "apres": ""},
-  {"nom": "Reine (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, jambon, champignons de Paris, œuf", "apres": ""},
-  {"nom": "Duchesse (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, chèvre, miel", "apres": ""},
-  {"nom": "Reblochonne (Rodolphe Rivière)", "base": "creme", "avant": "Crème, pommes de terre, lardons, oignons, fromage à tartiflette, mozzarella", "apres": ""},
-  {"nom": "Quatre fromages (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, chèvre, gorgonzola, camembert (végétarienne)", "apres": ""},
-  {"nom": "Norvégienne (Rodolphe Rivière)", "base": "creme", "avant": "Crème, mozzarella, saumon", "apres": ""},
-  {"nom": "Napolitaine (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, câpres, anchois", "apres": ""},
-  {"nom": "Girolle (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, girolles, lardons", "apres": ""},
-  {"nom": "L'escargot (Rodolphe Rivière)", "base": "creme", "avant": "Crème, mozzarella, champignons de Paris, chair d'escargot, beurre d'escargot, œuf", "apres": ""},
-  {"nom": "Bergère (Rodolphe Rivière)", "base": "creme", "avant": "Crème, mozzarella, pommes de terre, gésier de volaille, lardons", "apres": ""},
-  {"nom": "Pantoufle, pizza fermée (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, jambon, champignons de Paris, oignons, chorizo, œuf, olives", "apres": ""},
-  {"nom": "Pepperoni (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, spianata, poivrons", "apres": ""},
-  {"nom": "Végétarienne (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, artichauts, poivrons, champignons de Paris, olives (végétarienne)", "apres": ""},
-  {"nom": "Chicken (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, poulet, poivrons, chèvre", "apres": ""},
-  {"nom": "Capricciosa (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, jambon, champignons de Paris, chorizo, câpres, olives, anchois", "apres": ""},
-  {"nom": "Gourmande (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, bœuf égrené assaisonné, champignons de Paris, poivrons, oignons, reblochon, œuf", "apres": ""},
-  {"nom": "La baronne (Rodolphe Rivière)", "base": "creme", "avant": "Crème, mozzarella, champignons de Paris, lardons, gorgonzola", "apres": ""},
-  {"nom": "Comtesse (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, jambon de Parme", "apres": ""},
-  {"nom": "Marquise (Rodolphe Rivière)", "base": "tomate", "avant": "Tomate, mozzarella, bœuf égrené assaisonné, merguez, jambon, poulet", "apres": ""},
-  {"nom": "Campione, championne du monde 2025, pizza fermée (Rodolphe Rivière)", "base": "creme", "avant": "Moutarde de Reims à l'ancienne crémée, scamorza fumée, effiloché de porc, champignons de Paris, oignons rouges poêlés et déglacés au vin", "apres": ""},
-  {"nom": "La bologna (Rodolphe Rivière)", "base": "creme", "avant": "Base crème au pesto, mozzarella, mortadelle, burrata, éclats de pistaches", "apres": "Basilic frais"},
-  {"nom": "La panuozzo (Rodolphe Rivière)", "base": "tomate", "avant": "Tranches de mozzarella, tomates fraîches", "apres": "Jambon de Parme, huile d'olive, basilic frais"},
-  {"nom": "La salumi (Rodolphe Rivière)", "base": "tomate", "avant": "Base tomate, mozzarella", "apres": "Coppa, jambon de Parme, mortadelle, burrata, huile d'olive, basilic frais"},
-  {"nom": "La parme (Rodolphe Rivière)", "base": "tomate", "avant": "Base tomate, mozzarella", "apres": "Roquette, jambon de Parme affiné, tomates cerise, copeaux de parmesan, huile d'olive, crème de basilic"},
-  {"nom": "La tartufo, uniquement sur place (Rodolphe Rivière)", "base": "creme", "avant": "Crème de tartufo, mozzarella", "apres": "Roquette, jambon blanc, burrata et carpaccio de truffe, copeaux de parmesan"},
-  {"nom": "La ritrovata (Franco Pepe)", "base": "tomate", "avant": "Passata de tomate San Marzano DOP, piennolo du Vésuve DOP, câpres déshydratées, poudre d'olives noires de Caiazzo, filets d'anchois de Cetara, huile à l'ail, basilic, origan", "apres": ""},
-  {"nom": "Grana, pepe e fantasia (Franco Pepe)", "base": "creme", "avant": "Fondue de Grana Padano DOP 12 mois, scamorza fumée, jaune d'œuf pasteurisé, bacon fumé, pecorino romano sur le bord, chips de Grana Padano DOP 24 mois, poivre, zeste de lime", "apres": ""},
-  {"nom": "Mangiabufalo (Franco Pepe)", "base": "creme", "avant": "Fondue de fromage mou de bufflonne en croûte fleurie, fior di latte, pain grillé au vinaigre balsamique de Modène IGP, noix, bresaola de bufflonne, scarole frisée crue, huile d'olive", "apres": ""},
-  {"nom": "Bufala profumata (Franco Pepe)", "base": "creme", "avant": "Mozzarella de bufflonne de Campanie DOP, bresaola de bufflonne, jus de lime, graines de sésame, huile à l'ail, lime, poivre noir, huile d'olive", "apres": ""},
-  {"nom": "Porkaserta (Franco Pepe)", "base": "tomate", "avant": "Tomate San Marzano, fior di latte, scamorza fumée, salami de porc de Caserte, origan, huile d'olive", "apres": ""},
-  {"nom": "Alletterata (Franco Pepe)", "base": "creme", "avant": "Crème d'oignons d'Alife, mozzarella de bufflonne de Campanie DOP, thon alletterato, céleri, huile d'olive", "apres": ""},
-  {"nom": "Nero fumé (Franco Pepe)", "base": "creme", "avant": "Fior di latte fumé, tomate cerise confite, saucisse séchée de porc noir de Caserte, origan du Matese", "apres": ""},
-  {"nom": "Sfizio ai pomodori (Franco Pepe)", "base": "creme", "avant": "Mozzarella de bufflonne de Campanie DOP, tomate datterino jaune, tomates séchées aromatisées, Grana Padano DOP 24 mois, huile d'olive", "apres": ""},
-  {"nom": "Vulcanica (Franco Pepe)", "base": "tomate", "avant": "Pâté d'olives noires de Caiazzo, passata de tomate Caiatino, tresse de mozzarella de bufflonne DOP effilochée, origan frais, huile d'olive", "apres": "Câpres déshydratées"},
-  {"nom": "Il sole nel piatto (Franco Pepe)", "base": "creme", "avant": "Mozzarella de bufflonne de Campanie DOP, piennolo du Vésuve DOP, olives de Caiazzo, filets d'anchois de Cetara, origan, basilic, huile d'olive", "apres": ""},
-  {"nom": "Sapori del cilento (Franco Pepe)", "base": "creme", "avant": "Mozzarella de bufflonne de Campanie DOP, ricotta de bufflonne de Campanie DOP, artichauts de Paestum à l'huile, huile d'olive", "apres": ""},
-  {"nom": "Selva blu (Franco Pepe)", "base": "creme", "avant": "Guanciale de porc noir de Caserte, fromage bleu aromatisé aux myrtilles, miel mille fleurs, noix, huile d'olive", "apres": ""},
-  {"nom": "Viandante (Franco Pepe)", "base": "creme", "avant": "Mortadelle IGP, ricotta de bufflonne de Campanie DOP, pistaches, zeste de citron, huile d'olive", "apres": ""},
-  {"nom": "Zucca conciata, de saison (Franco Pepe)", "base": "creme", "avant": "Velouté de potiron, potiron rôti aromatisé, haricot lanzariello frit, oignon d'Alife frit croustillant, Conciato Romano, persil", "apres": ""},
-  {"nom": "Salsiccia e friarielli, de saison (Franco Pepe)", "base": "creme", "avant": "Fior di latte, saucisse séchée de porc noir de Caserte, friarielli, piment, stracciata de bufflonne, amandes croquantes, ail, huile d'olive", "apres": ""},
-  {"nom": "La championne, pizza championne du monde (Yvan Cotta)", "base": "tomate", "avant": "Sauce tomate jaune, basilic, huile d'olive, jambon cru, pecorino, noisettes concassées, fleur de courgette", "apres": ""},
-  {"nom": "Marinara d.o.c. (Marc Possamai)", "base": "tomate", "avant": "Sauce tomate, anchois, fleurs de câpres, huile d'olive, origan, olives, basilic frais", "apres": ""},
-  {"nom": "Margherita (Marc Possamai)", "base": "tomate", "avant": "Sauce tomate, mozzarella, basilic frais", "apres": ""},
-  {"nom": "Napolitaine (Marc Possamai)", "base": "tomate", "avant": "Sauce tomate, mozzarella, anchois, fleurs de câpres, huile d'olive, origan, olives, basilic frais", "apres": ""},
-  {"nom": "Regina (Marc Possamai)", "base": "tomate", "avant": "Sauce tomate, mozzarella, champignons, jambon cuit", "apres": ""},
-  {"nom": "Vegetariana (Marc Possamai)", "base": "tomate", "avant": "Sauce tomate, tomates fraîches, mozzarella, poivrons, oignons, champignons, basilic frais", "apres": ""},
-  {"nom": "Picante (Marc Possamai)", "base": "tomate", "avant": "Sauce tomate, mozzarella, poivrons, spianata (saucisson italien piquant)", "apres": ""},
-  {"nom": "3 Formaggi (Marc Possamai)", "base": "creme", "avant": "Base blanche (ni sauce ni crème) : mozzarella, chèvre, gorgonzola", "apres": ""},
-  {"nom": "Label (Marc Possamai)", "base": "tomate", "avant": "Sauce tomate, mozzarella, viande hachée, aubergines grillées, Grana Padano, basilic frais", "apres": ""},
-  {"nom": "Pescatore (Marc Possamai)", "base": "tomate", "avant": "Thon, oignons, anchois, mozzarella, basilic frais", "apres": ""},
-  {"nom": "Calzone d.o.c. (Marc Possamai)", "base": "tomate", "avant": "Sauce tomate, ricotta, saucisson piquant, provola fumée", "apres": ""},
-  {"nom": "Verace (Marc Possamai)", "base": "tomate", "avant": "Tomates fraîches, mozzarella di bufala, basilic frais", "apres": "Grana Padano râpé"},
-  {"nom": "Pulcinella (Marc Possamai)", "base": "tomate", "avant": "Mozzarella, tomates fraîches, ail, basilic frais (après cuisson), roquette, jambon cru, tomates cerises, copeaux de Grana Padano", "apres": ""},
-  {"nom": "Bianca (Marc Possamai)", "base": "creme", "avant": "Mozzarella, tomates fraîches, ricotta, jambon cuit, basilic frais", "apres": ""},
-  {"nom": "Montagna (Marc Possamai)", "base": "creme", "avant": "Crème, mozzarella, taleggio (fromage italien), pancetta fumée", "apres": ""},
-  {"nom": "Deliziosa (Marc Possamai)", "base": "creme", "avant": "Crème, mozzarella, provola fumée", "apres": "Speck, tomates cerises, basilic frais"},
-  {"nom": "Capri (Marc Possamai)", "base": "creme", "avant": "Crème, chèvre, miel, noix", "apres": ""},
-  {"nom": "Golosa (Marc Possamai)", "base": "creme", "avant": "Crème, mozzarella, tomates fraîches, gorgonzola", "apres": "Jambon cru"},
-  {"nom": "Tartufa (Marc Possamai)", "base": "creme", "avant": "Crème de truffe, mozzarella", "apres": "Roquette, coppa, crème balsamique"},
-  {"nom": "Prosciutto e funghi (Les Trucs à Mamy)", "base": "tomate", "avant": "Sauce tomate maison, mozzarella fior di latte, jambon cuit maison, champignons de Paris, origan", "apres": ""},
-  {"nom": "Quattro formaggi (Les Trucs à Mamy)", "base": "creme", "avant": "Sauce crème maison, mozzarella fior di latte, gorgonzola, parmesan, taleggio, huile d'olive", "apres": ""},
-  {"nom": "Burrata & rucola (Les Trucs à Mamy)", "base": "tomate", "avant": "Sauce tomate maison, mozzarella fior di latte, burrata crémeuse, roquette, tomates cerises, parmesan, huile d'olive extra vierge", "apres": ""}
+ {
+  "nom": "Alsacienne (Camion Jaune)",
+  "base": "creme",
+  "avant": "crème, oignons, lardons",
+  "apres": ""
+ },
+ {
+  "nom": "Épinards (Camion Jaune)",
+  "base": "creme",
+  "avant": "crème, épinards, ail, chèvre bûche, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Bacon (Camion Jaune)",
+  "base": "creme",
+  "avant": "crème, bacon, chèvre, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Savoyarde (Camion Jaune)",
+  "base": "creme",
+  "avant": "crème, pommes de terre, oignons, lardons, reblochon, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Botox (Francesco Capece — Confine, Milan)",
+  "base": "creme",
+  "avant": "fondue de caciocavallo affiné en grotte, fior di latte, blue de bufala au lait cru, provolone de Gragnano",
+  "apres": "chips de Parmigiano Reggiano, confiture de figues de Campanie, basilic, huile d'olive extra vierge Leccino"
+ },
+ {
+  "nom": "Scarola in concerto (Francesco Capece — Confine, Milan)",
+  "base": "creme",
+  "avant": "fondue de Parmigiano Reggiano, fior di latte, scarole frisée assaisonnée au vinaigre de miel, saucisse crue de scottona de Benevento",
+  "apres": "copeaux de Parmigiano Reggiano 36 mois, glaçage de Concierto (liqueur traditionnelle de la côte amalfitaine), huile d'olive extra vierge Chianti Classico DOP"
+ },
+ {
+  "nom": "Zucchine alla capece / zucchini capece-style (Francesco Capece — Confine, Milan)",
+  "base": "creme",
+  "avant": "crème de courgettes, provola",
+  "apres": "fleurs de courgettes, vinaigre balsamique vieilli 20 ans, provolone de Gragnano, mayonnaise à la menthe, chips de courgettes, huile d'olive extra vierge Carpellese"
+ },
+ {
+  "nom": "Calzone scarola (Francesco Capece — Confine, Milan)",
+  "base": "creme",
+  "avant": "scarole, colatura d'anchois, anchois de Cetara, huile au piment, noix de Sorrente, poudre d'olives noires de Caiazzane, câpres de Salina, tomates datterino semi-séchées, huile à l'ail, provola fumée",
+  "apres": "huile d'olive extra vierge Itrana"
+ },
+ {
+  "nom": "Salsiccia e friarielli (Francesco Capece — Confine, Milan)",
+  "base": "creme",
+  "avant": "provola, saucisse de porc",
+  "apres": "friarielli (brocolis-raves napolitains) sautés à l'ail, à l'huile et au piment, poivron crusco Sciuscillone de Teggiano, huile d'olive extra vierge Itrana"
+ },
+ {
+  "nom": "Pistadella (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "creme",
+  "avant": "fior di latte d'Agerola",
+  "apres": "mortadella Favola, pesto de pistache de Sicile, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Sfogliata (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "creme",
+  "avant": "pommes de terre en fines couches rôties, provola d'Agerola, beurre, sauge, Grana Padano",
+  "apres": "porchetta de porc"
+ },
+ {
+  "nom": "Baccarina (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "creme",
+  "avant": "crème de poivrons jaunes, fior di latte d'Agerola, cabillaud",
+  "apres": "olives Taggiasche, câpres de Pantelleria, poivrons aigres-doux, basilic riccio napolitain"
+ },
+ {
+  "nom": "Paprika, carote e 'nduja (Roberto Davanzo — BOB Alchimia a Spicchi, Calabre)",
+  "base": "creme",
+  "avant": "pâte/focaccia à la paprika",
+  "apres": "crème de carottes et 'nduja, carottes fumées, crème fraîche acidulée, fruit de la passion"
+ },
+ {
+  "nom": "Gold but old (Roberto Davanzo — BOB Alchimia a Spicchi, Calabre)",
+  "base": "creme",
+  "avant": "format cubique, crevette, blette, oursins, battuto de crevette violette",
+  "apres": "crème de blettes, émulsion d'oursins, or alimentaire"
+ },
+ {
+  "nom": "Scarpetta (Franco Pepe — Pepe in Grani, Caiazzo)",
+  "base": "creme",
+  "avant": "mozzarella di bufala Campana DOP, fondue de Grana Padano DOP 12 mois",
+  "apres": "composée froide de tomate, pesto de basilic lyophilisé, copeaux de Grana Padano DOP 24 mois, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Calgyoza (Francesco Capece — Confine, Milan; calzone)",
+  "base": "creme",
+  "avant": "chou chinois glacé à la sauce soja, poitrine de porc marinée, crevette rouge méditerranéenne, lime noire",
+  "apres": ""
+ },
+ {
+  "nom": "Zucca arrabbiata (Enzo Coccia — La Notizia, Naples)",
+  "base": "creme",
+  "avant": "crème de courge, salami de porc piquant, provola de bufflonne, pecorino râpé",
+  "apres": "basilic"
+ },
+ {
+  "nom": "Profumo d'inverno (Enzo Coccia — La Notizia, Naples)",
+  "base": "creme",
+  "avant": "provola de bufflonne, brocolis friarielli",
+  "apres": "lard de porc noir de Parme, tomates semi-séchées, pecorino râpé"
+ },
+ {
+  "nom": "Salsiccia e friarielli nel futuro (Enzo Coccia — La Notizia, Naples)",
+  "base": "creme",
+  "avant": "crème de friarielli, saucisse piquante",
+  "apres": "stracciata de bufflonne"
+ },
+ {
+  "nom": "Coccia special (Enzo Coccia — La Notizia, Naples)",
+  "base": "creme",
+  "avant": "fior di latte d'Agerola, crème de cèpes",
+  "apres": "truffe blanche, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Salsiccia e stracchino (Simone Padoan — I Tigli, San Bonifacio)",
+  "base": "creme",
+  "avant": "mozzarella, saucisse fraîche, stracchino",
+  "apres": ""
+ },
+ {
+  "nom": "Carbonara di capesante (Simone Padoan — I Tigli, San Bonifacio)",
+  "base": "creme",
+  "avant": "noix de Saint-Jacques",
+  "apres": "chanterelles, mayonnaise de corail"
+ },
+ {
+  "nom": "Fior dì (Giuseppe Pignalosa — Le Parùle)",
+  "base": "creme",
+  "avant": "fior di latte, ricotta de fuscella",
+  "apres": "fleurs de courgettes cuites et crues, anchois à l'huile"
+ },
+ {
+  "nom": "Ortolana fresca fresca (Giuseppe Pignalosa — Le Parùle)",
+  "base": "creme",
+  "avant": "courgettes rôties, aubergines à la napolitaine",
+  "apres": "poivrons verts de rivière frits, stracciata de bufflonne, fleurs de courgettes crues"
+ },
+ {
+  "nom": "Oshirase (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "creme",
+  "avant": "fior di latte, filet de bœuf mariné à la sauce soja et aux épices orientales",
+  "apres": "sauce chili verte, huile d'olive extra vierge Gaudenzi"
+ },
+ {
+  "nom": "Fresella (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "creme",
+  "avant": "mozzarella di bufala Campana DOP, cubes de fior di latte cru",
+  "apres": "concassé de tomate biologique, stracciata de bufflonne, pain croustillant aromatisé, basilic, huile d'olive extra vierge Sincero di Viola"
+ },
+ {
+  "nom": "Oceano (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "creme",
+  "avant": "fior di latte, ricotta de bufflonne aux algues nori, dulse et laitue de mer",
+  "apres": "sériole fumée, poivre rose, zeste de citron, huile d'olive extra vierge Moraiolo de Felsina"
+ },
+ {
+  "nom": "Terramare (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "creme",
+  "avant": "fior di latte, crème d'aubergines frites marinées aux épices japonaises",
+  "apres": "oignon rouge en osmose, thon à l'huile d'olive, céleri croquant, huile d'olive extra vierge Moraiolo de Felsina"
+ },
+ {
+  "nom": "Costiera (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "creme",
+  "avant": "fior di latte",
+  "apres": "anchois frais marinés au vermouth blanc Mulassano, salade de citron de la côte, persil concassé, jus d'anchois, huile d'olive extra vierge Ortice"
+ },
+ {
+  "nom": "Artichauts et lardons (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "creme",
+  "avant": "fior di latte d'Agerola, artichauts de Paestum au naturel, pancetta roulée de porc blanc XXL",
+  "apres": "Ragusano DOP râpé, huile d'olive extra vierge Sant'Arcangelo, basilic"
+ },
+ {
+  "nom": "Nduja et verzin (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "creme",
+  "avant": "fior di latte d'Agerola, nduja calabraise, fromage bleu Verzin au lait de vache",
+  "apres": "huile d'olive extra vierge Titolo d'Elena Fucci, basilic"
+ },
+ {
+  "nom": "Maialata (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "creme",
+  "avant": "pomme de terre cuite sous la cendre assaisonnée d'huile au citron, ciboulette, sauge, menthe, fior di latte",
+  "apres": "porchetta maison, basilic, huile d'olive extra vierge Moraiolo Felsina"
+ },
+ {
+  "nom": "4 Fromages (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "creme",
+  "avant": "fior di latte, OL Sciur de zola de chèvre affiné aux fruits rouges et roses, caciotta de chèvre mi-affinée de Bagnoli Irpino, provolone affiné",
+  "apres": "robiola de chèvre et de vache, huile d'olive extra vierge Titolo d'Elena Fucci"
+ },
+ {
+  "nom": "Calzone frit (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "creme",
+  "avant": "ricotta de bufflonne, mozzarella de bufflonne fumée de Campanie, grattons napolitains, poivre rouge foncé de Sarawak",
+  "apres": ""
+ },
+ {
+  "nom": "Profumo di costiera (Francesco et Salvatore Salvo — Pizzeria Salvo, Naples)",
+  "base": "creme",
+  "avant": "base blanche, fior di latte",
+  "apres": "pecorino di fossa, petite salade de citrons de la côte amalfitaine, anchois marinés quelques minutes au vermouth blanc Mulassano, battuto de persil et colatura d'anchois"
+ },
+ {
+  "nom": "Le 7 consistenze della cipolla con ostrica (Francesco Martucci — I Masanielli, Caserte)",
+  "base": "creme",
+  "avant": "fior di latte, préparation d'oignon en crème, fermentée, croquante, brûlée, mayonnaise d'oignon (sans œufs, au lait de soja), gel d'oignon et confiture d'oignon",
+  "apres": "granita d'huîtres"
+ },
+ {
+  "nom": "Abra-ciami (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "creme",
+  "avant": "provola fumée, pâte à double croustillant (ou base crunchy)",
+  "apres": "carpaccio d'Angus fumé, mayonnaise à la braise, roquette, paprika doux, fleur de sel"
+ },
+ {
+  "nom": "Che cavolo (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "creme",
+  "avant": "crème de chou noir (cavolo nero)",
+  "apres": "anchois fumés de la mer Cantabrique, noix à la curcuma, feuilles de chou noir frites"
+ },
+ {
+  "nom": "Colpo di testa (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "creme",
+  "avant": "fiordilatte, poireaux au beurre, poivre Cuvée",
+  "apres": "coppa di testa, crème de papaccelle (poivrons napolitains)"
+ },
+ {
+  "nom": "Rio nerano (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "creme",
+  "avant": "crème de courgettes, fiordilatte",
+  "apres": "chips de courgettes, jambon cuit à l'eau de mer, copeaux de Grana Padano, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Le 3 m (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "creme",
+  "avant": "crème d'aubergines avec soja, tahini et miso, provola dei Monti",
+  "apres": "aubergines frites, aubergines à l'huile, tomates cerises semi-séchées, menthe, huile d'olive extra vierge du Cilento DOP"
+ },
+ {
+  "nom": "Buttergine (Christopher Pacaud — Strada Pizza, La Couronne; Champion de France 2026, catégorie classique)",
+  "base": "creme",
+  "avant": "velouté de carottes, saucisse Pérugine maison (fenouil, ail, persil, cognac), graines de fenouil",
+  "apres": "carpaccio de fenouil et carotte mariné aux agrumes puis fumé, billes de carottes glacées au piment d’Espelette, sauce diable au persil, zestes de citron"
+ },
+ {
+  "nom": "Antica mortadella (Julien Serri — scrocchiarella romana, Le Cirque, Paris)",
+  "base": "creme",
+  "avant": "mozzarella fior di latte",
+  "apres": "mortadelle, crème de pistache, pistache concassée, huile infusée au citron"
+ },
+ {
+  "nom": "Morteau de fame (Julien Serri — scrocchiarella romana, Le Cirque, Paris)",
+  "base": "creme",
+  "avant": "mozzarella fumée, saucisse de Morteau, pommes de terre rôties",
+  "apres": "oignon frit"
+ },
+ {
+  "nom": "Carbonara du bougnat (Julien Serri — scrocchiarella romana, Le Cirque, Paris)",
+  "base": "creme",
+  "avant": "mozzarella fior di latte, guanciale, sauce carbonara au Cantal, poivre de Kampot",
+  "apres": ""
+ },
+ {
+  "nom": "Daniela (Antoine Voilqué — création de concours, Castellino, Châteauvillain)",
+  "base": "creme",
+  "avant": "compotée de citron, noix de pétoncles, carottes, parmesan, pistaches",
+  "apres": ""
+ },
+ {
+  "nom": "Breizh hatao (Cyrille Auffret & Jérôme Gourmelen — création Pizza a Due, championne de France 2026)",
+  "base": "creme",
+  "avant": "base maïs agrémentée de sarrasin, pigeonneau des Monts d’Arrée élevé à la farine de châtaigne, topinambours, navets boule d’or",
+  "apres": "agrumes japonais, huile de ponzu"
+ },
+ {
+  "nom": "Pizza concours 2025 de jimmy pestel (Jimmy Pestel — Giacomo; Champion de France de pizza 2025)",
+  "base": "creme",
+  "avant": "base butternut, fenouil croquant et condiment de fenouil desséché au pastis normand, condiment de piment doux, kumquat infusé à la badiane et au poivre long, noix de macadamia torréfiées, zestes de combava",
+  "apres": "saumon fumé maison"
+ },
+ {
+  "nom": "Moltobella (Cheffe Amale — IMPRONTA, Paris)",
+  "base": "creme",
+  "avant": "base ricotta, fior di latte, mortadella artisanale de veau",
+  "apres": "stracciatella, éclats de pistaches, crème de pistache"
+ },
+ {
+  "nom": "Tanto formaggi (Cheffe Amale — IMPRONTA, Paris)",
+  "base": "creme",
+  "avant": "crème de ricotta, gorgonzola, fior di latte, provola fumée",
+  "apres": "crème de parmesan, miel et amandes torréfiées (option)"
+ },
+ {
+  "nom": "Truffe (Cheffe Amale — IMPRONTA, Paris)",
+  "base": "creme",
+  "avant": "crème de truffe à la ricotta, parmesan, fior di latte",
+  "apres": "stracciatella, carpaccio de truffe"
+ },
+ {
+  "nom": "Pizza zucca (Cheffe Amale — IMPRONTA, Paris)",
+  "base": "creme",
+  "avant": "crème de potimarron maison, fior di latte, dés de potimarron rôtis au zaatar, shiitakés poêlés",
+  "apres": ""
+ },
+ {
+  "nom": "Dolce vittoria (Peppe Cutraro — Campionato Pizza DOC 2025, catégorie Gourmet)",
+  "base": "creme",
+  "avant": "montanara frite puis passée au four, crème de mascarpone et ricotta, zestes de citron",
+  "apres": "chocolat noir, pomme caramélisée, basilic"
+ },
+ {
+  "nom": "The golden smoke (Luca Cusimano — Grano Lab, Royaume-Uni; Pizza Chef of the Year 2026)",
+  "base": "creme",
+  "avant": "crème de potimarron rôti, provola fumée, gorgonzola doux, pepperoni, bacon fumé",
+  "apres": "amandes grillées, amaretti émiettés, sauge fraîche"
+ },
+ {
+  "nom": "Appely ever after (Lewis Jennings — Village Pizza Kitchen, Royaume-Uni; PAPA Industry Awards 2026)",
+  "base": "creme",
+  "avant": "pommes Bramley, cannelle, caramel, pâte fine et croustillante style romain",
+  "apres": "crème Chantilly"
+ },
+ {
+  "nom": "Tropical paneer (Matty Ryles — The Watch House, Royaume-Uni; PAPA Industry Awards 2026)",
+  "base": "creme",
+  "avant": "paneer grillé aux épices allspice, salsa de mangue et piment, pois chiches croustillants",
+  "apres": "yaourt au citron vert"
+ },
+ {
+  "nom": "The Marco (Ooni)",
+  "base": "creme",
+  "avant": "crème de pistache, pecorino râpé, mozzarella fior di latte égouttée coupée en fines lanières, filet d'huile d'olive",
+  "apres": "prosciutto crudo, zeste de citron, pistaches concassées"
+ },
+ {
+  "nom": "Pizza Dough & Behold Signature, margherita à la burrata (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, fior di latte, huile d'olive, sel marin au piment",
+  "apres": "tomates cerises marinées au basilic et à l'estragon, burrata, huile d'olive, sel au piment"
+ },
+ {
+  "nom": "Pizza donair canadienne (Ooni)",
+  "base": "creme",
+  "avant": "mozzarella, tomates, oignons, viande donair (bœuf et agneau), za'atar",
+  "apres": "sauce donair"
+ },
+ {
+  "nom": "Pizza au jambon glacé au miel (Ooni)",
+  "base": "creme",
+  "avant": "crème fraîche, mozzarella, gouda, oignons rôtis, jambon, ananas rôti",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza Quattro Formaggi d'Attilio Bachetti (Ooni)",
+  "base": "creme",
+  "avant": "huile d'olive extra vierge, ricotta, gorgonzola, fior di latte, pecorino romano",
+  "apres": "basilic frais"
+ },
+ {
+  "nom": "Pizza Diavola d'Attilio Bachetti (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella fior di latte, salami piquant napolitain, olives noires de Gaeta, pecorino romano, parmigiano reggiano, basilic, huile d'olive extra vierge",
+  "apres": "feuilles de basilic frais"
+ },
+ {
+  "nom": "Pizza Capricciosa d'Attilio Bachetti (Ooni)",
+  "base": "tomate",
+  "avant": "tomates pelées écrasées, mozzarella fior di latte, jambon cuit (prosciutto cotto), olives noires de Gaeta, champignons cremini frais",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza courge butternut, ricotta et sauge frite (Ooni)",
+  "base": "creme",
+  "avant": "purée de courge butternut, mozzarella fraîche",
+  "apres": "ricotta fouettée au poivre noir, feuilles de sauge frites"
+ },
+ {
+  "nom": "Pizza au poulet rôti à l'harissa (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, poulet rôti à l'harissa, tomates séchées, mozzarella, parmigiano reggiano, piment roquito, basilic, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza franco-belge poulet, pommes de terre, asperges et sauce Samouraï (Ooni)",
+  "base": "tomate",
+  "avant": "tomates concassées, mozzarella, poulet, pommes de terre",
+  "apres": "sauce Samouraï, asperges"
+ },
+ {
+  "nom": "Pizza Philly Cheesesteak, version revisitée (Ooni)",
+  "base": "creme",
+  "avant": "crème fraîche, ail, mozzarella, entrecôte émincée, provolone, poivron vert, oignon, parmesan",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza à l'aubergine parmigiana déconstruite (Ooni)",
+  "base": "tomate",
+  "avant": "tomates concassées, mozzarella fraîche, aubergine frite, ricotta, parmesan",
+  "apres": "basilic frais, huile d'olive"
+ },
+ {
+  "nom": "Pizza Pickle Lady (Ooni)",
+  "base": "creme",
+  "avant": "crème double à l'aneth, taleggio",
+  "apres": "conserva de ventre de saumon, relish aux cornichons, oignon rouge émincé, herbes hachées, parmesan"
+ },
+ {
+  "nom": "Pizza bratwurst, chutney de rhubarbe et roquette (Ooni)",
+  "base": "creme",
+  "avant": "ricotta, mozzarella, saucisse bratwurst",
+  "apres": "chutney de rhubarbe, roquette"
+ },
+ {
+  "nom": "Pizzette alla Benno de Nancy Silverton, speck et ananas (Ooni)",
+  "base": "tomate",
+  "avant": "passata de tomate, mozzarella, ananas, jalapeños",
+  "apres": "speck, huile d'olive, sel en flocons, ciboulette"
+ },
+ {
+  "nom": "Pizza kouign-amann et andouille (Ooni)",
+  "base": "creme",
+  "avant": "crème fraîche, parmesan, oignons",
+  "apres": "andouille, salicorne"
+ },
+ {
+  "nom": "Pizza salade aux herbes (Ooni)",
+  "base": "creme",
+  "avant": "mozzarella",
+  "apres": "laitues mélangées, menthe, aneth, persil plat, fenouil émincé, radis, ciboulette, sauce au yaourt à l'ail et au citron, filet de citron"
+ },
+ {
+  "nom": "Pizza nordique saumon, aneth et crème fraîche (Ooni)",
+  "base": "creme",
+  "avant": "crème fraîche, aneth, zeste de citron, poivre rose, mozzarella",
+  "apres": "saumon fumé, aneth"
+ },
+ {
+  "nom": "Pizza à la carbonara (Ooni)",
+  "base": "creme",
+  "avant": "crème double, parmesan, mozzarella fior di latte, bucatini cuits, pancetta, basilic",
+  "apres": "jaunes d'œuf battus au parmesan, parmesan, poivre noir moulu"
+ },
+ {
+  "nom": "Pizza New York au fromage (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate à l'origan, mozzarella, parmesan",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza hespenrolletjes met witloof, jambon et endives (Ooni)",
+  "base": "creme",
+  "avant": "béchamel, endives, jambon, emmental",
+  "apres": "citron"
+ },
+ {
+  "nom": "Pizza épicée et sucrée aux saucisses et poivrons (Ooni)",
+  "base": "creme",
+  "avant": "saucisse crue, poivrons, oignons, tomates, mozzarella, pecorino romano, ail, flocons de piment, origan",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza supreme ultime (Ooni)",
+  "base": "tomate",
+  "avant": "tomates concassées, mozzarella fraîche, pepperoni, poivrons et oignons rôtis, champignons rôtis, olives vertes tranchées, parmesan",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza blanche aux quatre fromages et épinards sautés à l'ail, façon Real Clever Food (Ooni)",
+  "base": "creme",
+  "avant": "huile d'olive, provolone, mozzarella, ricotta, épinards sautés à l'ail",
+  "apres": "pecorino romano râpé"
+ },
+ {
+  "nom": "Pizza au haddock fumé, épinards, ricotta, cheddar et oignons nouveaux (Ooni)",
+  "base": "creme",
+  "avant": "ricotta, épinards, haddock fumé, cheddar, oignons nouveaux, poivre noir, sel de mer, huile d'olive extra vierge",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza épique aux pommes de terre de Santa Barbara Baker (Ooni)",
+  "base": "creme",
+  "avant": "purée de pommes de terre à la ricotta, oignons caramélisés, pommes de terre rôties au romarin, cheddar blanc affiné, mozzarella fraîche",
+  "apres": "ciboulette"
+ },
+ {
+  "nom": "Pizza Tét vietnamienne, poitrine de porc, haricots mungo et floss de crevettes (Ooni)",
+  "base": "creme",
+  "avant": "pistou asiatique au basilic thaï, coriandre et cacahuètes, porchetta vietnamienne à la poitrine de porc",
+  "apres": "chapelure de haricots mungo, floss de crevettes séchées, huile aux oignons verts, sauce hoisin"
+ },
+ {
+  "nom": "Le Vegan Hum-Bo : houmous et olives noires (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, houmous maison à l'ail rôti, olives noires, thym frais",
+  "apres": "huile d'olive extra vierge, sel, poivre noir"
+ },
+ {
+  "nom": "Pizza merguez, feta fouettée à l'abricot et oignons rouges marinés (Ooni)",
+  "base": "creme",
+  "avant": "feta fouettée à l'abricot, mozzarella fraîche, merguez, oignons rouges marinés, pignons de pin grillés",
+  "apres": "menthe fraîche hachée"
+ },
+ {
+  "nom": "Pizza au foie gras confit et aux cèpes de Manon Santini (Ooni)",
+  "base": "creme",
+  "avant": "sauce albufera, mozzarella fior di latte, parmesan",
+  "apres": "cèpes rôtis, épinards, stracciatella, foie gras, fleurs d'ail, fleur de sel, poivre, huile d'olive"
+ },
+ {
+  "nom": "Pizza au dip chaud au crabe (Ooni)",
+  "base": "creme",
+  "avant": "mozzarella fraîche, dip au crabe",
+  "apres": "échalotes frites, ciboulette"
+ },
+ {
+  "nom": "Pizza gratinée aux choux de Bruxelles (Ooni)",
+  "base": "creme",
+  "avant": "crème fraîche, gruyère, mozzarella, échalotes, lardons, choux de Bruxelles, cheddar, huile d'olive, sel",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza à la patate douce et à la harissa (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate à la harissa, patate douce, piment serrano, ail",
+  "apres": "oignons rouges marinés, pignons de pin toastés, persil"
+ },
+ {
+  "nom": "Pizza champignons, tomates et crème d'artichaut de Thierry Graffagnino (Ooni)",
+  "base": "creme",
+  "avant": "crème d'artichaut, mozzarella, champignons de Paris, tomates cerises, artichauts grillés",
+  "apres": "roquette, fleurs comestibles, tomates séchées, filet d'huile d'olive"
+ },
+ {
+  "nom": "Pizza courge acorn et quesillo, huile de piment habanero (Ooni)",
+  "base": "creme",
+  "avant": "quesillo, courge acorn rôtie, oignons rouges marinés",
+  "apres": "coriandre fraîche, huile de piment habanero"
+ },
+ {
+  "nom": "Pizza araignée aux olives, sauce vodka (Ooni)",
+  "base": "tomate",
+  "avant": "sauce vodka, mozzarella, olives noires",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza maïs doux et 'nduja (Ooni)",
+  "base": "creme",
+  "avant": "crème fraîche, mozzarella, maïs, 'nduja",
+  "apres": "oignons nouveaux, basilic"
+ },
+ {
+  "nom": "Pizza ananas mariné et chorizo (Ooni)",
+  "base": "tomate",
+  "avant": "tomates concassées, mozzarella fraîche, oignon rouge, chorizo espagnol, ananas mariné, parmesan",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza ananas caramélisé, pepperoni et jalapeños (Ooni)",
+  "base": "tomate",
+  "avant": "tomates concassées, mozzarella fraîche, pepperoni, ananas caramélisé, jalapeños au vinaigre, parmesan",
+  "apres": "sauce ranch"
+ },
+ {
+  "nom": "Pizza myrtilles marinées et camembert (Ooni)",
+  "base": "creme",
+  "avant": "camembert, gruyère, thym, myrtilles marinées",
+  "apres": "zeste de citron"
+ },
+ {
+  "nom": "Pizza jarret de jambon, chou braisé et pommes de terre rôties des Dough Bros (Ooni)",
+  "base": "creme",
+  "avant": "sauce crème au persil, mozzarella, jarret de jambon effiloché, pommes de terre rôties, chou braisé au miso, jus de cuisson du chou",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza betterave et feta (Ooni)",
+  "base": "creme",
+  "avant": "sauce à la betterave, feta",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza Pineapple Express (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, basilic, parmigiano reggiano, fior di latte, pepperoni, jalapeños confits, morceaux d'ananas",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza Currywurst (Ooni)",
+  "base": "tomate",
+  "avant": "sauce curry, bratwurst tranchée",
+  "apres": "frites"
+ },
+ {
+  "nom": "Pizza lasagne (Ooni)",
+  "base": "tomate",
+  "avant": "ragù de bœuf haché, béchamel",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza à la pistache inspirée de Chris Bianco (Ooni)",
+  "base": "creme",
+  "avant": "oignon rouge, romarin, Piave Vecchio, huile d'olive, pistaches",
+  "apres": "miel au thym et citron Meyer"
+ },
+ {
+  "nom": "Pizza Welsh Rarebit (Ooni)",
+  "base": "creme",
+  "avant": "sauce au cheddar à la bière, moutarde de Dijon, sauce Worcestershire, cheddar",
+  "apres": "poivre noir fraîchement moulu"
+ },
+ {
+  "nom": "Pizza topinambours et choux de Bruxelles, huile d'herbes à l'ail (Ooni)",
+  "base": "creme",
+  "avant": "purée de topinambours rôtis, ail, choux de Bruxelles émincés, échalotes émincées, gros sel",
+  "apres": "huile d'herbes, huile d'olive extra vierge, fleur de sel, poivre vert frais moulu"
+ },
+ {
+  "nom": "Pizza chanterelles et patate douce, sauce tomate acidulée et beurre de graines de courge (Ooni)",
+  "base": "creme",
+  "avant": "beurre de graines de courge, crème fraîche végétale, pommes de terre, échalotes, chanterelles",
+  "apres": "sauce tomate acidulée"
+ },
+ {
+  "nom": "Pizza pommes de terre rôties croustillantes, truffe, brie et sauge (Ooni)",
+  "base": "creme",
+  "avant": "huile de truffe, brie, pommes de terre rôties, feuilles de sauge, fior di latte, truffe noire conservée",
+  "apres": "réduction balsamique"
+ },
+ {
+  "nom": "Pizza au pepperoni de dinde et miel piquant de Tariq Trotter (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, pepperoni de dinde, mozzarella",
+  "apres": "miel piquant, pecorino, flocons de piment rouge, basilic frais"
+ },
+ {
+  "nom": "Pizza Panna de Dan Richer (Razza) (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, crème épaisse, sel de mer",
+  "apres": "roquette, parmigiano reggiano"
+ },
+ {
+  "nom": "Pizza Di Natale de Dan Richer (Razza) (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, olives noires, pignons de pin, raisins secs, ail, huile d'olive",
+  "apres": "basilic, huile pimentée"
+ },
+ {
+  "nom": "Pizza au poulet Buffalo, croûte badigeonnée épicée (Ooni)",
+  "base": "creme",
+  "avant": "poulet effiloché, mayonnaise à l'ail, sauce piquante, mozzarella, oignon rouge, jalapeños, gorgonzola",
+  "apres": "sauce piquante"
+ },
+ {
+  "nom": "Pizza patate douce façon casserole (Ooni)",
+  "base": "creme",
+  "avant": "purée de patate douce au beurre et à la cannelle, noix de pécan concassées, mini guimauves",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza Margherita (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella",
+  "apres": "basilic frais"
+ },
+ {
+  "nom": "Pizza Pepperoni (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate à l'ail, mozzarella, pepperoni",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza Saint-Jacques, lardons, ciboulette et parmesan (Ooni)",
+  "base": "creme",
+  "avant": "oignons caramélisés, lardons, Saint-Jacques, parmesan, ciboulette",
+  "apres": "huile d'olive extra vierge"
+ },
+ {
+  "nom": "Pizza blanche asperges, champignons bruns et thym (Ooni)",
+  "base": "creme",
+  "avant": "oignons, asperges, champignons bruns, mozzarella, thym, huile d'olive, sel, poivre noir",
+  "apres": "huile d'olive"
+ },
+ {
+  "nom": "Pizza à la croûte de chou-fleur sans gluten (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella",
+  "apres": "basilic frais"
+ },
+ {
+  "nom": "Pizza Marinara (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate San Marzano, ail, basilic, origan, huile d'olive extra vierge",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza turque à l'agneau (Ooni)",
+  "base": "tomate",
+  "avant": "agneau haché, tomates cerises, poivron rouge rôti, concentré de tomate, flocons de piment, paprika fumé, cannelle, sumac, cumin, échalote, coriandre fraîche, huile d'olive",
+  "apres": "citron grillé, persil frais, origan frais, sel, poivre"
+ },
+ {
+  "nom": "Pizza Bar Style (Ooni)",
+  "base": "creme",
+  "avant": "fromage, pepperoni, saucisse",
+  "apres": "ricotta pochée, origan séché, huile d'ail"
+ },
+ {
+  "nom": "Pizza tomate et ricotta (Ooni)",
+  "base": "tomate",
+  "avant": "ricotta, tomates cerises",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza blanche aux moules (Ooni)",
+  "base": "creme",
+  "avant": "béchamel, moules, pignons de pin",
+  "apres": "basilic frais, poivre noir fraîchement moulu"
+ },
+ {
+  "nom": "Pizza avocat, noix de coco et crevettes façon goane (Ooni)",
+  "base": "tomate",
+  "avant": "crevettes façon goane, sauce balchão, mozzarella",
+  "apres": "avocat, noix de coco toastée, coriandre"
+ },
+ {
+  "nom": "Pizza salami au fenouil et brocoli rabe à la napolitaine (Ooni)",
+  "base": "creme",
+  "avant": "huile au citron, brocoli rabe, salami au fenouil, fior di latte, scamorza",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza feta rôtie, citron et figue (Ooni)",
+  "base": "creme",
+  "avant": "sauce feta au citron, figues fraîches, tapenade figue-menthe-olive",
+  "apres": "citron confit haché, miel, noix hachées"
+ },
+ {
+  "nom": "Pizza au poulet BBQ, croûte de bretzel (Ooni)",
+  "base": "creme",
+  "avant": "sauce barbecue, poulet, fromage à la bière, gros sel",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza façon French Dip (Ooni)",
+  "base": "creme",
+  "avant": "béchamel, rosbif fin, oignon caramélisé, emmental râpé",
+  "apres": "thym, jus de bœuf pour tremper"
+ },
+ {
+  "nom": "Pizza ricotta vegan, piments confits et sauce à la courge rôtie (Ooni)",
+  "base": "creme",
+  "avant": "sauce à la courge rôtie, ricotta vegan, piments confits, sirop de piment",
+  "apres": "feuilles de sauge frites croustillantes"
+ },
+ {
+  "nom": "Pizza citrouille et oignons balsamiques, sauge et pignons (Ooni)",
+  "base": "creme",
+  "avant": "fior di latte, courge butternut rôtie, oignons au vinaigre balsamique, huile d'olive",
+  "apres": "pignons grillés, sauge émincée, fromage bleu émietté (facultatif)"
+ },
+ {
+  "nom": "Pizza deli italienne épicée (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, salami milano, provolone",
+  "apres": "rosettes de mortadelle, poivrons marinés, cornichon, roquette, filet de vinaigre balsamique"
+ },
+ {
+  "nom": "Pizza dinde rôtie, camembert et canneberges (Ooni)",
+  "base": "creme",
+  "avant": "sauce aux canneberges, camembert, dinde rôtie, mozzarella",
+  "apres": "sauce aux canneberges, thym, parmesan, poivre noir"
+ },
+ {
+  "nom": "Pizza pommes de terre, fromage bleu et oignons rouges balsamiques (Ooni)",
+  "base": "creme",
+  "avant": "mozzarella, pommes de terre, fromage bleu, oignons rouges au vinaigre balsamique",
+  "apres": "thym, huile d'olive"
+ },
+ {
+  "nom": "Pizza à la farce des restes (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, farce maison, sauce aux canneberges, feuilles de sauge",
+  "apres": "sel, poivre"
+ },
+ {
+  "nom": "Pizza pomme, bacon, sauge et cheddar (Ooni)",
+  "base": "creme",
+  "avant": "cheddar, bacon, pomme, feuilles de sauge",
+  "apres": "sel de mer, poivre"
+ },
+ {
+  "nom": "Pizza citrouille, épices et tout le reste (Ooni)",
+  "base": "creme",
+  "avant": "purée de citrouille, mozzarella, pepperoni, piment rouge",
+  "apres": "flocons de piment"
+ },
+ {
+  "nom": "Pizza betteraves épicées, ail noir et stracciatella à la pistache (Ooni)",
+  "base": "creme",
+  "avant": "huile d'ail, grana padano, mozzarella, purée de betteraves, pistaches",
+  "apres": "stracciatella di bufala, pistaches, huile de piment"
+ },
+ {
+  "nom": "Pizza ricotta, anchois siciliens et fleurs de courgette (Ooni)",
+  "base": "creme",
+  "avant": "ricotta, fleurs de courgette, anchois siciliens, fior di latte, huile d'olive extra vierge",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza courge butternut rôtie, ricotta, piment et sauge (Ooni)",
+  "base": "creme",
+  "avant": "mozzarella, courge butternut rôtie, feuilles de sauge",
+  "apres": "ricotta, flocons de piment, filet d'huile d'olive"
+ },
+ {
+  "nom": "Pizza de Noël, tout y est (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate au basilic et à l'origan, brie, dinde, saucisses enrobées de lard",
+  "apres": "sauce aux canneberges, farce"
+ },
+ {
+  "nom": "Pizza marrons rôtis, oignons caramélisés et stilton (Ooni)",
+  "base": "creme",
+  "avant": "huile d'olive, stilton, oignons caramélisés, marrons rôtis, poivre noir concassé",
+  "apres": "stilton, thym frais"
+ },
+ {
+  "nom": "Pizza Miracle on 34th St (Ooni)",
+  "base": "creme",
+  "avant": "mozzarella fraîche, saucisses cocktail, jambon de Parme ou speck, lard croustillant, huile d'ail",
+  "apres": "réduction balsamique aux canneberges, poivre noir"
+ },
+ {
+  "nom": "Pizza plateau de fromages (Ooni)",
+  "base": "creme",
+  "avant": "huile à l'ail, mozzarella fraîche, fromage de chèvre, brie, grana padano",
+  "apres": "salade de chou rouge, réduction balsamique aux canneberges, poivre noir, chutney d'oignon rouge"
+ },
+ {
+  "nom": "Pizza à croûte protéinée, potiron, thym et ricotta (Ooni)",
+  "base": "creme",
+  "avant": "purée de potiron, ricotta, parmesan, ail, huile d'olive, flocons de piment rouge, thym, mozzarella, graines de courge grillées",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza double cheeseburger au bacon (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, cheddar, bœuf haché, bacon, cornichon",
+  "apres": "laitue, sauce burger"
+ },
+ {
+  "nom": "Pizza courgettes flambées et tomates cerises (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, fior di latte, courgettes grillées, tomates cerises",
+  "apres": "sel, poivre noir"
+ },
+ {
+  "nom": "Pizza citrouille, courgette et piment (Ooni)",
+  "base": "creme",
+  "avant": "purée de potiron, huile d'olive, ail, courgette, piment, pignons de pin",
+  "apres": "huile d'olive, sel, poivre"
+ },
+ {
+  "nom": "Pizza citron, chèvre et courgette (Ooni)",
+  "base": "creme",
+  "avant": "citrons caramélisés, courgette en rubans, mozzarella, fromage de chèvre, huile d'olive",
+  "apres": "piment rouge haché, ciboulette hachée, zeste de citron"
+ },
+ {
+  "nom": "Pizza patate douce, asperges et feta (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, asperges, patate douce",
+  "apres": "feta émiettée"
+ },
+ {
+  "nom": "Pizza au poulet BBQ (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, poulet effiloché, maïs, poivron rouge, oignon rouge",
+  "apres": "sauce barbecue"
+ },
+ {
+  "nom": "Pizza chou-fleur Buffalo (Ooni)",
+  "base": "creme",
+  "avant": "fromage bleu, ailes de chou-fleur Buffalo coupées en deux, sauce buffalo",
+  "apres": "céleri émincé, poivre"
+ },
+ {
+  "nom": "Pizza Bloody Mary à la vodka (Ooni)",
+  "base": "tomate",
+  "avant": "sauce marinara à la vodka, lardons, ail, basilic, tabasco, sauce Worcestershire",
+  "apres": "copeaux de céleri, poivre noir fraîchement moulu"
+ },
+ {
+  "nom": "Pizza aux quatre fromages, sauce tomate (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, cheddar, mozzarella, fromage bleu, feta",
+  "apres": "poivre noir moulu"
+ },
+ {
+  "nom": "Pizza protéinée courge butternut, lardons et oignons caramélisés (Ooni)",
+  "base": "creme",
+  "avant": "ricotta, parmesan, huile d'olive, ail, piment rouge, mozzarella, courge butternut, lardons, oignons caramélisés, feuilles de sauge",
+  "apres": "glaçage balsamique"
+ },
+ {
+  "nom": "Pizza petit-déjeuner ultime (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, bacon, champignons, tomates cerises, mozzarella, œuf",
+  "apres": "persil frais, sriracha, avocat"
+ },
+ {
+  "nom": "Pizza au poulet Buffalo (Ooni)",
+  "base": "creme",
+  "avant": "fromage bleu émietté, poulet façon ailes buffalo, sauce buffalo",
+  "apres": "céleri émincé en rubans"
+ },
+ {
+  "nom": "Pizza Pigs in Blankets (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, mini saucisses enrobées de bacon, oignon rouge, sauce aux canneberges",
+  "apres": "poivre noir moulu"
+ },
+ {
+  "nom": "Pizza champignons au bourbon et trois fromages (Ooni)",
+  "base": "creme",
+  "avant": "champignons au bourbon, mozzarella, cheddar, fromage bleu, huile d'olive",
+  "apres": "thym frais"
+ },
+ {
+  "nom": "Pizza betterave rôtie, noix et fromage de chèvre (Ooni)",
+  "base": "creme",
+  "avant": "huile de noix, betterave, fromage de chèvre, noix",
+  "apres": "origan frais, poivre noir moulu, miel"
+ },
+ {
+  "nom": "Pizza rubans de courgette, ciboules et beurre à l'ail (Ooni)",
+  "base": "creme",
+  "avant": "beurre à l'ail, mozzarella, rubans de courgette, ciboules",
+  "apres": "zeste de citron, sel fumé, flocons de piment rouge"
+ },
+ {
+  "nom": "Pizza porcini et provolone (Ooni)",
+  "base": "creme",
+  "avant": "huile d'olive, provolone, mascarpone, cèpes, pecorino ou parmesan, persil, poivre noir",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza new-yorkaise inspirée de Falco (Ooni)",
+  "base": "tomate",
+  "avant": "mozzarella, parmesan, huile d'olive, sauce tomate, piment, origan",
+  "apres": "huile à l'ail, basilic frais"
+ },
+ {
+  "nom": "Pizza Hot Diablo (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, pepperoni, jambon de Parme, boulettes de viande épicées, piment frais émincé, sauce piquante",
+  "apres": "poivre noir fraîchement moulu"
+ },
+ {
+  "nom": "Tarte à la tomate du New Jersey (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella",
+  "apres": "pecorino, origan, flocons de piment, basilic, huile d'ail"
+ },
+ {
+  "nom": "Pizza Tex-Mex (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, poudre de chili, cumin, fromage râpé, oignon rouge émincé, haricots",
+  "apres": "laitue hachée, avocat en tranches"
+ },
+ {
+  "nom": "Pizza bacon, poireau et crème (Ooni)",
+  "base": "creme",
+  "avant": "crème fraîche, bacon, poireau caramélisé",
+  "apres": "crème fraîche"
+ },
+ {
+  "nom": "Pizza chorizo et ananas infusé au citron vert (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, chorizo, ananas infusé au citron vert",
+  "apres": "coriandre fraîche"
+ },
+ {
+  "nom": "Pizza hawaïenne (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, jambon, ananas",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza hawaïenne épicée (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, jambon, pepperoni épicé, ananas, jalapeños marinés",
+  "apres": "sauce piquante"
+ },
+ {
+  "nom": "Pizza tapas espagnole (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, manchego, olives, oignon rouge, poivron rouge, persil frais",
+  "apres": "sel, poivre"
+ },
+ {
+  "nom": "Pizza cocktail de crevettes (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, laitue romaine, crevettes",
+  "apres": "sauce cocktail, avocat"
+ },
+ {
+  "nom": "Pizza au crab dip du Maryland (Ooni)",
+  "base": "creme",
+  "avant": "béchamel, mozzarella, cheddar, chair de crabe",
+  "apres": "assaisonnement pour crabe, persil séché"
+ },
+ {
+  "nom": "Pizza salami milano et roquette (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella fraîche, salami milano",
+  "apres": "roquette fraîche, glaçage balsamique, sel, poivre"
+ },
+ {
+  "nom": "Pizza pesto vert et fromage de chèvre (Ooni)",
+  "base": "creme",
+  "avant": "pesto au basilic, fromage de chèvre, pignons de pin grillés",
+  "apres": "cresson, fleurs comestibles"
+ },
+ {
+  "nom": "Pizza asperges, feta et lardons (Ooni)",
+  "base": "creme",
+  "avant": "huile d'olive à l'ail, asperges, lardons, feta",
+  "apres": "glaçage balsamique, poivre noir concassé"
+ },
+ {
+  "nom": "Pizza kale, haricots verts, aubergine et chou-fleur (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, kale, haricots verts, aubergine, chou-fleur, tomates cerises, piment rouge",
+  "apres": "huile d'olive"
+ },
+ {
+  "nom": "Pizza blanche salami, chèvre et miel piquant (Ooni)",
+  "base": "creme",
+  "avant": "huile d'olive à l'ail, mozzarella, salami au poivre noir, fromage de chèvre, feuilles de sauge",
+  "apres": "miel piquant, pomme verte"
+ },
+ {
+  "nom": "Pizza scandinave au saumon et fromage à la crème (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, saumon fumé, aneth",
+  "apres": "fromage à la crème, citron, poivre noir"
+ },
+ {
+  "nom": "Pizza poulet, champignons et pesto (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, champignons, pesto, poulet",
+  "apres": "basilic frais"
+ },
+ {
+  "nom": "Pizza boulettes, ricotta et basilic (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, boulettes de viande, mozzarella de bufflonne, ricotta, basilic",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza pêche, prosciutto et basilic (Ooni)",
+  "base": "creme",
+  "avant": "pêche, mozzarella, prosciutto, huile d'olive à l'ail, sel de mer",
+  "apres": "feuilles de basilic"
+ },
+ {
+  "nom": "Pizza prosciutto, figues et ricotta (Ooni)",
+  "base": "creme",
+  "avant": "mozzarella, ricotta, prosciutto, huile d'olive",
+  "apres": "figues, roquette, sel, poivre, miel"
+ },
+ {
+  "nom": "Pizza bacon, épinards et tomates (Ooni)",
+  "base": "creme",
+  "avant": "huile d'ail, mozzarella, épinards, bacon caramélisé, tomate en dés",
+  "apres": "sel, poivre"
+ },
+ {
+  "nom": "Pizza Philly Cheesesteak classique (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, oignons, provolone, mozzarella, bœuf, poivron vert, poivre noir",
+  "apres": "huile d'olive"
+ },
+ {
+  "nom": "Pizza épinards et œuf (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, épinards, huile d'olive, œuf",
+  "apres": "sel, poivre, huile d'olive"
+ },
+ {
+  "nom": "Pizza Diablo au pepperoni (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, pepperoni, saucisse de Francfort, chorizo, piment rouge",
+  "apres": "basilic frais"
+ },
+ {
+  "nom": "Pizza olives, tomates séchées et roquette (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, olives, tomates séchées",
+  "apres": "parmesan, roquette, poivre noir concassé, huile d'olive"
+ },
+ {
+  "nom": "Pizza satay au poulet (Ooni)",
+  "base": "creme",
+  "avant": "sauce satay",
+  "apres": "poulet effiloché, carotte râpée, concombre émincé, cacahuètes concassées, coriandre, basilic thaï, sauce chili douce, quartiers de citron vert"
+ },
+ {
+  "nom": "Pizza butternut, pesto et burrata (Ooni)",
+  "base": "creme",
+  "avant": "pesto, courge butternut, pignons de pin, graines de courge",
+  "apres": "burrata, roquette, flocons de piment, huile d'olive"
+ },
+ {
+  "nom": "Pizza au miel et à la sriracha (Ooni)",
+  "base": "creme",
+  "avant": "sriracha, tofu frit en dés, oignon vert, graines de sésame",
+  "apres": "miel, coriandre fraîche"
+ },
+ {
+  "nom": "Pizza steak, fromage bleu et oignon rouge (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, steak, fromage bleu, oignon rouge",
+  "apres": "huile d'olive"
+ },
+ {
+  "nom": "La pizza Millennial (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, lardons",
+  "apres": "avocat écrasé, feta émiettée, sriracha"
+ },
+ {
+  "nom": "Pizza ricotta vegan, épinards et oignons caramélisés (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, ricotta vegan aux amandes, épinards, oignons caramélisés, tomates séchées",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza salami, piment vert et olives (Ooni)",
+  "base": "tomate",
+  "avant": "miel, graines de sésame noir et blanc, sauce tomate, mozzarella, salami, olives vertes, piments verts",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza pêche, brie et balsamique (Ooni)",
+  "base": "creme",
+  "avant": "huile d'olive, mozzarella, brie",
+  "apres": "pêches, feuilles de basilic, glaçage balsamique"
+ },
+ {
+  "nom": "Pizza nduja et brocoli (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, brocoli, nduja",
+  "apres": "huile d'olive, parmesan"
+ },
+ {
+  "nom": "Pizza œuf, pancetta et basilic (Ooni)",
+  "base": "creme",
+  "avant": "mozzarella, pancetta, œuf, huile d'olive",
+  "apres": "basilic frais, huile d'olive, poivre noir moulu"
+ },
+ {
+  "nom": "Pizza saumon, fromage à la crème, aneth et câpres (Ooni)",
+  "base": "creme",
+  "avant": "fromage à la crème, saumon fumé, câpres",
+  "apres": "aneth, quartiers de citron"
+ },
+ {
+  "nom": "Pizza steak grillé, emmental et moutarde (Ooni)",
+  "base": "creme",
+  "avant": "beurre fondu, moutarde, mozzarella, steak émincé, emmental, jambon de la Forêt-Noire, cornichons à l'aneth",
+  "apres": ""
+ },
+ {
+  "nom": "Pizza jalapeños marinés, oignons caramélisés et crème de cajou à l'ail (Ooni)",
+  "base": "creme",
+  "avant": "huile à l'ail, jalapeños marinés",
+  "apres": "oignons caramélisés, coriandre, jus de citron vert, poivre noir, crème de cajou à l'ail"
+ },
+ {
+  "nom": "Pizza végétarienne à la nduja végétale et à la courge (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, courge butternut rôtie, nduja végétale, oignon rouge",
+  "apres": "pignons de pin, sauce à l'ail et aux herbes"
+ },
+ {
+  "nom": "Pizza mozzarella, tomates semi-séchées et salade fraîche (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate",
+  "apres": "mozzarella, tomates semi-séchées, feuilles de salade, parmesan, mayonnaise au citron et à l'ail, glaçage balsamique à l'ail noir et miso"
+ },
+ {
+  "nom": "Pizza sauté de bœuf (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella, bœuf, piment rouge",
+  "apres": "miel, graines de sésame, concombre"
+ },
+ {
+  "nom": "Pizza choux de Bruxelles et confiture pomme-bacon (Ooni)",
+  "base": "creme",
+  "avant": "ricotta, mascarpone, poivre noir, mozzarella, choux de Bruxelles, ail, confiture pomme-bacon",
+  "apres": "filet d'huile d'olive"
+ },
+ {
+  "nom": "Pizza betterave, chèvre et oignons caramélisés (Ooni)",
+  "base": "creme",
+  "avant": "oignons caramélisés, fromage de chèvre, betterave",
+  "apres": "basilic, poivre noir, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Pizza poitrine de bœuf braisée, cornichons et moutarde (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, poitrine de bœuf braisée, mozzarella, cornichons",
+  "apres": "roquette, moutarde, huile d'olive, poivre noir, parmesan"
+ },
+ {
+  "nom": "Pizza patate douce, dattes, piment vert et feta (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, patate douce rôtie écrasée, feta émiettée, dattes, piments verts, huile d'olive",
+  "apres": "basilic frais"
+ },
+ {
+  "nom": "Pizza blanche gorgonzola, burrata et huile à l'ail (Ooni)",
+  "base": "creme",
+  "avant": "mozzarella, gorgonzola, tomates semi-séchées, parmesan",
+  "apres": "burrata, pignons de pin grillés, huile à l'ail, basilic frais"
+ },
+ {
+  "nom": "Pizza-baguette corse (Ooni)",
+  "base": "tomate",
+  "avant": "pulpe de tomate (ou tomates San Marzano écrasées à la main), feuilles de myrte (ou herbes de Provence), tomme corse de brebis (ou cheddar fort), pancetta corse",
+  "apres": "coppa, roquette"
+ },
+ {
+  "nom": "Pizza au poulet BBQ, maïs, oignon, bacon et coriandre (Ooni)",
+  "base": "creme",
+  "avant": "sauce barbecue, mozzarella fraîche, oignon rouge, poulet cuit, lardons de bacon fumé, maïs",
+  "apres": "sauce barbecue, coriandre fraîche"
+ },
+ {
+  "nom": "Pizza Saint-Valentin en forme de cœur (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate San Marzano, ail finement tranché infusé à l'huile d'olive, origan séché, basilic, huile pimentée (facultatif)",
+  "apres": "basilic frais, piment en flocons, poivre noir concassé"
+ },
+ {
+  "nom": "Pizza squelette d'Halloween (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella à pizza râpée ou fior di latte finement coupé",
+  "apres": "olive farcie au piment doux, olives dénoyautées coupées en deux, mozzarella ou parmesan en carrés (pour les dents), prosciutto di Parma, mortadelle"
+ },
+ {
+  "nom": "Pizza soppressata (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, soppressata, oignon, mozzarella",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Pizza étoile à croûte farcie, margherita (Ooni)",
+  "base": "tomate",
+  "avant": "sauce tomate, mozzarella râpée, mozzarella fraîche",
+  "apres": "parmesan, basilic"
+ },
+ {
+  "nom": "Tomate fromage (Camion Jaune)",
+  "base": "tomate",
+  "avant": "tomate, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Jambon fromage (Camion Jaune)",
+  "base": "tomate",
+  "avant": "jambon, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Moules (OIGNONS) FROMAGE (Camion Jaune)",
+  "base": "tomate",
+  "avant": "moules, oignons, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Calamars fromage (Camion Jaune)",
+  "base": "tomate",
+  "avant": "calamars, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Anchois fromage (Camion Jaune)",
+  "base": "tomate",
+  "avant": "anchois, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Sicilienne (Camion Jaune)",
+  "base": "tomate",
+  "avant": "anchois, oignons, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Canarienne (Camion Jaune)",
+  "base": "tomate",
+  "avant": "ail, thon, câpres, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Roquefort fromage (Camion Jaune)",
+  "base": "tomate",
+  "avant": "roquefort, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Végétarienne (Camion Jaune)",
+  "base": "tomate",
+  "avant": "champignons, oignons, poivrons, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Royale (Camion Jaune)",
+  "base": "tomate",
+  "avant": "jambon, champignons, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Stromboli (Camion Jaune)",
+  "base": "tomate",
+  "avant": "jambon, chorizo, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Chorizo poivrons dite « chp » (Camion Jaune)",
+  "base": "tomate",
+  "avant": "chorizo, poivrons, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Thaï (Camion Jaune)",
+  "base": "tomate",
+  "avant": "lardons, ananas, gingembre, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "L.a.o. (Camion Jaune)",
+  "base": "tomate",
+  "avant": "lardons, artichauts, oignons, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Napo (Camion Jaune)",
+  "base": "tomate",
+  "avant": "tomate, fraîche, mozzarella, basilic, parmesan",
+  "apres": ""
+ },
+ {
+  "nom": "Fruits de mer (Camion Jaune)",
+  "base": "tomate",
+  "avant": "moules, calamars, crevettes, ail, persil, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Olp (Camion Jaune)",
+  "base": "tomate",
+  "avant": "oignons, lardons, pommes de terre, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Causses (Camion Jaune)",
+  "base": "tomate",
+  "avant": "bleu, pommes de terre, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Campagne (Camion Jaune)",
+  "base": "tomate",
+  "avant": "champignons, pommes de terre, persil, ail, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Provençale (Camion Jaune)",
+  "base": "tomate",
+  "avant": "thon, ail, courgette, basilic, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Quatre fromages (Camion Jaune)",
+  "base": "tomate",
+  "avant": "mozzarella, chèvre, bleu d’Auvergne, parmesan",
+  "apres": ""
+ },
+ {
+  "nom": "Quercynoise (Camion Jaune)",
+  "base": "tomate",
+  "avant": "cabécous (4), asperges, fromage",
+  "apres": ""
+ },
+ {
+  "nom": "Margherita sbagliata (Franco Pepe — Pepe in Grani, Caiazzo)",
+  "base": "tomate",
+  "avant": "mozzarella di bufala Campana DOP, huile d'olive extra vierge",
+  "apres": "passata de tomate Riccio de Caiazzo, réduction de basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "La ritrovata di mastro stefano (Franco Pepe — Pepe in Grani, Caiazzo)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, tomate Piennolo du Vésuve, anchois de Cetara, câpres déshydratées",
+  "apres": "poudre d'olives noires de Caiazzane, basilic, huile à l'ail, origan"
+ },
+ {
+  "nom": "Futuro di marinara (Francesco Martucci — I Masanielli, Caserte)",
+  "base": "tomate",
+  "avant": "pâte napolitaine, crème de tomate rôtie",
+  "apres": "olives de Caiazzane, anchois, pesto d'ail des ours, câpres de Salina, origan"
+ },
+ {
+  "nom": "Assoluto di pomodoro (Francesco Martucci — I Masanielli, Caserte)",
+  "base": "tomate",
+  "avant": "crème de tomate cerise rôtie, tomate Piennolo sautée, tomate jaune de conservation sautée",
+  "apres": "mousse de tomate San Marzano DOP, tomate Piennolo séchée, tuile de tomate datterino rouge, confiture de tomate Piennolo, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Marinara secondo francesco (Francesco Capece — Confine, Milan)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, câpres de Pantelleria, anchois de Cetara",
+  "apres": "poudre d'olives noires Leccino, colatura d'anchois de Cetara, origan de Salina, huile à l'ail, huile d'olive extra vierge Leccino"
+ },
+ {
+  "nom": "Carminuccio state of mind (Francesco Capece — Confine, Milan)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, battuto de pancetta avec origan, ail rouge, piment serpentino de Teggiano",
+  "apres": "Parmigiano Reggiano 36 mois, basilic, huile d'olive extra vierge Carpellese"
+ },
+ {
+  "nom": "Margherita di bufala (Francesco Capece — Confine, Milan)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP",
+  "apres": "mozzarella di bufala Campana DOP, Parmigiano Reggiano, basilic, huile d'olive extra vierge des Collines Salernitaines"
+ },
+ {
+  "nom": "Margherinara (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, fior di latte d'Agerola, Grana Padano",
+  "apres": "tomate Piennolo rouge du Vésuve, origan du Matese, basilic riccio napolitain, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Margherita storica (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "tomate",
+  "avant": "tomate, fior di latte",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "4 Casi campani (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "tomate",
+  "avant": "caciocavallo podolico, blue de bufala, pecorino de Carmasciano, fior di latte d'Agerola",
+  "apres": "tomates cerises semi-séchées, crumble de pain multicéréales, basilic riccio napolitain, huile de céleri"
+ },
+ {
+  "nom": "La margherita di gino sorbillo (Gino Sorbillo — Sorbillo, Naples)",
+  "base": "tomate",
+  "avant": "tomate biologique, mozzarella di bufala Campana, fior di latte",
+  "apres": "ricotta di bufala salée et affinée râpée sur le cornicione, huile d'olive extra vierge, basilic"
+ },
+ {
+  "nom": "Casa sorbillo (Gino Sorbillo — Sorbillo, Naples)",
+  "base": "tomate",
+  "avant": "tomate, fior di latte",
+  "apres": "capocollo de Martina Franca, stracciatella de lait de vache, basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Margherita gialla « massimo bottura » (Gino Sorbillo — Sorbillo, Naples)",
+  "base": "tomate",
+  "avant": "tomates jaunes Pacchetelle du Vésuve, provola fumée, Conciato Romano",
+  "apres": "basilic frais, huile d'olive extra vierge"
+ },
+ {
+  "nom": "'Nduja, burrata, bergamotto (Roberto Davanzo — BOB Alchimia a Spicchi, Calabre)",
+  "base": "tomate",
+  "avant": "tomate à la 'nduja",
+  "apres": "burrata glacée, huile de basilic, bergamote"
+ },
+ {
+  "nom": "Supermarinizia / burro e pomodoro (Roberto Davanzo — BOB Alchimia a Spicchi, Calabre)",
+  "base": "tomate",
+  "avant": "tomate, anchois, ail, basilic, câpres, origan, olives, réglisse",
+  "apres": "crème de tomates cerises fumées, ajo blanco, crème de basilic, anchois en sauce ponzu, câpres croustillantes, origan, chocolat d'olives et réglisse"
+ },
+ {
+  "nom": "Cosacca (Enzo Coccia — La Notizia, Naples)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, pecorino râpé",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Dop provola e pepe (Enzo Coccia — La Notizia, Naples)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, provola de bufflonne, pecorino râpé, poivre noir",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Filetto (Enzo Coccia — La Notizia, Naples)",
+  "base": "tomate",
+  "avant": "tomates pelées en tranches, provola de bufflonne, Parmigiano Reggiano",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Piennolo (Enzo Coccia — La Notizia, Naples)",
+  "base": "tomate",
+  "avant": "tomates Piennolo rouges et jaunes du Vésuve DOP, mozzarella de bufflonne, pecorino râpé",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Diavola (Enzo Coccia — La Notizia, Naples)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, fior di latte d'Agerola, salami piquant",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "San daniele (Enzo Coccia — La Notizia, Naples)",
+  "base": "tomate",
+  "avant": "mozzarella de bufflonne",
+  "apres": "jambon San Daniele, copeaux de Parmigiano Reggiano 36 mois, basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Cilentana (Enzo Coccia — La Notizia, Naples)",
+  "base": "tomate",
+  "avant": "tomates Piennolo DOP du Vésuve, sauce tomate San Marzano DOP, cacioricotta du Cilento, poivre noir",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Procidana (Enzo Coccia — La Notizia, Naples)",
+  "base": "tomate",
+  "avant": "tomates Piennolo du Vésuve grillées, scamorza des monts Lattari, ail, persil, origan",
+  "apres": "basilic"
+ },
+ {
+  "nom": "Santa lucia (Enzo Coccia — La Notizia, Naples)",
+  "base": "tomate",
+  "avant": "tomates Piennolo rouges et jaunes, anchois de Cetara DOP, olives noires de Gaeta, persil, ail, origan",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Capricciosa evoluta (Ciro Salvo — 50 Kalò, Naples)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, fior di latte, jambon cuit, champignons sautés, olives noires Itrana, artichauts violets de Brindisi",
+  "apres": "huile d'olive extra vierge Itrana"
+ },
+ {
+  "nom": "Carrettiera (Gino Sorbillo — Sorbillo Gourmand, Bologne)",
+  "base": "tomate",
+  "avant": "saucisse de porc fraîche, friarielli sautés au piment, provola",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Vesuvio (Gino Sorbillo — Sorbillo Gourmand, Bologne)",
+  "base": "tomate",
+  "avant": "tomate Piennolo DOP du Vésuve, provola fumée des monts Lattari, Parmigiano Reggiano DOP Malandrone 1477",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Napoli (Gino Sorbillo — Sorbillo Gourmand, Bologne)",
+  "base": "tomate",
+  "avant": "fior di latte, tomates biologiques, câpres, anchois de Cetara, origan",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Capricciosa (Gino Sorbillo — Sorbillo Gourmand, Bologne)",
+  "base": "tomate",
+  "avant": "tomate biologique, fior di latte, jambon cuit Villani, champignons, artichauts, olives noires",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Marinara (Gino Sorbillo — Sorbillo, Naples)",
+  "base": "tomate",
+  "avant": "tomate, ail de la vallée de l'Ufita, origan sauvage",
+  "apres": "basilic, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Margherita (Ciro Salvo — 50 Kalò, Naples)",
+  "base": "tomate",
+  "avant": "tomate biologique, mozzarella, basilic",
+  "apres": "huile d'olive extra vierge de Campanie"
+ },
+ {
+  "nom": "Cosacca (Ciro Salvo — 50 Kalò, Naples)",
+  "base": "tomate",
+  "avant": "tomate, pecorino râpé",
+  "apres": "huile d'olive extra vierge, basilic"
+ },
+ {
+  "nom": "Capricciosa (Giuseppe Pignalosa — Le Parùle)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, fior di latte campano, salame Napoli, jambon cuit rôti, cèpes sautés, petits artichauts de Pertosa, olives caiazzane, huile d'olive extra vierge du Cilento",
+  "apres": "basilic frais"
+ },
+ {
+  "nom": "Provola e pepe (Giuseppe Pignalosa — Le Parùle)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, provola, poivre noir",
+  "apres": "huile d'olive extra vierge du Cilento DOP, basilic"
+ },
+ {
+  "nom": "Pizza al pomodoro — sei pomodori (Francesco et Salvatore Salvo, avec Salvatore Bianco)",
+  "base": "tomate",
+  "avant": "tomate de Corbara, tomate San Marzano DOP, datterino séchée au four, tomate grillée, crème de tomate fumée, tomate Piennolo marinée",
+  "apres": "basilic, huile d'olive extra vierge Valli Trapanesi DOP"
+ },
+ {
+  "nom": "Scarpariello (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "tomate",
+  "avant": "tomate de Gragnano Valle dei Mulini, tomates cerises grillées, concassé de tomate biologique, huile à l'ail, persil et piment",
+  "apres": "Tuma Persa sicilienne râpée, Pecorino Toscano Gran Riserva râpé, basilic"
+ },
+ {
+  "nom": "Nonna rosa (Francesco et Salvatore Salvo, avec Peppe Guida)",
+  "base": "tomate",
+  "avant": "fior di latte, boulettes de viande, sauce tomate à la viande",
+  "apres": "crème de ricotta froide, basilic, huile d'olive extra vierge 89/93 de Gaudenzi"
+ },
+ {
+  "nom": "Pulled pork (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "tomate",
+  "avant": "sauce tomate fumée, Pecorino Romano DOP, Parmigiano Reggiano 24 mois, fior di latte, pulled pork maison",
+  "apres": "mayonnaise au chipotle, huile d'olive extra vierge Moraiolo Felsina"
+ },
+ {
+  "nom": "Super diable (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "tomate",
+  "avant": "tomate de Corbara, pezzente épicé de la montagne materana, saucisse fraîche épicée, fior di latte mélangé à la provola fumée, ventriciana épicée de Vasto",
+  "apres": "basilic, huile d'olive extra vierge Titolo d'Elena Fucci"
+ },
+ {
+  "nom": "Marinara 4.0 (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "tomate",
+  "avant": "sauce tomate marinée aux agrumes et au gingembre",
+  "apres": "mayonnaise aux anchois, origan frais, poudre d'ail noir, anchois crus, jus d'anchois, huile à l'ail, basilic"
+ },
+ {
+  "nom": "Capricciosa (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, salami d'Agerola, artichauts naturels de Paestum, anchois de Cetara sous huile, olives noires de Gaeta, fior di latte d'Agerola",
+  "apres": "basilic, huile d'olive extra vierge Jannia"
+ },
+ {
+  "nom": "Provola e pepe (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "tomate",
+  "avant": "tomate de Gragnano Valle dei Mulini, provola fumée",
+  "apres": "poivres Timut, noir et or de Sarawak, huile d'olive extra vierge Roboris de San Comaio"
+ },
+ {
+  "nom": "Cosacca (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "tomate",
+  "avant": "tomate de Corbara, pecorino bagnolese",
+  "apres": "huile d'olive extra vierge Colline dell'Ufita, basilic"
+ },
+ {
+  "nom": "Montanara classique (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "tomate",
+  "avant": "pâte frite, sauce tomate Piennolo del Vesuvio DOP",
+  "apres": "copeaux de caciocavallo podolico irpin, basilic"
+ },
+ {
+  "nom": "Farci au four (Francesco et Salvatore Salvo — Pizzeria Salvo)",
+  "base": "tomate",
+  "avant": "ricotta de bufflonne, fior di latte d'Agerola, salami d'Agerola, poivre rouge foncé de Sarawak, tomate San Marzano DOP pelée",
+  "apres": "huile d'olive extra vierge Zahir de San Comaio"
+ },
+ {
+  "nom": "Saturnia (Francesco Martucci — I Masanielli, Caserte)",
+  "base": "tomate",
+  "avant": "crème de tomate rôtie, mozzarella di bufala Campana DOP",
+  "apres": "mousse d'ail noir fermenté à la sauce soja, poudre d'olives de Caiazzane, poudre de câpres de Salina, oignon croquant, bottarga de thon rouge, huile d'olive extra vierge Fontana Lupo"
+ },
+ {
+  "nom": "Marinara sbagliata (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "tomate",
+  "avant": "tomate San Marzano DOP, confiture de tomates cannellini des Campi Flegrei",
+  "apres": "pesto d'ail des ours, origano du Monte Saro, huile d'olive extra vierge fruitée intense"
+ },
+ {
+  "nom": "Conciaciccia (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "tomate",
+  "avant": "tomates jaunes du Piennolo du Vésuve, fiordilatte (ou provola selon les versions), ventricina/salami piquant, cacioricotta cilentano",
+  "apres": "basilic riccio napolitain, huile d'olive extra vierge"
+ },
+ {
+  "nom": "Cor e' peperone (Diego Vitagliano — 10 Diego Vitagliano, Naples)",
+  "base": "tomate",
+  "avant": "double cuisson ; crème de poivron jaune, bœuf haché, ail et poivron (garniture de base rapportée)",
+  "apres": "olives Taggiasche, pecorino romano, persil, fondue de provola dei Monti"
+ },
+ {
+  "nom": "Pepperoni au miel (Julien Serri — scrocchiarella romana, Le Cirque, Paris)",
+  "base": "tomate",
+  "avant": "mozzarella fior di latte, saucisse piquante italienne, pimentón de la Vera IGP",
+  "apres": "miel d’acacia"
+ },
+ {
+  "nom": "Pizza signature bella ciao (Joseph Sicorello — Bella Ciao, Le Grand-Lemps; recette présentée au Championnat de France 2024)",
+  "base": "tomate",
+  "avant": "aubergines, artichauts, jambon de Parme",
+  "apres": "roquette, burrata, filet d’huile de truffe"
+ },
+ {
+  "nom": "Green & yellow (Axel Pau-Cros — La Planque, Sainte-Maxime)",
+  "base": "tomate",
+  "avant": "base de tomate cerise jaune, mozzarella fior di latte, tomates cerises rôties, jambon de Parme affiné 24 mois (ou jambon cru de l’Aubrac en version habituelle), pesto, piments torréfiés",
+  "apres": "stracciatella"
+ },
+ {
+  "nom": "Omaggio al sud (Peppe Cutraro — Gruppo Peppe)",
+  "base": "tomate",
+  "avant": "tomate San Marzano, mozzarella fior di latte, spianata calabraise, ricotta de bufflonne, poivron doux crusco séché au soleil, oignons confits",
+  "apres": "pousses de basilic, huile d’olive extra vierge"
+ },
+ {
+  "nom": "Mare nostrum (Tonino Cogliano & Simone Lombardi — IMperfetto, Puteaux)",
+  "base": "tomate",
+  "avant": "tomates jaunes siciliennes, fior di latte, thon de Cetara, confiture d’oignons et de mûres, olives taggiasche",
+  "apres": "basilic, huile d’olive au citron"
+ },
+ {
+  "nom": "Piccantina (Cheffe Amale — IMPRONTA, Paris)",
+  "base": "tomate",
+  "avant": "sauce tomate italienne, fior di latte, parmesan, spianata premium",
+  "apres": "marmelade de poivrons « Coup de Cœur »"
+ },
+ {
+  "nom": "Stracotto d’agnello (Cheffe Amale — IMPRONTA, Paris)",
+  "base": "tomate",
+  "avant": "fior di latte, agneau stracotto longuement mijoté, pomarola",
+  "apres": ""
+ },
+ {
+  "nom": "Polpette di manzo (Cheffe Amale — IMPRONTA, Paris)",
+  "base": "tomate",
+  "avant": "sauce tomate italienne, fior di latte, boulettes de bœuf à l’italienne, parmesan, épices",
+  "apres": ""
+ },
+ {
+  "nom": "Senza filtri (Michele Rutigliano — Due, Royaume-Uni; PAPA Industry Awards 2026)",
+  "base": "tomate",
+  "avant": "sauce tomate, anchois, ail, origan",
+  "apres": "basilic, huile d’olive extra vierge"
+ },
+ {
+  "nom": "The calabrese comet (Alon Fuks — Born and Raised, Hamilton, Canada; Chef of the Year 2026)",
+  "base": "tomate",
+  "avant": "purée d’ail confit, salami calabrais, poivrons doux péruviens, oignon rouge, mozzarella de bufflonne, Parmigiano Reggiano",
+  "apres": "miel au habanero"
+ },
+ {
+  "nom": "La zucca (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème de courge, champignons cuisinés à l'ail et au persil",
+  "apres": "Pancetta, mozzarella di bufala, pousses d'épinards"
+ },
+ {
+  "nom": "Sorrente (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, pousses d'épinards, mozzarella fior di latte, poulet, chèvre",
+  "apres": "Cerneaux de noix, huile de noix"
+ },
+ {
+  "nom": "Firenze (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, champignons émincés, gorgonzola",
+  "apres": "Speck, mozzarella di bufala, roquette"
+ },
+ {
+  "nom": "Bolzano (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, crème de courge, scamorza",
+  "apres": "Speck, mozzarella di bufala, pousses d'épinards"
+ },
+ {
+  "nom": "Delicata (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, crème de courge, scamorza",
+  "apres": "Saumon fumé, mozzarella di bufala, tomates semi-séchées, basilic"
+ },
+ {
+  "nom": "Deliziosa (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, mozzarella fior di latte, poulet, chèvre",
+  "apres": "Crème de pistache, tomates semi-séchées"
+ },
+ {
+  "nom": "Mortadella (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, mozzarella fior di latte, chèvre",
+  "apres": "Mortadelle de Bologne, tomates semi-séchées, pesto à la Genovese"
+ },
+ {
+  "nom": "Diavola (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, mozzarella fior di latte, scamorza, spianata piquante, crème d'artichaut",
+  "apres": "Roquette, olives Riviera"
+ },
+ {
+  "nom": "Boscaiola (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, jambon blanc artisanal, champignons émincés, mozzarella fior di latte",
+  "apres": "Ricotta au basilic, pesto à la Genovese"
+ },
+ {
+  "nom": "Delfinato (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, jambon blanc artisanal, ravioles de Royans, mozzarella fior di latte, œuf",
+  "apres": ""
+ },
+ {
+  "nom": "Nero sublime (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, champignons émincés, crème de truffe noire et champignons",
+  "apres": "Jambon blanc truffé, burrata des Pouilles, lamelles de truffe d'été"
+ },
+ {
+  "nom": "Giovanna (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, mozzarella fior di latte, crème d'artichaut",
+  "apres": "Pancetta, burrata des Pouilles"
+ },
+ {
+  "nom": "Pistacchio (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, mozzarella fior di latte",
+  "apres": "Mortadelle de Bologne, burrata des Pouilles, crème de pistache"
+ },
+ {
+  "nom": "Fiume (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème",
+  "apres": "Saumon fumé, burrata des Pouilles, roquette, tomates semi-séchées, pesto à la Genovese, tranche de citron"
+ },
+ {
+  "nom": "Tartufo (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, jambon blanc artisanal, crème de truffe noire et champignons",
+  "apres": "Mozzarella di bufala, pousses d'épinards, huile aromatisée à la truffe"
+ },
+ {
+  "nom": "Capra al miele (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, mozzarella fior di latte, chèvre",
+  "apres": "Miel, amandes effilées et torréfiées"
+ },
+ {
+  "nom": "Truffadoro (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, mozzarella fior di latte",
+  "apres": "Jambon blanc truffé"
+ },
+ {
+  "nom": "Marcellino (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, mozzarella fior di latte, poulet, Saint-Marcellin",
+  "apres": ""
+ },
+ {
+  "nom": "Salmone (Jordan Thomas)",
+  "base": "creme",
+  "avant": "Crème, pousses d'épinards, mozzarella fior di latte",
+  "apres": "Saumon fumé, ricotta au basilic"
+ },
+ {
+  "nom": "La dietalie (Lotalie)",
+  "base": "creme",
+  "avant": "Crème de courge, mozzarella fior di latte, scamorza fumée",
+  "apres": "Chiffonnade de mortadelle IGP, champignons de Paris, ciboulette, confit d'oignon, graines de courges au paprika fumé",
+  "apresVege": "Girolles, champignons de Paris, ciboulette, confit d'oignon, graines de courges au paprika fumé"
+ },
+ {
+  "nom": "La lotalie (Lotalie)",
+  "base": "creme",
+  "avant": "Mozzarella fior di latte, Taleggio DOP",
+  "apres": "Magret séché, crème de cèpes, girolles, noisettes grillées",
+  "apresVege": "Artichauts, crème de cèpes, girolles, noisettes grillées"
+ },
+ {
+  "nom": "La pistache (Lotalie)",
+  "base": "creme",
+  "avant": "Mozzarella fior di latte",
+  "apres": "Chiffonnade de mortadelle IGP, crème de pistache, burrata, pistaches grillées",
+  "apresVege": "Aubergines, crème de pistache, burrata, pistaches grillées"
+ },
+ {
+  "nom": "La tartufa (Lotalie)",
+  "base": "creme",
+  "avant": "Crème de truffe, mozzarella fior di latte",
+  "apres": "Jambon blanc Gran Biscotto, burrata, lamelles de truffes, noisettes grillées, huile de truffe",
+  "apresVege": "Artichaut, champignons, burrata, lamelles de truffes, noisettes grillées, huile de truffe"
+ },
+ {
+  "nom": "La saumon (Lotalie)",
+  "base": "creme",
+  "avant": "Base ricotta à l'encre de seiche, mozzarella fior di latte",
+  "apres": "Saumon fumé, feta, zeste de citron, ciboulette, huile infusée au citron"
+ },
+ {
+  "nom": "La margherita (Lotalie)",
+  "base": "tomate",
+  "avant": "Tomate San Marzano",
+  "apres": "Mozzarella fior di latte, basilic"
+ },
+ {
+  "nom": "La 5 fromages (Lotalie)",
+  "base": "creme",
+  "avant": "Mozzarella fior di latte, Gorgonzola DOP, scamorza fumée, Taleggio DOP",
+  "apres": "Copeaux de parmesan, poivre noir"
+ },
+ {
+  "nom": "La regina (Lotalie)",
+  "base": "tomate",
+  "avant": "Tomate San Marzano, mozzarella fior di latte",
+  "apres": "Jambon blanc Gran Biscotto, champignons de Paris, basilic"
+ },
+ {
+  "nom": "La parma (Lotalie)",
+  "base": "tomate",
+  "avant": "Tomate San Marzano, mozzarella fior di latte",
+  "apres": "Jambon de Parme affiné 24 mois, basilic"
+ },
+ {
+  "nom": "La diavola (Lotalie)",
+  "base": "tomate",
+  "avant": "Tomate San Marzano, mozzarella fior di latte, chorizo (maison Mas)",
+  "apres": "Confit d'oignons, piment, basilic"
+ },
+ {
+  "nom": "La chèvre miel (Lotalie)",
+  "base": "creme",
+  "avant": "Mozzarella fior di latte, cabécous, sablécou (parmesan de chèvre), miel",
+  "apres": "Noix, ciboulette"
+ },
+ {
+  "nom": "La vegan (Lotalie)",
+  "base": "creme",
+  "avant": "Crème de courge, aubergines, artichauts, girolles",
+  "apres": "Confit d'oignons, graines de courges au paprika fumé"
+ },
+ {
+  "nom": "La jambon burrata (Lotalie)",
+  "base": "tomate",
+  "avant": "Tomate San Marzano, mozzarella fior di latte, scamorza, burrata",
+  "apres": "Jambon de Parme affiné 24 mois, copeaux de parmesan, confiture de figues, basilic",
+  "apresVege": "Aubergines, copeaux de parmesan, confiture de figues, basilic"
+ },
+ {
+  "nom": "Affumicata (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, jambon blanc artisanal cuit au bouillon, mozzarella fior di latte, spianata piquante, scamorza",
+  "apres": ""
+ },
+ {
+  "nom": "Selvatica (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, champignons émincés, gorgonzola",
+  "apres": "Pancetta, Parmigiano Reggiano, tomates semi-séchées, persil plat"
+ },
+ {
+  "nom": "Pepata (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella fior di latte, aubergines cuisinées",
+  "apres": "Pancetta, pecorino au poivre, tomates semi-séchées"
+ },
+ {
+  "nom": "Carnivora (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, jambon blanc artisanal, mozzarella fior di latte, poulet, spianata piquante",
+  "apres": ""
+ },
+ {
+  "nom": "Parmigiana (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, jambon blanc artisanal, mozzarella fior di latte, aubergines cuisinées",
+  "apres": "Parmigiano Reggiano"
+ },
+ {
+  "nom": "10 Formaggi (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella fior di latte, gorgonzola, chèvre, Saint-Marcellin, Taleggio, scamorza",
+  "apres": "Pecorino au poivre, mozzarella di bufala, ricotta au basilic, Parmigiano Reggiano"
+ },
+ {
+  "nom": "Verdura (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, aubergines et poivrons cuisinés, crème d'artichaut",
+  "apres": "Mozzarella di bufala, olives Riviera, basilic"
+ },
+ {
+  "nom": "Veggie (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, aubergines cuisinées",
+  "apres": "Tomates semi-séchées, burrata des Pouilles, pesto à la Genovese, Parmigiano Reggiano, huile d'olive vierge extra"
+ },
+ {
+  "nom": "Andria (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate",
+  "apres": "Jambon de Parme, burrata des Pouilles, tomates semi-séchées, pesto à la Genovese, basilic, huile d'olive vierge extra"
+ },
+ {
+  "nom": "Maestro (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, gorgonzola, poulet",
+  "apres": "Roquette, mozzarella di bufala, tomates semi-séchées, crème de vinaigre balsamique, huile aromatisée à la truffe"
+ },
+ {
+  "nom": "Margherita (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate",
+  "apres": "Mozzarella di bufala, basilic, huile d'olive vierge extra"
+ },
+ {
+  "nom": "Prosciutto (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate",
+  "apres": "Jambon de Parme, roquette, mozzarella di bufala, Parmigiano Reggiano, tomates semi-séchées, crème de vinaigre balsamique"
+ },
+ {
+  "nom": "Regina (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, jambon blanc artisanal, champignons émincés, mozzarella fior di latte",
+  "apres": ""
+ },
+ {
+  "nom": "4 Formaggi (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella fior di latte, gorgonzola, ricotta au basilic",
+  "apres": "Parmigiano Reggiano, ricotta au basilic"
+ },
+ {
+  "nom": "Cotta (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, jambon blanc artisanal, mozzarella fior di latte",
+  "apres": ""
+ },
+ {
+  "nom": "Bambino (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, jambon blanc artisanal, mozzarella fior di latte (ou tomate, double mozzarella fior di latte)",
+  "apres": ""
+ },
+ {
+  "nom": "Napoli (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella fior di latte, filet d'anchois",
+  "apres": "Olives Riviera"
+ },
+ {
+  "nom": "Piccante (Jordan Thomas)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella fior di latte, spianata piquante, poivrons cuisinés",
+  "apres": ""
+ },
+ {
+  "nom": "Marinara (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, anchois, ail, origan, olives",
+  "apres": ""
+ },
+ {
+  "nom": "Mezzo (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, 1/2 anchois, 1/2 emmental, olives",
+  "apres": ""
+ },
+ {
+  "nom": "Massilia (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, emmental, olives",
+  "apres": ""
+ },
+ {
+  "nom": "Margherita (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella fior di latte",
+  "apres": ""
+ },
+ {
+  "nom": "Jambon (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, jambon, mozzarella fior di latte",
+  "apres": ""
+ },
+ {
+  "nom": "Spianata (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, chorizo, mozzarella fior di latte",
+  "apres": ""
+ },
+ {
+  "nom": "Quattro (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, chèvre, gorgonzola DOP, emmental, mozzarella fior di latte, olives",
+  "apres": ""
+ },
+ {
+  "nom": "Salsiccia (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, saucisse italienne, mozzarella fior di latte, oignons rouges",
+  "apres": ""
+ },
+ {
+  "nom": "Regina mozzarella (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, champignons frais, jambon, mozzarella",
+  "apres": ""
+ },
+ {
+  "nom": "Calamar (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, calamars, persillade, tomates cerises, mozzarella fior di latte, olives",
+  "apres": ""
+ },
+ {
+  "nom": "Arménienne (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, viande de bœuf hachée, poivrons, oignons, olives",
+  "apres": ""
+ },
+ {
+  "nom": "Texane (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, viande de bœuf hachée, poivrons, oignons, sauce BBQ, chorizo, mozzarella fior di latte",
+  "apres": ""
+ },
+ {
+  "nom": "Stracciatella (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, cœur de burrata, tomates cerises, pesto alla genovese ou basilic",
+  "apres": ""
+ },
+ {
+  "nom": "Parmigiana (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, aubergines, parmigiano reggiano, pesto, mozzarella fior di latte",
+  "apres": ""
+ },
+ {
+  "nom": "Sicilienne (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, anchois, parmigiano reggiano, câpres, ail, huile d'olive, olives",
+  "apres": ""
+ },
+ {
+  "nom": "Verdura (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Tomate, légumes du moment, mozzarella fior di latte, câpres, persillade",
+  "apres": ""
+ },
+ {
+  "nom": "Gusto (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Sauce tomate, roquette, speck IGP, tomates cerises, stracciatella, crème balsamique",
+  "apres": ""
+ },
+ {
+  "nom": "Maradona (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Sauce tomate, roquette, tomates confites, chèvre frais, pesto alla genovese",
+  "apres": ""
+ },
+ {
+  "nom": "Calzone (Ludovic Bicchierai)",
+  "base": "tomate",
+  "avant": "Chausson garni de sauce tomate, champignon frais, jambon, mozzarella fior di latte, 1 œuf",
+  "apres": ""
+ },
+ {
+  "nom": "Carbonara (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème, lardons, oignons confits au miel, œuf, mozzarella fior di latte, poivre",
+  "apres": ""
+ },
+ {
+  "nom": "Regina bianca (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème, champignons frais, jambon, mozzarella fior di latte",
+  "apres": ""
+ },
+ {
+  "nom": "Quattro bianca (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème, chèvre, gorgonzola DOP, mozzarella fior di latte",
+  "apres": ""
+ },
+ {
+  "nom": "Montagna (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème, taleggio DOP, lardons, oignons rouges, pommes de terre, mozzarella",
+  "apres": ""
+ },
+ {
+  "nom": "Président (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème, 1/2 camembert, speck IGP, mozzarella fior di latte",
+  "apres": ""
+ },
+ {
+  "nom": "Forestière (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème, lardons, champignons frais, mozzarella fior di latte, oignons frits",
+  "apres": ""
+ },
+ {
+  "nom": "Chèvre miel (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème, chèvre, mozzarella fior di latte, miel, romarin",
+  "apres": ""
+ },
+ {
+  "nom": "Chicken (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème, poulet, mozzarella fior di latte (3 sortes : BBQ ou curry ou épices mexicaines)",
+  "apres": ""
+ },
+ {
+  "nom": "Salmone (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème, mozzarella fior di latte, courgettes, chèvre, saumon aux agrumes",
+  "apres": ""
+ },
+ {
+  "nom": "Tartufo (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème de truffe, roquette, tomates cerises, parmigiano reggiano, crème balsamique",
+  "apres": ""
+ },
+ {
+  "nom": "Mi amore (Ludovic Bicchierai)",
+  "base": "creme",
+  "avant": "Crème, roquette, speck IGP, chèvre frais, confiture de figues",
+  "apres": ""
+ },
+ {
+  "nom": "Classique napolitaine, médaille d'or (Peppe Cutraro)",
+  "base": "tomate",
+  "avant": "Base de tomate rôtie, provola fumée, poivre concassé, tomate confite",
+  "apres": "Basilic frais, filet d'huile d'olive"
+ },
+ {
+  "nom": "Margherita (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, basilic frais, huile d'olive (végétarienne)",
+  "apres": ""
+ },
+ {
+  "nom": "Impératrice (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, jambon, champignons de Paris, œuf, chorizo, poivrons",
+  "apres": ""
+ },
+ {
+  "nom": "Reine (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, jambon, champignons de Paris, œuf",
+  "apres": ""
+ },
+ {
+  "nom": "Duchesse (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, chèvre, miel",
+  "apres": ""
+ },
+ {
+  "nom": "Reblochonne (Rodolphe Rivière)",
+  "base": "creme",
+  "avant": "Crème, pommes de terre, lardons, oignons, fromage à tartiflette, mozzarella",
+  "apres": ""
+ },
+ {
+  "nom": "Quatre fromages (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, chèvre, gorgonzola, camembert (végétarienne)",
+  "apres": ""
+ },
+ {
+  "nom": "Norvégienne (Rodolphe Rivière)",
+  "base": "creme",
+  "avant": "Crème, mozzarella, saumon",
+  "apres": ""
+ },
+ {
+  "nom": "Napolitaine (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, câpres, anchois",
+  "apres": ""
+ },
+ {
+  "nom": "Girolle (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, girolles, lardons",
+  "apres": ""
+ },
+ {
+  "nom": "L'escargot (Rodolphe Rivière)",
+  "base": "creme",
+  "avant": "Crème, mozzarella, champignons de Paris, chair d'escargot, beurre d'escargot, œuf",
+  "apres": ""
+ },
+ {
+  "nom": "Bergère (Rodolphe Rivière)",
+  "base": "creme",
+  "avant": "Crème, mozzarella, pommes de terre, gésier de volaille, lardons",
+  "apres": ""
+ },
+ {
+  "nom": "Pantoufle, pizza fermée (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, jambon, champignons de Paris, oignons, chorizo, œuf, olives",
+  "apres": ""
+ },
+ {
+  "nom": "Pepperoni (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, spianata, poivrons",
+  "apres": ""
+ },
+ {
+  "nom": "Végétarienne (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, artichauts, poivrons, champignons de Paris, olives (végétarienne)",
+  "apres": ""
+ },
+ {
+  "nom": "Chicken (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, poulet, poivrons, chèvre",
+  "apres": ""
+ },
+ {
+  "nom": "Capricciosa (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, jambon, champignons de Paris, chorizo, câpres, olives, anchois",
+  "apres": ""
+ },
+ {
+  "nom": "Gourmande (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, bœuf égrené assaisonné, champignons de Paris, poivrons, oignons, reblochon, œuf",
+  "apres": ""
+ },
+ {
+  "nom": "La baronne (Rodolphe Rivière)",
+  "base": "creme",
+  "avant": "Crème, mozzarella, champignons de Paris, lardons, gorgonzola",
+  "apres": ""
+ },
+ {
+  "nom": "Comtesse (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, jambon de Parme",
+  "apres": ""
+ },
+ {
+  "nom": "Marquise (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tomate, mozzarella, bœuf égrené assaisonné, merguez, jambon, poulet",
+  "apres": ""
+ },
+ {
+  "nom": "Campione, championne du monde 2025, pizza fermée (Rodolphe Rivière)",
+  "base": "creme",
+  "avant": "Moutarde de Reims à l'ancienne crémée, scamorza fumée, effiloché de porc, champignons de Paris, oignons rouges poêlés et déglacés au vin",
+  "apres": ""
+ },
+ {
+  "nom": "La bologna (Rodolphe Rivière)",
+  "base": "creme",
+  "avant": "Base crème au pesto, mozzarella, mortadelle, burrata, éclats de pistaches",
+  "apres": "Basilic frais"
+ },
+ {
+  "nom": "La panuozzo (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Tranches de mozzarella, tomates fraîches",
+  "apres": "Jambon de Parme, huile d'olive, basilic frais"
+ },
+ {
+  "nom": "La salumi (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Base tomate, mozzarella",
+  "apres": "Coppa, jambon de Parme, mortadelle, burrata, huile d'olive, basilic frais"
+ },
+ {
+  "nom": "La parme (Rodolphe Rivière)",
+  "base": "tomate",
+  "avant": "Base tomate, mozzarella",
+  "apres": "Roquette, jambon de Parme affiné, tomates cerise, copeaux de parmesan, huile d'olive, crème de basilic"
+ },
+ {
+  "nom": "La tartufo, uniquement sur place (Rodolphe Rivière)",
+  "base": "creme",
+  "avant": "Crème de tartufo, mozzarella",
+  "apres": "Roquette, jambon blanc, burrata et carpaccio de truffe, copeaux de parmesan"
+ },
+ {
+  "nom": "La ritrovata (Franco Pepe)",
+  "base": "tomate",
+  "avant": "Passata de tomate San Marzano DOP, piennolo du Vésuve DOP, câpres déshydratées, poudre d'olives noires de Caiazzo, filets d'anchois de Cetara, huile à l'ail, basilic, origan",
+  "apres": ""
+ },
+ {
+  "nom": "Grana, pepe e fantasia (Franco Pepe)",
+  "base": "creme",
+  "avant": "Fondue de Grana Padano DOP 12 mois, scamorza fumée, jaune d'œuf pasteurisé, bacon fumé, pecorino romano sur le bord, chips de Grana Padano DOP 24 mois, poivre, zeste de lime",
+  "apres": ""
+ },
+ {
+  "nom": "Mangiabufalo (Franco Pepe)",
+  "base": "creme",
+  "avant": "Fondue de fromage mou de bufflonne en croûte fleurie, fior di latte, pain grillé au vinaigre balsamique de Modène IGP, noix, bresaola de bufflonne, scarole frisée crue, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Bufala profumata (Franco Pepe)",
+  "base": "creme",
+  "avant": "Mozzarella de bufflonne de Campanie DOP, bresaola de bufflonne, jus de lime, graines de sésame, huile à l'ail, lime, poivre noir, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Porkaserta (Franco Pepe)",
+  "base": "tomate",
+  "avant": "Tomate San Marzano, fior di latte, scamorza fumée, salami de porc de Caserte, origan, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Alletterata (Franco Pepe)",
+  "base": "creme",
+  "avant": "Crème d'oignons d'Alife, mozzarella de bufflonne de Campanie DOP, thon alletterato, céleri, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Nero fumé (Franco Pepe)",
+  "base": "creme",
+  "avant": "Fior di latte fumé, tomate cerise confite, saucisse séchée de porc noir de Caserte, origan du Matese",
+  "apres": ""
+ },
+ {
+  "nom": "Sfizio ai pomodori (Franco Pepe)",
+  "base": "creme",
+  "avant": "Mozzarella de bufflonne de Campanie DOP, tomate datterino jaune, tomates séchées aromatisées, Grana Padano DOP 24 mois, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Vulcanica (Franco Pepe)",
+  "base": "tomate",
+  "avant": "Pâté d'olives noires de Caiazzo, passata de tomate Caiatino, tresse de mozzarella de bufflonne DOP effilochée, origan frais, huile d'olive",
+  "apres": "Câpres déshydratées"
+ },
+ {
+  "nom": "Il sole nel piatto (Franco Pepe)",
+  "base": "creme",
+  "avant": "Mozzarella de bufflonne de Campanie DOP, piennolo du Vésuve DOP, olives de Caiazzo, filets d'anchois de Cetara, origan, basilic, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Sapori del cilento (Franco Pepe)",
+  "base": "creme",
+  "avant": "Mozzarella de bufflonne de Campanie DOP, ricotta de bufflonne de Campanie DOP, artichauts de Paestum à l'huile, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Selva blu (Franco Pepe)",
+  "base": "creme",
+  "avant": "Guanciale de porc noir de Caserte, fromage bleu aromatisé aux myrtilles, miel mille fleurs, noix, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Viandante (Franco Pepe)",
+  "base": "creme",
+  "avant": "Mortadelle IGP, ricotta de bufflonne de Campanie DOP, pistaches, zeste de citron, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Zucca conciata, de saison (Franco Pepe)",
+  "base": "creme",
+  "avant": "Velouté de potiron, potiron rôti aromatisé, haricot lanzariello frit, oignon d'Alife frit croustillant, Conciato Romano, persil",
+  "apres": ""
+ },
+ {
+  "nom": "Salsiccia e friarielli, de saison (Franco Pepe)",
+  "base": "creme",
+  "avant": "Fior di latte, saucisse séchée de porc noir de Caserte, friarielli, piment, stracciata de bufflonne, amandes croquantes, ail, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "La championne, pizza championne du monde (Yvan Cotta)",
+  "base": "tomate",
+  "avant": "Sauce tomate jaune, basilic, huile d'olive, jambon cru, pecorino, noisettes concassées, fleur de courgette",
+  "apres": ""
+ },
+ {
+  "nom": "Marinara d.o.c. (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Sauce tomate, anchois, fleurs de câpres, huile d'olive, origan, olives, basilic frais",
+  "apres": ""
+ },
+ {
+  "nom": "Margherita (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Sauce tomate, mozzarella, basilic frais",
+  "apres": ""
+ },
+ {
+  "nom": "Napolitaine (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Sauce tomate, mozzarella, anchois, fleurs de câpres, huile d'olive, origan, olives, basilic frais",
+  "apres": ""
+ },
+ {
+  "nom": "Regina (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Sauce tomate, mozzarella, champignons, jambon cuit",
+  "apres": ""
+ },
+ {
+  "nom": "Vegetariana (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Sauce tomate, tomates fraîches, mozzarella, poivrons, oignons, champignons, basilic frais",
+  "apres": ""
+ },
+ {
+  "nom": "Picante (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Sauce tomate, mozzarella, poivrons, spianata (saucisson italien piquant)",
+  "apres": ""
+ },
+ {
+  "nom": "3 Formaggi (Marc Possamai)",
+  "base": "creme",
+  "avant": "Base blanche (ni sauce ni crème) : mozzarella, chèvre, gorgonzola",
+  "apres": ""
+ },
+ {
+  "nom": "Label (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Sauce tomate, mozzarella, viande hachée, aubergines grillées, Grana Padano, basilic frais",
+  "apres": ""
+ },
+ {
+  "nom": "Pescatore (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Thon, oignons, anchois, mozzarella, basilic frais",
+  "apres": ""
+ },
+ {
+  "nom": "Calzone d.o.c. (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Sauce tomate, ricotta, saucisson piquant, provola fumée",
+  "apres": ""
+ },
+ {
+  "nom": "Verace (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Tomates fraîches, mozzarella di bufala, basilic frais",
+  "apres": "Grana Padano râpé"
+ },
+ {
+  "nom": "Pulcinella (Marc Possamai)",
+  "base": "tomate",
+  "avant": "Mozzarella, tomates fraîches, ail, basilic frais (après cuisson), roquette, jambon cru, tomates cerises, copeaux de Grana Padano",
+  "apres": ""
+ },
+ {
+  "nom": "Bianca (Marc Possamai)",
+  "base": "creme",
+  "avant": "Mozzarella, tomates fraîches, ricotta, jambon cuit, basilic frais",
+  "apres": ""
+ },
+ {
+  "nom": "Montagna (Marc Possamai)",
+  "base": "creme",
+  "avant": "Crème, mozzarella, taleggio (fromage italien), pancetta fumée",
+  "apres": ""
+ },
+ {
+  "nom": "Deliziosa (Marc Possamai)",
+  "base": "creme",
+  "avant": "Crème, mozzarella, provola fumée",
+  "apres": "Speck, tomates cerises, basilic frais"
+ },
+ {
+  "nom": "Capri (Marc Possamai)",
+  "base": "creme",
+  "avant": "Crème, chèvre, miel, noix",
+  "apres": ""
+ },
+ {
+  "nom": "Golosa (Marc Possamai)",
+  "base": "creme",
+  "avant": "Crème, mozzarella, tomates fraîches, gorgonzola",
+  "apres": "Jambon cru"
+ },
+ {
+  "nom": "Tartufa (Marc Possamai)",
+  "base": "creme",
+  "avant": "Crème de truffe, mozzarella",
+  "apres": "Roquette, coppa, crème balsamique"
+ },
+ {
+  "nom": "Prosciutto e funghi (Les Trucs à Mamy)",
+  "base": "tomate",
+  "avant": "Sauce tomate maison, mozzarella fior di latte, jambon cuit maison, champignons de Paris, origan",
+  "apres": ""
+ },
+ {
+  "nom": "Quattro formaggi (Les Trucs à Mamy)",
+  "base": "creme",
+  "avant": "Sauce crème maison, mozzarella fior di latte, gorgonzola, parmesan, taleggio, huile d'olive",
+  "apres": ""
+ },
+ {
+  "nom": "Burrata & rucola (Les Trucs à Mamy)",
+  "base": "tomate",
+  "avant": "Sauce tomate maison, mozzarella fior di latte, burrata crémeuse, roquette, tomates cerises, parmesan, huile d'olive extra vierge",
+  "apres": ""
+ }
 ]
