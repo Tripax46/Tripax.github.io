@@ -134,20 +134,40 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     ecran.addEventListener('click', fermer);
     // Toucher la bannière : l'affiche « merci » apparaît et la musique démarre.
     // Un clic sur l'écran : l'affiche disparaît, la musique s'arrête et on revient sur l'écran d'accueil.
-    let musique = null;
+    let musique = null, modeAffiche = false, ouvertureFaite = false, ouvertureEnCours = false;
+    const getMusique = () => { if (!musique) musique = new Audio('musique.mp3'); return musique; };
+    // À l'ouverture de l'application : la musique (14 s) est jouée UNE SEULE FOIS, sans boucle.
+    // Si le navigateur bloque le son automatique (iPhone, Safari...), elle démarre au premier toucher.
+    const gestes = ['click', 'touchend', 'keydown'];
+    const retirerGestes = () => gestes.forEach(g => document.removeEventListener(g, jouerOuverture, true));
+    function jouerOuverture() {
+      if (ouvertureFaite || ouvertureEnCours || modeAffiche) return;
+      ouvertureEnCours = true;
+      const m = getMusique(); m.loop = false;
+      try { m.currentTime = 0; } catch (err) {}
+      let p;
+      try { p = m.play(); } catch (err) { ouvertureEnCours = false; return; }
+      const ok = () => { ouvertureFaite = true; ouvertureEnCours = false; retirerGestes(); };
+      const bloque = () => { ouvertureEnCours = false; };
+      if (p && p.then) p.then(ok, bloque); else ok();
+    }
+    gestes.forEach(g => document.addEventListener(g, jouerOuverture, true));
+    jouerOuverture();
     document.addEventListener('click', e => {
       const merci = document.getElementById('ecran-merci'); // l'élément est plus bas dans la page : on le cherche au moment du clic
       if (!merci || occupe) return;
       if (merci.hidden) {
         if (!e.target.closest('header')) return;
         merci.hidden = false; void merci.offsetWidth; merci.classList.add('visible');
-        if (!musique) { musique = new Audio('musique.mp3'); musique.loop = true; }
-        try { musique.currentTime = 0; } catch (err) {}
-        const p = musique.play();
+        modeAffiche = true; ouvertureFaite = true; retirerGestes();
+        const m = getMusique(); m.loop = true;
+        try { m.currentTime = 0; } catch (err) {}
+        const p = m.play();
         if (p && p.catch) p.catch(() => {});
       } else {
         occupe = true;
-        if (musique) { musique.pause(); try { musique.currentTime = 0; } catch (err) {} }
+        modeAffiche = false;
+        if (musique) { musique.pause(); musique.loop = false; try { musique.currentTime = 0; } catch (err) {} }
         ouvrir(); // l'écran d'accueil apparaît derrière l'affiche qui s'efface
         merci.classList.remove('visible');
         window.setTimeout(() => { merci.hidden = true; occupe = false; }, 400);
