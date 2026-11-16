@@ -158,7 +158,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     // L'écran d'accueil ne se ferme PAS tout seul au chargement : il se ferme au clic dessus,
     // ou 6 s après le lancement automatique de la musique si le navigateur l'autorise.
     ecran.addEventListener('click', fermer);
-    // Toucher la bannière : la musique (pizzaiolo.mp3) démarre en boucle ; un nouveau toucher l'arrête.
+    // Toucher la bannière : la musique (pizzaiolo.mp3) démarre en boucle ; un nouveau toucher la met en pause ; un autre la reprend là où elle s'était arrêtée.
     // Elle ne démarre jamais pendant la lecture d'une vidéo YouTube, et se coupe si une vidéo démarre.
     let musique = null, ouvertureFaite = false, ouvertureEnCours = false;
     let musiqueBanniere = null, videosEnLecture = new Set();
@@ -195,13 +195,12 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     }
     gestes.forEach(g => ecran.addEventListener(g, jouerOuverture));
     jouerOuverture();
-    // Clic sur la bannière : lecture en boucle de la musique ; nouveau clic : arrêt.
+    // Clic sur la bannière : lecture en boucle ; clic suivant : pause ; clic suivant : reprise au même endroit.
     document.addEventListener('click', e => {
       if (!e.target.closest('header')) return;
       if (!musiqueBanniere) { musiqueBanniere = new Audio('pizzaiolo.mp3'); musiqueBanniere.loop = true; musiqueBanniere.preload = 'auto'; }
-      if (!musiqueBanniere.paused) { // déjà en cours : on arrête
+      if (!musiqueBanniere.paused) { // en cours : pause (la position est conservée, la lecture reprendra au même endroit)
         musiqueBanniere.pause();
-        try { musiqueBanniere.currentTime = 0; } catch (err) {}
         return;
       }
       if (videosEnLecture.size) return; // une vidéo YouTube est en lecture : pas de musique

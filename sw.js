@@ -1,6 +1,6 @@
 // Service worker des pizzas de Fafa : fonctionne hors ligne.
 // Augmente le numéro de version à chaque modification des fichiers.
-const VERSION = 'fafa-v19';
+const VERSION = 'fafa-v20';
 const FICHIERS = [
   './', 'index.html', 'pizzas.json', 'banniere.jpg', 'manifest.webmanifest',
   'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'favicon.ico',
