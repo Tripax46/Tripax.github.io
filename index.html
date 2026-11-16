@@ -33,7 +33,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .carte h2 .camion { height: 1.5em; width: auto; vertical-align: -0.35em; margin-left: .1em; }
 .carte h2 .ooni { height: 1.4em; width: auto; vertical-align: -0.3em; margin-left: .2em; }
 .etiquette { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 10px; color: #fff; margin-bottom: 6px; }
-.ing { display: inline-block; background: #e6d6b8; padding: 3px 8px; border-radius: 12px; margin: 2px 4px 4px 0; font-size: 14px; color: #4a2f1b; border: 1px solid #c9b08a; }
+.ing { cursor: pointer; -webkit-tap-highlight-color: transparent; display: inline-block; background: #e6d6b8; padding: 3px 8px; border-radius: 12px; margin: 2px 4px 4px 0; font-size: 14px; color: #4a2f1b; border: 1px solid #c9b08a; }
 .creme { background: #e8b830; color: #4a2f1b; }
 .tomate { background: #b3261e; }
 .carte p { margin: 4px 0; font-size: 15px; line-height: 1.4; }
@@ -95,6 +95,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .pastilles { position: absolute; top: 8px; right: 14px; width: 48.6px; font-size: 18px; display: flex; flex-direction: column; align-items: center; gap: 2px; pointer-events: none; }
 .pastilles img { display: block; height: 2.7em; width: auto; margin: 0; }
 .carte.avec-pastilles { min-height: calc(var(--nb) * 50px + 74px); }
+.ing:active { background: #d6c19a; }
 </style>
 </head>
 <body>
@@ -733,7 +734,7 @@ function afficher(){
             const bs=["creme","tomate"].filter(x=>filtres.has(x));
             if(bs.length&&!bs.includes(p.base))return false;
         }
-        const texte=norm(p.nom+" "+p.avant+" "+p.apres);
+        const texte=norm(p.nom+" "+p.avant+" "+p.apres+" "+(p.apresVege||""));
         // Recherche stricte par ingrédient via les limites de mot \b
         return mots.every(m => new RegExp('\\b' + m).test(texte));
     });
@@ -779,6 +780,30 @@ document.addEventListener("change",e=>{
     });
 });
 
+/* Toucher un ingrédient : il s'inscrit dans la barre de recherche et la recherche se lance */
+function termeRecherche(texte){
+    let t=texte.replace(/\([^)]*\)/g,"")
+        .replace(/\d+\s*\/\s*\d+/g,"")
+        .replace(/\d+(?:[.,]\d+)?\s*(?:g|kg|cl|ml)?(?=\s|$)/gi,"")
+        .replace(/\s+/g," ").trim()
+        .replace(/^['’"«»\s]+/,"")
+        .replace(/^(?:(?:le|la|les|du|de|des|un|une)\s+|(?:l|d)['’]\s*)+/i,"");
+    const mots=t.split(/\s+/).filter(Boolean);
+    if(!mots.length)return "";
+    /* mot principal ; si trop court (ex : « Or alimentaire »), on garde les deux premiers mots */
+    return (mots[0].replace(/[^\p{L}\p{N}]/gu,"").length<=3&&mots.length>1?mots.slice(0,2).join(" "):mots[0]).toLowerCase();
+}
+document.addEventListener("click",e=>{
+    const t=e.target.closest(".ing");
+    if(!t)return;
+    const terme=termeRecherche(t.textContent);
+    if(!terme)return;
+    const ongletPizzas=document.querySelector('.onglets button[data-onglet="pizzas"]');
+    if(document.getElementById("vue-pizzas").hidden&&ongletPizzas)ongletPizzas.click();
+    champ.value=terme;
+    afficher();
+    window.scrollTo({top:0,behavior:"smooth"});
+});
 champ.addEventListener("input",afficher);
 document.querySelectorAll(".bases button").forEach(b=>{
     b.addEventListener("click",()=>{
