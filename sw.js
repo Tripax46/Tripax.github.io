@@ -1,6 +1,6 @@
 // Service worker des pizzas de Fafa : fonctionne hors ligne.
 // Augmente le numéro de version à chaque modification des fichiers.
-const VERSION = 'fafa-v8';
+const VERSION = 'fafa-v9';
 const FICHIERS = [
   './', 'index.html', 'pizzas.json', 'banniere.jpg', 'manifest.webmanifest',
   'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'favicon.ico',
@@ -47,15 +47,14 @@ self.addEventListener('fetch', e => {
   if (frais) {
     // page et données : réseau d'abord (toujours à jour), cache en secours hors ligne
     e.respondWith(fetch(req).then(r => {
-      const copie = r.clone();
-      caches.open(VERSION).then(c => c.put(req, copie));
+      if (r.ok) { const copie = r.clone(); caches.open(VERSION).then(c => c.put(req, copie)); }
       return r;
     }).catch(() => caches.match(req).then(r => r || caches.match('index.html'))));
   } else {
     // images, icônes : cache d'abord
     e.respondWith(caches.match(req).then(r => r || fetch(req).then(rep => {
-      const copie = rep.clone();
-      caches.open(VERSION).then(c => c.put(req, copie));
+      // on ne garde en cache que les réponses réussies (jamais une erreur 404)
+      if (rep.ok) { const copie = rep.clone(); caches.open(VERSION).then(c => c.put(req, copie)); }
       return rep;
     })));
   }
