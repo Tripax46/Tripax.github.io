@@ -1,11 +1,11 @@
 // Service worker des pizzas de Fafa : fonctionne hors ligne.
 // Augmente le numéro de version à chaque modification des fichiers.
-const VERSION = 'fafa-v9';
+const VERSION = 'fafa-v10';
 const FICHIERS = [
   './', 'index.html', 'pizzas.json', 'banniere.jpg', 'manifest.webmanifest',
   'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'favicon.ico',
   'images/favicon-32.png', 'images/apple-touch-icon.png', 'images/accueil.png',
-  'images/fond-accueil.jpg', 'images/logo-signature.png', 'images/picto-camion.png', 'images/picto-vege.png', 'images/logo-ooni.png', 'images/affiche-merci.jpg', 'musique.mp3'
+  'images/fond-accueil.jpg', 'images/logo-signature.png', 'images/picto-camion.png', 'images/picto-vege.png', 'images/logo-ooni.png', 'images/affiche-merci.jpg', 'images/affiche-merci-pc.jpg', 'musique.mp3'
 ];
 
 // Lecture audio depuis le cache : Safari demande des morceaux (en-tête Range)

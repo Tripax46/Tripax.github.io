@@ -120,6 +120,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
   #ecran-merci { position: fixed; inset: 0; z-index: 100000; background: #f3e7d3; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .4s ease; }
   #ecran-merci.visible { opacity: 1; }
   #ecran-merci[hidden] { display: none; }
+  #ecran-merci picture { display: block; width: 100%; height: 100%; }
   #ecran-merci img { width: 100%; height: 100%; object-fit: contain; display: block; }
   header { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 </style>
@@ -152,11 +153,17 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
         window.setTimeout(() => { merci.hidden = true; occupe = false; }, 400);
       }
     });
-    window.addEventListener('load', () => { new Image().src = 'images/affiche-merci.jpg'; });
   })();
 </script>
 
-<div id="ecran-merci" hidden aria-label="Pizza Fafa vous remercie. À bientôt !"><img src="images/affiche-merci.jpg" alt="Pizza Fafa vous remercie. À bientôt !"></div>
+<div id="ecran-merci" hidden aria-label="Pizza Fafa vous remercie. À bientôt !">
+<picture>
+<!-- smartphone / iPhone (portrait ou paysage) : l'affiche verticale -->
+<source media="(max-width: 600px), (max-height: 500px) and (hover: none)" srcset="images/affiche-merci.jpg">
+<!-- PC, MacBook, iMac, tablette... : l'image large -->
+<img src="images/affiche-merci-pc.jpg" alt="Pizza Fafa vous remercie. À bientôt !">
+</picture>
+</div>
 
 <header>
 <img id="banniere" src="banniere.jpg" alt="Pizza Fafa, mes recettes de pizza gourmandes !" onerror="this.remove();document.getElementById('titre').hidden=false">
