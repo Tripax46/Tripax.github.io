@@ -111,6 +111,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <!-- Écran d'accueil de lancement : la bannière du site reste intacte -->
 <div id="ecran-demarrage" aria-label="Les pizzas de Fafa — écran d'accueil">
   <img src="images/accueil.png" alt="Les pizzas de Fafa, logo du pizzaiolo avec four à bois" />
+  <div id="invite-son" hidden>🔊 Touchez ou cliquez pour entrer</div>
 </div>
 <style>
   #ecran-demarrage { position: fixed; inset: 0; z-index: 99999; background: #f3e7d3 url("images/fond-accueil.jpg") center center / cover no-repeat; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity .55s ease; }
@@ -123,6 +124,9 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
   #ecran-merci picture { display: block; width: 100%; height: 100%; }
   #ecran-merci img { width: 100%; height: 100%; object-fit: contain; display: block; }
   header { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  #invite-son { position: absolute; left: 0; right: 0; bottom: 6%; text-align: center; font: 600 1.1rem/1.3 Georgia, serif; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.8); animation: pulse-son 1.4s ease-in-out infinite; pointer-events: none; }
+  #invite-son[hidden] { display: none; }
+  @keyframes pulse-son { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
 </style>
 <script>
   (() => {
@@ -130,7 +134,8 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     let minuteur, occupe = false;
     const fermer = () => { window.clearTimeout(minuteur); ecran.classList.add('masque'); };
     const ouvrir = () => { ecran.classList.remove('masque'); window.clearTimeout(minuteur); minuteur = window.setTimeout(fermer, 3000); };
-    minuteur = window.setTimeout(fermer, 3000);
+    // L'écran d'accueil ne se ferme PAS tout seul au chargement : il se ferme au clic dessus,
+    // ou 6 s après le lancement automatique de la musique si le navigateur l'autorise.
     ecran.addEventListener('click', fermer);
     // Toucher la bannière : l'affiche « merci » apparaît et la musique démarre.
     // Un clic sur l'écran : l'affiche disparaît, la musique s'arrête et on revient sur l'écran d'accueil.
@@ -138,20 +143,34 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     const getMusique = () => { if (!musique) musique = new Audio('musique.mp3'); return musique; };
     // À l'ouverture de l'application : la musique (14 s) est jouée UNE SEULE FOIS, sans boucle.
     // Si le navigateur bloque le son automatique (iPhone, Safari...), elle démarre au premier toucher.
-    const gestes = ['click', 'touchend', 'keydown'];
-    const retirerGestes = () => gestes.forEach(g => document.removeEventListener(g, jouerOuverture, true));
-    function jouerOuverture() {
+    // Cas 1 : le navigateur autorise le son automatique -> la musique démarre à l'ouverture (une seule fois),
+    //         et l'écran d'accueil se ferme 6 s plus tard (ou au clic).
+    // Cas 2 : le navigateur refuse (PC, Mac...) -> l'écran d'accueil reste affiché avec « Touchez ou cliquez pour entrer » ;
+    //         la musique démarre UNIQUEMENT quand on clique sur l'écran d'accueil, qui se ferme alors.
+    const gestes = ['pointerdown', 'touchend', 'click'];
+    const invite = document.getElementById('invite-son');
+    const retirerGestes = () => gestes.forEach(g => ecran.removeEventListener(g, jouerOuverture));
+    function jouerOuverture(e) {
       if (ouvertureFaite || ouvertureEnCours || modeAffiche) return;
+      const parGeste = !!(e && e.isTrusted);
       ouvertureEnCours = true;
       const m = getMusique(); m.loop = false;
       try { m.currentTime = 0; } catch (err) {}
       let p;
-      try { p = m.play(); } catch (err) { ouvertureEnCours = false; return; }
-      const ok = () => { ouvertureFaite = true; ouvertureEnCours = false; retirerGestes(); };
-      const bloque = () => { ouvertureEnCours = false; };
+      try { p = m.play(); } catch (err) { p = Promise.reject(err); }
+      const ok = () => {
+        ouvertureFaite = true; ouvertureEnCours = false; retirerGestes();
+        if (invite) invite.hidden = true;
+        if (!parGeste) { window.clearTimeout(minuteur); minuteur = window.setTimeout(fermer, 6000); } // lecture automatique : fermeture après 6 s
+        // si c'est un clic : l'écran d'accueil se ferme par son propre clic
+      };
+      const bloque = () => {
+        ouvertureEnCours = false;
+        if (!parGeste && invite) invite.hidden = false; // son automatique refusé : on attend le clic, l'écran reste affiché
+      };
       if (p && p.then) p.then(ok, bloque); else ok();
     }
-    gestes.forEach(g => document.addEventListener(g, jouerOuverture, true));
+    gestes.forEach(g => ecran.addEventListener(g, jouerOuverture));
     jouerOuverture();
     document.addEventListener('click', e => {
       const merci = document.getElementById('ecran-merci'); // l'élément est plus bas dans la page : on le cherche au moment du clic
