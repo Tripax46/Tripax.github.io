@@ -118,7 +118,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <!-- Écran d'accueil de lancement : la bannière du site reste intacte -->
 <div id="ecran-demarrage" aria-label="Les pizzas de Fafa — écran d'accueil">
   <img src="images/accueil.png" alt="Les pizzas de Fafa, logo du pizzaiolo avec four à bois" />
-  <div id="invite-son" hidden>
+  <div id="invite-son">
     <svg viewBox="0 0 240 90" aria-hidden="true">
       <rect class="fond" x="8" y="8" width="224" height="74" rx="16"/>
     </svg>
@@ -175,10 +175,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     //         la musique démarre UNIQUEMENT quand on clique sur l'écran d'accueil, qui se ferme alors.
     const gestes = ['pointerdown', 'touchend', 'click'];
     const invite = document.getElementById('invite-son');
+    const installee = (window.matchMedia && (matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: window-controls-overlay)').matches || matchMedia('(display-mode: minimal-ui)').matches)) || window.navigator.standalone === true;
     const retirerGestes = () => gestes.forEach(g => ecran.removeEventListener(g, jouerOuverture));
     function jouerOuverture(e) {
-      if (ouvertureFaite || ouvertureEnCours || modeAffiche) return;
       const parGeste = !!(e && e.isTrusted);
+      if (ouvertureFaite || modeAffiche || (ouvertureEnCours && !parGeste)) return;
       ouvertureEnCours = true;
       const m = getMusique(); m.loop = false;
       try { m.currentTime = 0; } catch (err) {}
@@ -186,13 +187,13 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
       try { p = m.play(); } catch (err) { p = Promise.reject(err); }
       const ok = () => {
         ouvertureFaite = true; ouvertureEnCours = false; retirerGestes();
-        if (invite) invite.hidden = true;
-        if (!parGeste) { window.clearTimeout(minuteur); minuteur = window.setTimeout(fermer, 6000); } // lecture automatique : fermeture après 6 s
+        // le bouton « Cliquez / Touchez » reste toujours visible ; application installée : l'écran attend le clic
+        if (!parGeste && !installee) { window.clearTimeout(minuteur); minuteur = window.setTimeout(fermer, 6000); } // lecture automatique : fermeture après 6 s
         // si c'est un clic : l'écran d'accueil se ferme par son propre clic
       };
       const bloque = () => {
         ouvertureEnCours = false;
-        if (!parGeste && invite) invite.hidden = false; // son automatique refusé : on attend le clic, l'écran reste affiché
+        if (invite) invite.hidden = false; // son automatique refusé : on attend le clic, l'écran reste affiché
       };
       if (p && p.then) p.then(ok, bloque); else ok();
     }
@@ -361,7 +362,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <button data-base="vege">Végé</button>
 <button data-base="creme">Base crème</button>
 <button data-base="tomate">Base tomate</button>
-<button data-base="signature">Pizza Signature</button>
+<button data-base="signature">Pizzas Signature</button>
 </div>
 </div>
 <div id="compteur"><span id="compteur-txt"></span><i class="fil v"></i><i class="fil b"></i><i class="fil r"></i></div>
