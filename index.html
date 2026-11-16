@@ -632,7 +632,12 @@ document.querySelectorAll(".bases button").forEach(b=>{
         const k=b.dataset.base;
         if(k==="toutes")filtres.clear();
         else if(filtres.has(k))filtres.delete(k);
-        else filtres.add(k);
+        else{
+            /* crème et tomate s'excluent : cocher l'une décoche l'autre */
+            if(k==="creme")filtres.delete("tomate");
+            if(k==="tomate")filtres.delete("creme");
+            filtres.add(k);
+        }
         document.querySelectorAll(".bases button").forEach(x=>{
             x.classList.toggle("actif",x.dataset.base==="toutes"?filtres.size===0:filtres.has(x.dataset.base));
         });
