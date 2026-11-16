@@ -100,7 +100,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .etoiles { margin-top: 6px; }
 .etoiles button { background: none; border: 0; padding: 0 3px; font-size: 30px; line-height: 1; color: #d8c7a6; cursor: pointer; }
 .etoiles button.on { color: #e8b830; }
-#creme-pistache h2 { display: inline-block; background: #e6d6b8; color: #4a2f1b; border: 1px solid #c9b08a; border-radius: 12px; padding: 4px 12px; }
+#vue-creme .pate h2 { display: inline-block; background: #e6d6b8; color: #4a2f1b; border: 1px solid #c9b08a; border-radius: 12px; padding: 4px 12px; }
 .pastilles { position: absolute; top: 8px; right: 14px; width: 48.6px; font-size: 18px; display: flex; flex-direction: column; align-items: center; gap: 2px; pointer-events: none; }
 .pastilles img { display: block; height: 2.7em; width: auto; margin: 0; }
 .carte.avec-pastilles { min-height: calc(var(--nb) * 50px + 74px); }
@@ -357,6 +357,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <div id="liste"></div>
 </div>
 <div id="vue-creme" hidden>
+<nav class="sous-onglets" id="sous-creme">
+<button type="button" data-creme="fond" class="actif">Crèmes de fond</button>
+<button type="button" data-creme="finition">Crèmes de finition</button>
+</nav>
+<div id="creme-fond">
 <div class="pate" id="creme-pistache">
 <h2>Crème à la pistache</h2>
 <h3>Ingrédients</h3>
@@ -373,6 +378,171 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <li>Concasser quelques pistaches (mortier, maillet ou fond de bouteille) pour les répartir sur la pizza après cuisson.</li>
 <li>Si la crème est trop épaisse pour s'étaler facilement, ajouter un peu d'eau.</li>
 </ol>
+</div>
+<div class="pate" id="creme-pistache-ricotta">
+<h2>Crème de pistache (à mettre avant ou après cuisson)</h2>
+<h3>Ingrédients</h3>
+<ul>
+<li>100 g de pâte de pistache pure (100 % pistache, sans sucre)</li>
+<li>100 g de ricotta fraîche bien égouttée</li>
+<li>30 g de parmesan râpé</li>
+<li>2 à 3 cuillères à soupe d'eau chaude (ou de crème liquide)</li>
+<li>1 filet d'huile d'olive</li>
+<li>Sel et poivre</li>
+</ul>
+<h3>Préparation</h3>
+<p>Fouettez la pâte de pistache avec la ricotta et le parmesan pour détendre le mélange. Ajoutez progressivement l'eau chaude et l'huile d'olive jusqu'à obtenir une texture lisse et facile à étaler à la louche.</p>
+<h3>Conseil cuisson</h3>
+<p>Étalez-la en fine couche avant cuisson avec de la fior di latte (et ajoutez la mortadelle et la burrata après cuisson).</p>
+</div>
+<div class="pate" id="creme-courge">
+<h2>Crème de courge ou potimarron (base d'automne)</h2>
+<h3>Ingrédients</h3>
+<ul>
+<li>400 g de chair de courge (butternut ou potimarron)</li>
+<li>40 g de parmesan râpé</li>
+<li>2 cuillères à soupe d'huile d'olive vierge extra</li>
+<li>1 pincée de noix de muscade</li>
+<li>1 branche de romarin</li>
+<li>Sel et poivre</li>
+</ul>
+<h3>Préparation</h3>
+<p>Faites rôtir la courge coupée en cubes au four à 180 °C pendant 25 minutes avec l'huile d'olive et le romarin (le rôtissage évite l'excès d'eau). Retirez le romarin puis mixez finement la chair chaude avec le parmesan, la muscade, le sel et le poivre.</p>
+<h3>Conseil cuisson</h3>
+<p>Si la purée est trop épaisse, détendez-la avec une cuillère d'eau chaude avant de l'étaler sur la pâte crue.</p>
+</div>
+<div class="pate" id="creme-truffe">
+<h2>Crème de truffe (base blanche raffinée)</h2>
+<h3>Ingrédients</h3>
+<ul>
+<li>150 g de ricotta (ou de mascarpone pour plus de gourmandise)</li>
+<li>50 g de crème fraîche épaisse</li>
+<li>30 à 40 g de tartufata (sauce aux champignons et truffe noire)</li>
+<li>30 g de parmesan râpé</li>
+<li>Poivre noir</li>
+</ul>
+<h3>Préparation</h3>
+<p>Mélangez simplement tous les ingrédients à froid dans un bol jusqu'à obtenir une crème homogène. Évitez de la saler avant de goûter, car la tartufata et le parmesan le sont déjà.</p>
+<h3>Conseil cuisson</h3>
+<p>Ne la faites pas cuire directement à nu à très haute température (la truffe perd son arôme à la chaleur). Étalez-la sur le fond de pâte et recouvrez-la immédiatement de mozzarella pour la protéger pendant la cuisson.</p>
+</div>
+<div class="pate" id="creme-cepes">
+<h2>Crème de cèpes (base forestière)</h2>
+<h3>Ingrédients</h3>
+<ul>
+<li>250 g de cèpes frais (ou surgelés, bien décongelés et pressés)</li>
+<li>1 échalote</li>
+<li>1 gousse d'ail</li>
+<li>10 cl de crème liquide entière</li>
+<li>30 g de parmesan râpé</li>
+<li>2 cuillères à soupe d'huile d'olive</li>
+<li>Persil plat</li>
+<li>Sel et poivre</li>
+</ul>
+<h3>Préparation</h3>
+<p>Faites revenir l'échalote et l'ail ciselés dans l'huile d'olive, puis ajoutez les cèpes coupés en morceaux à feu vif jusqu'à évaporation complète de leur eau. Versez la crème liquide, laissez réduire 3 minutes à feu doux, ajoutez le parmesan et mixez le tout pour obtenir un velouté bien épais.</p>
+<h3>Conseil cuisson</h3>
+<p>Laissez refroidir la crème avant de l'étaler sur la pâte à pizza crue pour ne pas ramollir le pâton avant l'enfournement.</p>
+</div>
+</div>
+<div id="creme-finition" hidden>
+<div class="pate" id="creme-parmesan">
+<h2>Crème de parmesan fluide (Fonduta légère)</h2>
+<p>Cette crème onctueuse est idéale sur une pizza aux champignons, à la truffe, aux asperges ou avec une charcuterie italienne (bresaola, jambon de Parme).</p>
+<h3>Ingrédients (pour 1 biberon de 250 ml)</h3>
+<ul>
+<li>150 g de crème liquide entière (30 % MG)</li>
+<li>80 g de Parmigiano Reggiano (affiné 24 mois) finement râpé</li>
+<li>1 pincée de poivre noir fraîchement moulu</li>
+<li>Facultatif : 1 pointe de couteau de gomme xanthane (pour éviter que le gras ne se sépare au contact de la pizza brûlante)</li>
+</ul>
+<h3>Préparation</h3>
+<ol>
+<li>Faites chauffer la crème liquide à feu très doux sans la faire bouillir.</li>
+<li>Retirez du feu et incorporez le parmesan râpé en fouettant vivement.</li>
+<li>Mixez au mixeur plongeant pendant 1 minute (ajoutez la gomme xanthane à ce moment-là si vous en utilisez) pour lisser et émulsionner l'appareil.</li>
+<li>Passez au chinois fin, versez en pipette et laissez tiédir à température ambiante avant utilisation (elle va légèrement épaissir en refroidissant).</li>
+</ol>
+</div>
+<div class="pate" id="creme-pesto-pistache">
+<h2>Pesto de pistache de Bronte émulsionné</h2>
+<p>Ce pesto détendu s'accorde parfaitement avec une base blanche, de la mortadelle, de la stracciatella ou du speck.</p>
+<h3>Ingrédients (pour 1 biberon de 250 ml)</h3>
+<ul>
+<li>100 g de pistaches vertes non salées (émondées)</li>
+<li>60 ml d'huile d'olive extra-vierge douce</li>
+<li>50 à 60 ml d'eau bien froide (ou de bouillon de légumes froid)</li>
+<li>20 g de Pecorino Romano ou de parmesan râpé</li>
+<li>1 pincée de sel fin</li>
+</ul>
+<h3>Préparation</h3>
+<ol>
+<li>Mixez les pistaches au robot jusqu'à obtenir une pâte épaisse.</li>
+<li>Ajoutez le fromage et le sel, puis mixez à nouveau.</li>
+<li>Versez l'huile d'olive en filet tout en mixant pour créer une émulsion.</li>
+<li>Détendez progressivement avec l'eau froide jusqu'à obtenir une texture fluide qui nappe la cuillère mais passe sans bloquer dans l'embout de votre biberon.</li>
+</ol>
+</div>
+<div class="pate" id="creme-poivrons">
+<h2>Crème de poivrons jaunes rôtis et basilic</h2>
+<p>Cette sauce douce, sucrée et très colorée sublime les pizzas d'été, les pizzas aux légumes grillés, au thon ou aux anchois.</p>
+<h3>Ingrédients (pour 1 biberon de 250 ml)</h3>
+<ul>
+<li>2 beaux poivrons jaunes (environ 350 g)</li>
+<li>40 ml d'huile d'olive extra-vierge</li>
+<li>5 feuilles de basilic frais</li>
+<li>1 filet de jus de citron (environ 1 cuillère à café)</li>
+<li>Sel fin et poivre blanc</li>
+</ul>
+<h3>Préparation</h3>
+<ol>
+<li>Enfournez les poivrons entiers à 220 °C pendant 25 à 30 minutes jusqu'à ce que la peau noircisse et boursoufle.</li>
+<li>Enfermez-les 10 minutes dans un sac congélation ou un bol filmé, puis retirez la peau, les graines et les filaments blancs.</li>
+<li>Placez la chair tiède dans un blender avec le basilic, le citron, le sel et le poivre.</li>
+<li>Mixez à pleine puissance en versant l'huile d'olive en filet pour obtenir une crème brillante et parfaitement lisse, puis transférez en pipette.</li>
+</ol>
+</div>
+<div class="pate" id="creme-gorgonzola">
+<h2>Crème de gorgonzola doux et mascarpone</h2>
+<p>Très appréciée sur une pizza aux noix, aux poires, aux figues ou sur une quatre fromages revisitée.</p>
+<h3>Ingrédients (pour 1 biberon de 250 ml)</h3>
+<ul>
+<li>100 g de gorgonzola dolce (crémeux) sans la croûte</li>
+<li>60 g de mascarpone</li>
+<li>50 à 60 ml de lait entier (ou de crème liquide)</li>
+<li>Poivre noir du moulin</li>
+</ul>
+<h3>Préparation</h3>
+<ol>
+<li>Coupez le gorgonzola en dés et placez-le dans un récipient haut avec le mascarpone et 50 ml de lait.</li>
+<li>Mixez directement au mixeur plongeant à froid (ou tiédissez très légèrement 15 secondes au micro-ondes si le fromage sort du réfrigérateur).</li>
+<li>Ajustez la fluidité en ajoutant la dernière cuillère de lait si nécessaire, poivrez et versez dans votre biberon de dressage.</li>
+</ol>
+</div>
+<div class="pate" id="creme-cepes-pipette">
+<h2>Crème veloutée aux cèpes (pour pipette)</h2>
+<p>Une crème de cèpes bien lisse, pensée pour être dressée en zigzag à la pipette.</p>
+<h3>Ingrédients (pour 1 biberon de 250 ml)</h3>
+<ul>
+<li>150 g de cèpes frais nettoyés (ou 20 g de cèpes séchés réhydratés dans 150 ml d'eau chaude)</li>
+<li>100 ml de crème liquide entière (30 % MG)</li>
+<li>50 ml de bouillon de légumes (ou l'eau de trempage filtrée des cèpes séchés)</li>
+<li>1 petite échalote ciselée finement</li>
+<li>15 g de beurre (ou 1 cuillère à soupe d'huile d'olive)</li>
+<li>15 g de parmesan râpé (facultatif, pour renforcer le goût umami)</li>
+<li>Sel fin et poivre noir du moulin</li>
+</ul>
+<h3>Préparation</h3>
+<ol>
+<li><b>Suer la base :</b> faites fondre le beurre dans une poêle à feu moyen. Ajoutez l'échalote ciselée et faites-la revenir 2 minutes sans coloration.</li>
+<li><b>Cuire les champignons :</b> ajoutez les cèpes coupés en fines lamelles. Faites-les sauter pendant 5 à 7 minutes jusqu'à ce que toute leur eau de végétation soit évaporée et qu'ils dorent légèrement.</li>
+<li><b>Mijoter :</b> versez le bouillon (ou l'eau de trempage filtrée) et la crème liquide. Laissez frémir à feu doux pendant 5 minutes pour concentrer les arômes.</li>
+<li><b>Mixer et lisser :</b> transférez le tout dans un blender ou un récipient haut avec le parmesan, le sel et le poivre. Mixez à pleine puissance pendant au moins 1 minute pour obtenir une texture parfaitement soyeuse.</li>
+<li><b>Filtrer :</b> passez la crème au chinois fin en pressant bien avec le dos d'une cuillère afin d'éliminer les micro-morceaux qui pourraient boucher l'embout du biberon.</li>
+</ol>
+<h3>Conseil de dressage</h3>
+<p>Cette crème a tendance à épaissir légèrement au réfrigérateur. Sortez le biberon 20 minutes avant le service ou passez-le quelques secondes sous l'eau tiède pour que le tracé en zigzag soit parfaitement fluide sur la pizza chaude.</p>
+</div>
 </div>
 </div>
 <div id="vue-favoris" hidden>
@@ -712,12 +882,17 @@ document.getElementById("t-p").addEventListener("input",()=>{
     }
 });
 
-document.querySelectorAll(".sous-onglets button").forEach(b=>b.addEventListener("click",()=>{
+document.querySelectorAll("#vue-pate .sous-onglets button").forEach(b=>b.addEventListener("click",()=>{
     pauseVideos();
-    document.querySelectorAll(".sous-onglets button").forEach(x=>x.classList.toggle("actif",x===b));
+    document.querySelectorAll("#vue-pate .sous-onglets button").forEach(x=>x.classList.toggle("actif",x===b));
     document.getElementById("pate-biga").hidden=b.dataset.sous!=="biga";
     document.getElementById("pate-napolitaine").hidden=b.dataset.sous!=="napolitaine";
     document.getElementById("pate-teglia").hidden=b.dataset.sous!=="teglia";
+}));
+document.querySelectorAll("#sous-creme button").forEach(b=>b.addEventListener("click",()=>{
+    document.querySelectorAll("#sous-creme button").forEach(x=>x.classList.toggle("actif",x===b));
+    document.getElementById("creme-fond").hidden=b.dataset.creme!=="fond";
+    document.getElementById("creme-finition").hidden=b.dataset.creme!=="finition";
 }));
 </script>
 <script>
