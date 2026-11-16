@@ -2625,5 +2625,11 @@
   "base": "tomate",
   "avant": "Sauce tomate maison, mozzarella fior di latte, burrata crémeuse, roquette, tomates cerises, parmesan, huile d'olive extra vierge",
   "apres": ""
+ },
+ {
+  "nom": "Pêcheur (Del Portel)",
+  "base": "tomate",
+  "avant": "Sauce tomate, mozzarella, gambas fraîches (x2), Saint-Jacques fraîches (x2), crevettes, moules, crème",
+  "apres": "Beurre à l'ail et persil"
  }
 ]
