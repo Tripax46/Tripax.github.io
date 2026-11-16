@@ -618,7 +618,7 @@ champ.addEventListener("input",afficher);
 document.querySelectorAll(".bases button").forEach(b=>{
     b.addEventListener("click",()=>{
         const k=b.dataset.base;
-        if(k==="toutes")filtres.clear();
+        if(k==="toutes"){filtres.clear();champ.value="";} /* « Toutes » = retour à la liste complète : filtres ET recherche (ex. « Camion Jaune ») effacés */
         else if(filtres.has(k))filtres.delete(k);
         else{
             /* crème et tomate s'excluent : cocher l'une décoche l'autre */
