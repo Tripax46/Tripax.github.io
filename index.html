@@ -111,7 +111,14 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <!-- Écran d'accueil de lancement : la bannière du site reste intacte -->
 <div id="ecran-demarrage" aria-label="Les pizzas de Fafa — écran d'accueil">
   <img src="images/accueil.png" alt="Les pizzas de Fafa, logo du pizzaiolo avec four à bois" />
-  <div id="invite-son" hidden>🔊 Touchez ou cliquez pour entrer</div>
+  <div id="invite-son" hidden>
+    <svg viewBox="0 0 240 90" aria-hidden="true">
+      <rect class="fil v" x="2" y="2" width="236" height="86" rx="22"/>
+      <rect class="fil b" x="5" y="5" width="230" height="80" rx="19"/>
+      <rect class="fil r" x="8" y="8" width="224" height="74" rx="16"/>
+    </svg>
+    <span class="mot"><span class="mot-pc">Cliquez</span><span class="mot-tactile">Touchez</span></span>
+  </div>
 </div>
 <style>
   #ecran-demarrage { position: fixed; inset: 0; z-index: 99999; background: #f3e7d3 url("images/fond-accueil.jpg") center center / cover no-repeat; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity .55s ease; }
@@ -124,16 +131,37 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
   #ecran-merci picture { display: block; width: 100%; height: 100%; }
   #ecran-merci img { width: 100%; height: 100%; object-fit: contain; display: block; }
   header { cursor: pointer; -webkit-tap-highlight-color: transparent; }
-  #invite-son { position: absolute; left: 0; right: 0; bottom: 6%; text-align: center; font: 600 1.1rem/1.3 Georgia, serif; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.8); animation: pulse-son 1.4s ease-in-out infinite; pointer-events: none; }
+  /* Message « Cliquez » : cadre rouge + liseret blanc + liseret vert, NON fermé : un petit vide décalé fait le tour de chaque fil */
+  #invite-son { position: absolute; left: 50%; bottom: 5vh; transform: translateX(-50%); width: 240px; height: 90px; display: flex; align-items: center; justify-content: center; pointer-events: none; transition: opacity .25s ease; }
   #invite-son[hidden] { display: none; }
-  @keyframes pulse-son { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+  #invite-son svg { position: absolute; inset: 0; width: 240px; height: 90px; overflow: visible; }
+  #invite-son .fil { fill: none; stroke-width: 3; }
+  #invite-son .v { stroke: #009246; stroke-dasharray: 566.23 40; animation: tour-v 3.6s linear infinite; }
+  #invite-son .b { stroke: #fff; stroke-dasharray: 547.38 40; animation: tour-b 3.6s linear infinite; animation-delay: -1.2s; }
+  #invite-son .r { stroke: #b3261e; fill: #fff8ea; stroke-dasharray: 528.53 40; animation: tour-r 3.6s linear infinite; animation-delay: -2.4s; }
+  @keyframes tour-v { to { stroke-dashoffset: -606.23; } }
+  @keyframes tour-b { to { stroke-dashoffset: -587.38; } }
+  @keyframes tour-r { to { stroke-dashoffset: -568.53; } }
+  #invite-son .mot { position: relative; font: 40px/1 Pacifico, cursive; color: #b3261e; padding-bottom: 6px; white-space: nowrap; }
+  #invite-son .mot-tactile { display: none; }
+  @media (hover: none), (pointer: coarse) { #invite-son .mot-pc { display: none; } #invite-son .mot-tactile { display: inline; } }
+  /* PC : une bande réservée sous l'image, pour que le message ne la recouvre jamais */
+  @media (hover: hover) and (pointer: fine) {
+    #ecran-demarrage { --zone: clamp(140px, 21vh, 180px); padding-bottom: var(--zone); box-sizing: border-box; }
+    #invite-son { bottom: calc(var(--zone) / 2 - 45px); }
+  }
+  /* Sortie : l'image tourne sur elle-même en rapetissant (effet d'éloignement), puis l'écran s'efface */
+  @keyframes eloigne { 0% { transform: rotate(0deg) scale(1); opacity: 1; } 70% { opacity: .9; } 100% { transform: rotate(720deg) scale(0); opacity: 0; } }
+  #ecran-demarrage.sortie img { animation: eloigne 1.2s cubic-bezier(.5, .05, .85, .45) forwards; }
+  #ecran-demarrage.sortie #invite-son { opacity: 0; }
+  @media (prefers-reduced-motion: reduce) { #invite-son .fil { animation: none; } #ecran-demarrage.sortie img { animation: none; } }
 </style>
 <script>
   (() => {
     const ecran = document.getElementById('ecran-demarrage');
     let minuteur, occupe = false;
-    const fermer = () => { window.clearTimeout(minuteur); ecran.classList.add('masque'); };
-    const ouvrir = () => { ecran.classList.remove('masque'); window.clearTimeout(minuteur); minuteur = window.setTimeout(fermer, 3000); };
+    const fermer = () => { if (ecran.classList.contains('sortie')) return; window.clearTimeout(minuteur); ecran.classList.add('sortie'); minuteur = window.setTimeout(() => ecran.classList.add('masque'), 700); }; // l'image s'éloigne en tournant, puis l'écran s'efface
+    const ouvrir = () => { ecran.classList.remove('masque', 'sortie'); window.clearTimeout(minuteur); minuteur = window.setTimeout(fermer, 3000); };
     // L'écran d'accueil ne se ferme PAS tout seul au chargement : il se ferme au clic dessus,
     // ou 6 s après le lancement automatique de la musique si le navigateur l'autorise.
     ecran.addEventListener('click', fermer);
@@ -191,6 +219,22 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
         merci.classList.remove('visible');
         window.setTimeout(() => { merci.hidden = true; occupe = false; }, 400);
       }
+    });
+    // Si une vidéo YouTube (page Pâtes) démarre, la musique d'accueil se coupe.
+    const abonnerYT = f => { try { f.postMessage(JSON.stringify({ event: 'listening', id: 1, channel: 'widget' }), 'https://www.youtube.com'); } catch (err) {} };
+    window.addEventListener('message', e => {
+      if (e.origin !== 'https://www.youtube.com') return;
+      let d = e.data; if (typeof d === 'string') { try { d = JSON.parse(d); } catch (err) { return; } }
+      if (!d) return;
+      if (d.event === 'onReady' || d.event === 'initialDelivery') abonnerYT(e.source);
+      const lecture = (d.event === 'onStateChange' && d.info === 1) || (d.event === 'infoDelivery' && d.info && d.info.playerState === 1);
+      if (lecture && musique && !modeAffiche) { try { musique.pause(); } catch (err) {} }
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach(f => {
+        f.addEventListener('load', () => abonnerYT(f.contentWindow));
+        abonnerYT(f.contentWindow);
+      });
     });
   })();
 </script>
