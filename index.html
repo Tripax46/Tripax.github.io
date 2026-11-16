@@ -130,11 +130,6 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
   #ecran-demarrage img { width: 100%; height: 100%; object-fit: contain; display: block; }
   #ecran-demarrage { transition: opacity .55s ease, visibility .55s; }
   #ecran-demarrage.masque { opacity: 0; pointer-events: none; visibility: hidden; }
-  #ecran-merci { position: fixed; inset: 0; z-index: 100000; background: #f3e7d3; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .4s ease; }
-  #ecran-merci.visible { opacity: 1; }
-  #ecran-merci[hidden] { display: none; }
-  #ecran-merci picture { display: block; width: 100%; height: 100%; }
-  #ecran-merci img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
   header { cursor: pointer; -webkit-tap-highlight-color: transparent; }
   /* Message « Cliquez » : trois mèches de dynamite (vert, blanc, rouge) qui se consument avec des étincelles (dessinées par le script) */
   #invite-son { position: absolute; left: 50%; bottom: 5vh; transform: translateX(-50%); width: 240px; height: 90px; display: flex; align-items: center; justify-content: center; pointer-events: none; transition: opacity .25s ease; }
@@ -163,9 +158,10 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     // L'écran d'accueil ne se ferme PAS tout seul au chargement : il se ferme au clic dessus,
     // ou 6 s après le lancement automatique de la musique si le navigateur l'autorise.
     ecran.addEventListener('click', fermer);
-    // Toucher la bannière : l'affiche « merci » apparaît et la musique démarre.
-    // Un clic sur l'écran : l'affiche disparaît, la musique s'arrête et on revient sur l'écran d'accueil.
-    let musique = null, modeAffiche = false, ouvertureFaite = false, ouvertureEnCours = false;
+    // Toucher la bannière : la musique (pizzaiolo.mp3) démarre en boucle ; un nouveau toucher l'arrête.
+    // Elle ne démarre jamais pendant la lecture d'une vidéo YouTube, et se coupe si une vidéo démarre.
+    let musique = null, ouvertureFaite = false, ouvertureEnCours = false;
+    let musiqueBanniere = null, videosEnLecture = new Set();
     const getMusique = () => { if (!musique) musique = new Audio('musique.mp3'); return musique; };
     // À l'ouverture de l'application : la musique (14 s) est jouée UNE SEULE FOIS, sans boucle.
     // Si le navigateur bloque le son automatique (iPhone, Safari...), elle démarre au premier toucher.
@@ -179,7 +175,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     const retirerGestes = () => gestes.forEach(g => ecran.removeEventListener(g, jouerOuverture));
     function jouerOuverture(e) {
       const parGeste = !!(e && e.isTrusted);
-      if (ouvertureFaite || modeAffiche || (ouvertureEnCours && !parGeste)) return;
+      if (ouvertureFaite || (ouvertureEnCours && !parGeste)) return;
       ouvertureEnCours = true;
       const m = getMusique(); m.loop = false;
       try { m.currentTime = 0; } catch (err) {}
@@ -199,38 +195,40 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     }
     gestes.forEach(g => ecran.addEventListener(g, jouerOuverture));
     jouerOuverture();
+    // Clic sur la bannière : lecture en boucle de la musique ; nouveau clic : arrêt.
     document.addEventListener('click', e => {
-      const merci = document.getElementById('ecran-merci'); // l'élément est plus bas dans la page : on le cherche au moment du clic
-      if (!merci || occupe) return;
-      if (merci.hidden) {
-        if (!e.target.closest('header')) return;
-        merci.hidden = false; void merci.offsetWidth; merci.classList.add('visible');
-        modeAffiche = true; ouvertureFaite = true; retirerGestes();
-        const m = getMusique(); m.loop = true;
-        try { m.currentTime = 0; } catch (err) {}
-        const p = m.play();
-        if (p && p.catch) p.catch(() => {});
-      } else {
-        occupe = true;
-        modeAffiche = false;
-        if (musique) { musique.pause(); musique.loop = false; try { musique.currentTime = 0; } catch (err) {} }
-        // retour direct à l'écran des pizzas (sans repasser par l'écran d'accueil)
-        merci.classList.remove('visible');
-        window.setTimeout(() => { merci.hidden = true; occupe = false; }, 400);
-        const tp = document.querySelector('.onglets button[data-onglet="pizzas"]');
-        if (tp && !tp.classList.contains('actif')) tp.click();
-        window.scrollTo(0, 0);
+      if (!e.target.closest('header')) return;
+      if (!musiqueBanniere) { musiqueBanniere = new Audio('pizzaiolo.mp3'); musiqueBanniere.loop = true; musiqueBanniere.preload = 'auto'; }
+      if (!musiqueBanniere.paused) { // déjà en cours : on arrête
+        musiqueBanniere.pause();
+        try { musiqueBanniere.currentTime = 0; } catch (err) {}
+        return;
       }
+      if (videosEnLecture.size) return; // une vidéo YouTube est en lecture : pas de musique
+      // la petite musique d'ouverture est coupée si elle jouait encore
+      if (musique) { try { musique.pause(); } catch (err) {} }
+      ouvertureFaite = true; retirerGestes();
+      const p = musiqueBanniere.play();
+      if (p && p.catch) p.catch(() => {});
     });
-    // Si une vidéo YouTube (page Pâtes) démarre, la musique d'accueil se coupe.
+    // Si une vidéo YouTube (page Pâtes) démarre, toute musique se coupe ; tant qu'elle joue, la bannière ne lance pas de musique.
     const abonnerYT = f => { try { f.postMessage(JSON.stringify({ event: 'listening', id: 1, channel: 'widget' }), 'https://www.youtube.com'); } catch (err) {} };
     window.addEventListener('message', e => {
       if (e.origin !== 'https://www.youtube.com') return;
       let d = e.data; if (typeof d === 'string') { try { d = JSON.parse(d); } catch (err) { return; } }
       if (!d) return;
       if (d.event === 'onReady' || d.event === 'initialDelivery') abonnerYT(e.source);
-      const lecture = (d.event === 'onStateChange' && d.info === 1) || (d.event === 'infoDelivery' && d.info && d.info.playerState === 1);
-      if (lecture && musique && !modeAffiche) { try { musique.pause(); } catch (err) {} }
+      let etat = null;
+      if (d.event === 'onStateChange' && typeof d.info === 'number') etat = d.info;
+      else if (d.event === 'infoDelivery' && d.info && typeof d.info.playerState === 'number') etat = d.info.playerState;
+      if (etat === null) return;
+      if (etat === 1) { // lecture
+        videosEnLecture.add(e.source);
+        if (musique) { try { musique.pause(); } catch (err) {} }
+        if (musiqueBanniere && !musiqueBanniere.paused) { musiqueBanniere.pause(); }
+      } else if (etat !== 3) { // pause, fin, arrêt (3 = mise en mémoire tampon : on ne change rien)
+        videosEnLecture.delete(e.source);
+      }
     });
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach(f => {
@@ -332,15 +330,6 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', demarrer); else demarrer();
 })();
 </script>
-
-<div id="ecran-merci" hidden aria-label="Pizza Fafa vous remercie. À bientôt !">
-<picture>
-<!-- smartphone / iPhone (portrait ou paysage) : l'affiche verticale -->
-<source media="(max-width: 600px), (max-height: 500px) and (hover: none)" srcset="images/affiche-merci.jpg">
-<!-- PC, MacBook, iMac, tablette... : l'image large -->
-<img src="images/affiche-merci-pc.jpg" alt="Pizza Fafa vous remercie. À bientôt !">
-</picture>
-</div>
 
 <header>
 <img id="banniere" src="banniere.jpg" alt="Pizza Fafa, mes recettes de pizza gourmandes !" onerror="this.remove();document.getElementById('titre').hidden=false">
