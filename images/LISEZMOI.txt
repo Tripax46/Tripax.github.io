@@ -1,0 +1,4 @@
+Place ici les 10 images du dossier images/ de ton depot actuel :
+accueil.png, affiche-merci-pc.jpg, affiche-merci.jpg, apple-touch-icon.png, favicon-32.png,
+fond-accueil.jpg, logo-ooni.png, logo-signature.png, picto-camion.png, picto-vege.png
+(supprime ce fichier ensuite)
