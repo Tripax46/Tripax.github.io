@@ -100,7 +100,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .etoiles { margin-top: 6px; }
 .etoiles button { background: none; border: 0; padding: 0 3px; font-size: 30px; line-height: 1; color: #d8c7a6; cursor: pointer; }
 .etoiles button.on { color: #e8b830; }
-#vue-creme .pate summary { display: block; list-style: none; cursor: pointer; background: #e6d6b8; color: #4a2f1b; border: 1px solid #c9b08a; border-radius: 12px; padding: 8px 12px 8px 34px; position: relative; font-size: 1.5em; font-weight: bold; -webkit-tap-highlight-color: transparent; }
+#vue-creme .pate summary { display: block; list-style: none; cursor: pointer; background: #e6d6b8; color: #4a2f1b; border: 1px solid #c9b08a; border-radius: 12px; padding: 8px 12px 8px 34px; position: relative; font-size: 18px; line-height: 1.35; font-weight: bold; -webkit-tap-highlight-color: transparent; }
 #vue-creme .pate summary::-webkit-details-marker { display: none; }
 #vue-creme .pate summary::before { content: "\25B8"; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); }
 #vue-creme .pate details[open] > summary::before { content: "\25BE"; }
@@ -118,11 +118,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .bases button[data-base="signature"] { grid-column: 1 / -1; }
 
 /* ===== Cartes repliables : numéro, nom, créateur et logos ; un clic déplie ingrédients et préparation ===== */
-.carte { padding: 0; overflow: hidden; background: var(--fond); border: 2px solid var(--bord); box-shadow: 0 1px 3px rgba(90, 58, 34, .25); }
-.carte.t0 { --fond: #e9d3b4; --bord: #b98d5e; }
-.carte.t1 { --fond: #f4e7d0; --bord: #c9a273; }
-.carte.t2 { --fond: #fcf4e2; --bord: #d8bc90; }
-.carte.t3 { --fond: #dcbf98; --bord: #a67a4e; }
+.carte { padding: 0; overflow: hidden; background: #e9d6b6; border: 0; box-shadow: 0 1px 3px rgba(90, 58, 34, .18); --bord: rgba(90, 58, 34, .25); }
 .carte.avec-pastilles { min-height: 0; }
 .carte summary { list-style: none; display: flex; align-items: center; gap: 10px; padding: 10px 12px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .carte summary::-webkit-details-marker { display: none; }
@@ -740,7 +736,7 @@ function carte(p){
     const i=pizzas.indexOf(p),n=i+1;
     const sg=!/\((?:Ooni|Camion Jaune)\)/.test(p.nom),vg=sansViande(p),nb=(sg?1:0)+(vg?1:0);
     const apres=(()=>{const v=p.apresVege&&filtres.has("vege"),a=v?p.apresVege:p.apres;return a?'<p class="cuisson"><b>Après cuisson'+(v?' (version végé)':'')+' :</b><br> '+formaterIngredients(a)+'</p>':''})();
-    return '<div class="carte t'+(n%4)+'"><details>'+
+    return '<div class="carte"><details>'+
     '<summary><h2><span class="num">'+n+'</span>'+nomAffiche(p.nom)+'</h2>'+
     (nb?'<div class="pastilles">'+(sg?'<img class="sig filtre" data-filtre="signature" role="button" tabindex="0" src="'+LOGO_SIGNATURE+'" alt="Pizza Signature" title="Pizza Signature">':'')+(vg?'<img class="vege filtre" data-filtre="vege" role="button" tabindex="0" src="images/picto-vege.png" alt="Pizza végé" title="Pizza végé">':'')+'</div>':'')+
     '</summary><div class="contenu">'+
