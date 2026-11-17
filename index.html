@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#2f6b3a">
+<meta name="theme-color" content="#1f4d34">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Pizzas Fafa">
@@ -172,6 +172,84 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .coeur:active { transform: scale(.85); }
 .coeur.bat { animation: battement 1s ease-in-out; }
 @media (prefers-reduced-motion: reduce) { .coeur.bat { animation-duration: .01s; } .carte summary::after { transition: none; } }
+</style>
+<style id="luxe">
+/* ===== Présentation unifiée « luxe » : même palette et mêmes composants sur Pizzas, Pâtes, Crèmes et Favoris =====
+   Couleurs prédéfinies conservées : boutons/étiquettes végé, crème, tomate, signature, bande vert-blanc-rouge, mèches, cœur */
+:root {
+  --fond: #f6efe2; --carte: #fffdf8; --texte: #3b2a1c; --doux: #6b5440;
+  --vert: #1f4d34; --or: #b08d4a; --or-clair: #e6d6a8; --or-fonce: #8a6a2c;
+  --bordeaux: #7d1d1d; --filet: #e2d3b0; --sommaire: #efe4cc; --sommaire-bord: #cdb67f;
+  --serif: Georgia, "Times New Roman", serif;
+}
+body { background: var(--fond); color: var(--texte); }
+header { background: #fbf6ea; border-bottom: 3px solid var(--vert); box-shadow: 0 2px 0 var(--or); }
+header h1 { color: var(--bordeaux); font-family: var(--serif); }
+
+/* Onglets, sous-onglets et bouton « Toutes » : un seul style */
+.onglets button, .sous-onglets button, .bases button[data-base="toutes"] { border: 1px solid var(--or); background: var(--carte); color: var(--vert); font-family: var(--serif); letter-spacing: .3px; box-shadow: 0 1px 2px rgba(59,42,28,.15); }
+.onglets button.actif, .sous-onglets button.actif, .bases button[data-base="toutes"].actif { background: var(--vert); border-color: var(--vert); color: #f1dfae; }
+.bases button { border-radius: 20px; font-family: var(--serif); }
+.bases button[data-base]:not([data-base="toutes"]).actif { box-shadow: 0 0 0 2px var(--carte), 0 0 0 4px var(--vert); }
+.filtres input { border: 1px solid var(--or); background: var(--carte); color: var(--texte); border-radius: 10px; font-family: var(--serif); }
+
+/* Cartes : pizzas et crèmes identiques (fermées : bandeau beige doré ; ouvertes : fond crème, filet doré) */
+.carte details[open], #vue-creme .pate details[open], #vue-pate .pate details[open] { background: var(--carte); border-color: var(--filet); box-shadow: 0 2px 6px rgba(59,42,28,.14); }
+.carte summary, #vue-creme .pate summary, #vue-pate .pate summary { background: var(--sommaire); color: var(--texte); border: 1px solid var(--sommaire-bord); border-radius: 12px; box-shadow: 0 1px 2px rgba(59,42,28,.2); font-family: var(--serif); }
+.carte h2 { color: var(--texte); font-family: var(--serif); font-weight: 700; letter-spacing: .2px; }
+.carte summary::after, #vue-creme .pate summary::after, #vue-pate .pate summary::after { background: var(--vert); color: #f1dfae; box-shadow: 0 0 0 2px var(--or-clair); }
+
+/* Page Crèmes : même bandeau que les pizzas (rond vert à gauche, pas de petit triangle) */
+#vue-creme .pate, #vue-pate .pate { background: transparent; border: 0; padding: 0; margin: 10px auto; border-radius: 0; }
+#vue-creme .pate details, #vue-pate .pate details { border: 1px solid transparent; border-radius: 10px; padding: 0; }
+#vue-creme .pate details[open], #vue-pate .pate details[open] { padding: 14px; }
+#vue-creme .pate summary, #vue-pate .pate summary { display: flex; align-items: center; gap: 6px; padding: 8px 8px 8px 12px; font-size: 17px; line-height: 1.35; font-weight: 700; }
+#vue-creme .pate summary::before, #vue-creme .pate details[open] > summary::before, #vue-pate .pate summary::before, #vue-pate .pate details[open] > summary::before { content: none; }
+#vue-creme .pate summary::after, #vue-pate .pate summary::after { content: "\25BE"; order: -1; flex: none; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; font-size: 18px; line-height: 1; margin: 0 2px 0 0; transition: transform .2s; }
+#vue-creme .pate details[open] > summary::after, #vue-pate .pate details[open] > summary::after { transform: rotate(180deg); }
+#vue-creme .pate details[open] > summary, #vue-pate .pate details[open] > summary { margin-bottom: 6px; }
+
+/* Page Pâtes : même carte, mêmes titres */
+
+/* Bandeaux des pâtes : même comportement que ceux des crèmes */
+#vue-pate .pate summary { position: relative; list-style: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+#vue-pate .pate summary::-webkit-details-marker { display: none; }
+#vue-pate .pate iframe { width: 100%; border-radius: 10px; border: 1px solid var(--or-clair); box-shadow: 0 1px 3px rgba(59,42,28,.18); }
+#vue-pate .pate details > p:first-of-type { margin: 10px 0 4px; }
+
+/* Titres, textes, liens, puces : une seule hiérarchie */
+.pate h2 { color: var(--texte); font-family: var(--serif); }
+.pate h3 { color: var(--or-fonce); font-family: var(--serif); font-size: 15px; text-transform: uppercase; letter-spacing: 1.2px; margin: 16px 0 6px; padding-bottom: 3px; border-bottom: 1px solid var(--or-clair); }
+.pate .source, .vide, #compteur-fav { color: var(--doux); }
+.pate a, .createur { color: var(--vert); }
+.carte .contenu p > b:first-child { color: var(--bordeaux); font-family: var(--serif); }
+.carte .ing { background: #f6efe0; border: 1px solid var(--or-clair); color: var(--texte); }
+.carte .ing:active { background: var(--or-clair); }
+.etiquette { letter-spacing: .4px; }
+.cuisson { color: var(--doux); }
+
+/* Étoiles dorées */
+.etoiles button { color: #dccfb4; }
+.etoiles button.on { color: #c9a24a; }
+
+/* Calculatrices de pâte */
+.calc { font-family: var(--serif); color: var(--texte); }
+.calc .ligne span { font-family: var(--serif); }
+.calc input { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--vert); text-align: center; background: #fbf6ea; border: 1px solid var(--or); border-radius: 8px; box-shadow: inset 0 1px 2px rgba(59,42,28,.12); }
+.calc input:focus { outline: none; border-color: var(--vert); box-shadow: 0 0 0 3px var(--or-clair); background: var(--carte); }
+.calc input::placeholder { color: #b9a98a; font-weight: 400; }
+.calc table { border-collapse: separate; border-spacing: 0; border: 1px solid var(--filet); border-radius: 10px; overflow: hidden; background: var(--carte); }
+.calc th { color: var(--doux); }
+.calc td { font-family: var(--serif); font-size: 16px; padding: 8px 10px; border-top: 1px solid var(--filet); }
+.calc tr:first-child td { border-top: 0; }
+.calc .phase td { background: #f1e8d3; color: var(--or-fonce); font-family: var(--serif); font-size: 15px; text-transform: uppercase; letter-spacing: 1px; }
+.calc td b { color: var(--bordeaux); font-family: var(--serif); font-size: 18px; }
+
+/* Cœur favori : en haut à droite de la partie dépliée */
+.contenu { padding-top: 6px; }
+.contenu .fav { top: 6px; bottom: auto; right: 2px; }
+.contenu .etiquette { margin: 11px 0; }
+.contenu .etoiles { margin-right: 0; min-height: 0; }
 </style>
 </head>
 <body>
@@ -636,6 +714,8 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <button type="button" data-sous="teglia">Teglia Romana (24h)<small>plaque pizza</small></button>
 </nav>
 <div class="pate" id="pate-biga">
+<details open>
+<summary>Pâte à la Biga · 19 à 48 heures</summary>
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/0vnOSVStfjU?si=DZ6eUNDZaihLpY0x&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
 <h3>Calcul des quantités</h3>
 <div class="calc">
@@ -652,8 +732,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <tr><td>Levure</td><td><b id="r-l2"></b></td></tr>
 </table>
 </div>
+</details>
 </div>
 <div class="pate" id="pate-napolitaine" hidden>
+<details open>
+<summary>Pâte napolitaine · 6 à 8 heures</summary>
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/qI7dLt7IJ_8?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
 <h3>Calcul des quantités</h3>
 <div class="calc">
@@ -667,8 +750,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <tr><td>Levure fraîche</td><td><b id="r-nl"></b></td></tr>
 </table>
 </div>
+</details>
 </div>
 <div class="pate" id="pate-teglia" hidden>
+<details open>
+<summary>Teglia Romana · 24 heures</summary>
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/bPuf36exXiA?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
 <h3>Calcul des quantités</h3>
 <div class="calc">
@@ -684,6 +770,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <tr><td>Huile</td><td><b id="r-th"></b></td></tr>
 </table>
 </div>
+</details>
 </div>
 </div>
 </main>
