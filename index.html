@@ -100,7 +100,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .etoiles { margin-top: 6px; }
 .etoiles button { background: none; border: 0; padding: 0 3px; font-size: 30px; line-height: 1; color: #d8c7a6; cursor: pointer; }
 .etoiles button.on { color: #e8b830; }
-#vue-creme .pate h2 { display: inline-block; background: #e6d6b8; color: #4a2f1b; border: 1px solid #c9b08a; border-radius: 12px; padding: 4px 12px; }
+#vue-creme .pate summary { display: block; list-style: none; cursor: pointer; background: #e6d6b8; color: #4a2f1b; border: 1px solid #c9b08a; border-radius: 12px; padding: 8px 12px 8px 34px; position: relative; font-size: 1.5em; font-weight: bold; -webkit-tap-highlight-color: transparent; }
+#vue-creme .pate summary::-webkit-details-marker { display: none; }
+#vue-creme .pate summary::before { content: "\25B8"; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); }
+#vue-creme .pate details[open] > summary::before { content: "\25BE"; }
+#vue-creme .pate details[open] > summary { margin-bottom: 4px; }
 .pastilles { position: absolute; top: 8px; right: 14px; width: 48.6px; font-size: 18px; display: flex; flex-direction: column; align-items: center; gap: 2px; pointer-events: none; }
 .pastilles img { display: block; height: 2.7em; width: auto; margin: 0; }
 .carte.avec-pastilles { min-height: calc(var(--nb) * 50px + 74px); }
@@ -112,6 +116,30 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .filtre:active { opacity: .6; }
 .pastilles img.filtre { pointer-events: auto; }
 .bases button[data-base="signature"] { grid-column: 1 / -1; }
+
+/* ===== Cartes repliables : numéro, nom, créateur et logos ; un clic déplie ingrédients et préparation ===== */
+.carte { padding: 0; overflow: hidden; background: var(--fond); border: 2px solid var(--bord); box-shadow: 0 1px 3px rgba(90, 58, 34, .25); }
+.carte.t0 { --fond: #e9d3b4; --bord: #b98d5e; }
+.carte.t1 { --fond: #f4e7d0; --bord: #c9a273; }
+.carte.t2 { --fond: #fcf4e2; --bord: #d8bc90; }
+.carte.t3 { --fond: #dcbf98; --bord: #a67a4e; }
+.carte.avec-pastilles { min-height: 0; }
+.carte summary { list-style: none; display: flex; align-items: center; gap: 10px; padding: 10px 12px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.carte summary::-webkit-details-marker { display: none; }
+.carte summary::after { content: "\25BE"; flex: none; color: #5a3a22; font-size: 20px; transition: transform .2s; }
+.carte details[open] > summary::after { transform: rotate(180deg); }
+.carte h2 { flex: 1; min-width: 0; margin: 0; font-size: 18px; line-height: 1.35; }
+.num { display: inline-flex; align-items: center; justify-content: center; min-width: 1.9em; height: 1.9em; padding: 0 .45em; margin-right: .5em; border-radius: 999px; background: #5a3a22; color: #fffdf8; font-size: .85em; font-weight: bold; vertical-align: .1em; }
+.carte .pastilles { position: static; width: auto; flex: none; flex-direction: row; gap: 6px; font-size: 18px; pointer-events: auto; }
+.carte .pastilles img { height: 2.4em; }
+.contenu { position: relative; padding: 8px 14px 10px; border-top: 1px dashed var(--bord); animation: deplie .25s ease; }
+.contenu .fav { bottom: 8px; right: 10px; }
+.contenu .etoiles { margin-right: 50px; min-height: 40px; }
+.carte .ing { background: #fffdf8; }
+.carte .ing:active { background: #e6d6b8; }
+.contenu .prepa { white-space: pre-line; }
+@keyframes deplie { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .contenu { animation: none; } .carte summary::after { transition: none; } }
 </style>
 </head>
 <body>
@@ -163,7 +191,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     let musique = null, ouvertureFaite = false, ouvertureEnCours = false;
     let musiqueBanniere = null, videosEnLecture = new Set();
     const getMusique = () => { if (!musique) musique = new Audio('musique.mp3'); return musique; };
-    // À l'ouverture de l'application : la musique (6,5 s) est jouée UNE SEULE FOIS, sans boucle.
+    // À l'ouverture de l'application : la musique (14 s) est jouée UNE SEULE FOIS, sans boucle.
     // Si le navigateur bloque le son automatique (iPhone, Safari...), elle démarre au premier toucher.
     // Cas 1 : le navigateur autorise le son automatique -> la musique démarre à l'ouverture (une seule fois),
     //         et l'écran d'accueil se ferme 6 s plus tard (ou au clic).
@@ -363,7 +391,8 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 </nav>
 <div id="creme-fond">
 <div class="pate" id="creme-pistache">
-<h2>Crème à la pistache</h2>
+<details>
+<summary>Crème à la pistache</summary>
 <h3>Ingrédients</h3>
 <ul>
 <li>120 g de pistaches décortiquées, grillées et non salées (+ quelques-unes pour décorer)</li>
@@ -378,9 +407,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <li>Concasser quelques pistaches (mortier, maillet ou fond de bouteille) pour les répartir sur la pizza après cuisson.</li>
 <li>Si la crème est trop épaisse pour s'étaler facilement, ajouter un peu d'eau.</li>
 </ol>
+</details>
 </div>
 <div class="pate" id="creme-pistache-ricotta">
-<h2>Crème de pistache (à mettre avant ou après cuisson)</h2>
+<details>
+<summary>Crème de pistache (à mettre avant ou après cuisson)</summary>
 <h3>Ingrédients</h3>
 <ul>
 <li>100 g de pâte de pistache pure (100 % pistache, sans sucre)</li>
@@ -394,9 +425,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <p>Fouettez la pâte de pistache avec la ricotta et le parmesan pour détendre le mélange. Ajoutez progressivement l'eau chaude et l'huile d'olive jusqu'à obtenir une texture lisse et facile à étaler à la louche.</p>
 <h3>Conseil cuisson</h3>
 <p>Étalez-la en fine couche avant cuisson avec de la fior di latte (et ajoutez la mortadelle et la burrata après cuisson).</p>
+</details>
 </div>
 <div class="pate" id="creme-courge">
-<h2>Crème de courge ou potimarron (base d'automne)</h2>
+<details>
+<summary>Crème de courge ou potimarron (base d'automne)</summary>
 <h3>Ingrédients</h3>
 <ul>
 <li>400 g de chair de courge (butternut ou potimarron)</li>
@@ -410,9 +443,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <p>Faites rôtir la courge coupée en cubes au four à 180 °C pendant 25 minutes avec l'huile d'olive et le romarin (le rôtissage évite l'excès d'eau). Retirez le romarin puis mixez finement la chair chaude avec le parmesan, la muscade, le sel et le poivre.</p>
 <h3>Conseil cuisson</h3>
 <p>Si la purée est trop épaisse, détendez-la avec une cuillère d'eau chaude avant de l'étaler sur la pâte crue.</p>
+</details>
 </div>
 <div class="pate" id="creme-truffe">
-<h2>Crème de truffe (base blanche raffinée)</h2>
+<details>
+<summary>Crème de truffe (base blanche raffinée)</summary>
 <h3>Ingrédients</h3>
 <ul>
 <li>150 g de ricotta (ou de mascarpone pour plus de gourmandise)</li>
@@ -425,9 +460,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <p>Mélangez simplement tous les ingrédients à froid dans un bol jusqu'à obtenir une crème homogène. Évitez de la saler avant de goûter, car la tartufata et le parmesan le sont déjà.</p>
 <h3>Conseil cuisson</h3>
 <p>Ne la faites pas cuire directement à nu à très haute température (la truffe perd son arôme à la chaleur). Étalez-la sur le fond de pâte et recouvrez-la immédiatement de mozzarella pour la protéger pendant la cuisson.</p>
+</details>
 </div>
 <div class="pate" id="creme-cepes">
-<h2>Crème de cèpes (base forestière)</h2>
+<details>
+<summary>Crème de cèpes (base forestière)</summary>
 <h3>Ingrédients</h3>
 <ul>
 <li>250 g de cèpes frais (ou surgelés, bien décongelés et pressés)</li>
@@ -443,11 +480,13 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <p>Faites revenir l'échalote et l'ail ciselés dans l'huile d'olive, puis ajoutez les cèpes coupés en morceaux à feu vif jusqu'à évaporation complète de leur eau. Versez la crème liquide, laissez réduire 3 minutes à feu doux, ajoutez le parmesan et mixez le tout pour obtenir un velouté bien épais.</p>
 <h3>Conseil cuisson</h3>
 <p>Laissez refroidir la crème avant de l'étaler sur la pâte à pizza crue pour ne pas ramollir le pâton avant l'enfournement.</p>
+</details>
 </div>
 </div>
 <div id="creme-finition" hidden>
 <div class="pate" id="creme-parmesan">
-<h2>Crème de parmesan fluide (Fonduta légère)</h2>
+<details>
+<summary>Crème de parmesan fluide (Fonduta légère)</summary>
 <p>Cette crème onctueuse est idéale sur une pizza aux champignons, à la truffe, aux asperges ou avec une charcuterie italienne (bresaola, jambon de Parme).</p>
 <h3>Ingrédients (pour 1 biberon de 250 ml)</h3>
 <ul>
@@ -463,9 +502,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <li>Mixez au mixeur plongeant pendant 1 minute (ajoutez la gomme xanthane à ce moment-là si vous en utilisez) pour lisser et émulsionner l'appareil.</li>
 <li>Passez au chinois fin, versez en pipette et laissez tiédir à température ambiante avant utilisation (elle va légèrement épaissir en refroidissant).</li>
 </ol>
+</details>
 </div>
 <div class="pate" id="creme-pesto-pistache">
-<h2>Pesto de pistache de Bronte émulsionné</h2>
+<details>
+<summary>Pesto de pistache de Bronte émulsionné</summary>
 <p>Ce pesto détendu s'accorde parfaitement avec une base blanche, de la mortadelle, de la stracciatella ou du speck.</p>
 <h3>Ingrédients (pour 1 biberon de 250 ml)</h3>
 <ul>
@@ -482,9 +523,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <li>Versez l'huile d'olive en filet tout en mixant pour créer une émulsion.</li>
 <li>Détendez progressivement avec l'eau froide jusqu'à obtenir une texture fluide qui nappe la cuillère mais passe sans bloquer dans l'embout de votre biberon.</li>
 </ol>
+</details>
 </div>
 <div class="pate" id="creme-poivrons">
-<h2>Crème de poivrons jaunes rôtis et basilic</h2>
+<details>
+<summary>Crème de poivrons jaunes rôtis et basilic</summary>
 <p>Cette sauce douce, sucrée et très colorée sublime les pizzas d'été, les pizzas aux légumes grillés, au thon ou aux anchois.</p>
 <h3>Ingrédients (pour 1 biberon de 250 ml)</h3>
 <ul>
@@ -501,9 +544,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <li>Placez la chair tiède dans un blender avec le basilic, le citron, le sel et le poivre.</li>
 <li>Mixez à pleine puissance en versant l'huile d'olive en filet pour obtenir une crème brillante et parfaitement lisse, puis transférez en pipette.</li>
 </ol>
+</details>
 </div>
 <div class="pate" id="creme-gorgonzola">
-<h2>Crème de gorgonzola doux et mascarpone</h2>
+<details>
+<summary>Crème de gorgonzola doux et mascarpone</summary>
 <p>Très appréciée sur une pizza aux noix, aux poires, aux figues ou sur une quatre fromages revisitée.</p>
 <h3>Ingrédients (pour 1 biberon de 250 ml)</h3>
 <ul>
@@ -518,9 +563,11 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 <li>Mixez directement au mixeur plongeant à froid (ou tiédissez très légèrement 15 secondes au micro-ondes si le fromage sort du réfrigérateur).</li>
 <li>Ajustez la fluidité en ajoutant la dernière cuillère de lait si nécessaire, poivrez et versez dans votre biberon de dressage.</li>
 </ol>
+</details>
 </div>
 <div class="pate" id="creme-cepes-pipette">
-<h2>Crème veloutée aux cèpes (pour pipette)</h2>
+<details>
+<summary>Crème veloutée aux cèpes (pour pipette)</summary>
 <p>Une crème de cèpes bien lisse, pensée pour être dressée en zigzag à la pipette.</p>
 <h3>Ingrédients (pour 1 biberon de 250 ml)</h3>
 <ul>
@@ -542,6 +589,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 </ol>
 <h3>Conseil de dressage</h3>
 <p>Cette crème a tendance à épaissir légèrement au réfrigérateur. Sortez le biberon 20 minutes avant le service ou passez-le quelques secondes sous l'eau tiède pour que le tracé en zigzag soit parfaitement fluide sur la pizza chaude.</p>
+</details>
 </div>
 </div>
 </div>
@@ -689,14 +737,24 @@ function nomAffiche(n){
     });
 }
 function carte(p){
-    const i=pizzas.indexOf(p);
+    const i=pizzas.indexOf(p),n=i+1;
     const sg=!/\((?:Ooni|Camion Jaune)\)/.test(p.nom),vg=sansViande(p),nb=(sg?1:0)+(vg?1:0);
-    return '<div class="carte'+(nb?' avec-pastilles" style="--nb:'+nb:'')+'"><input type="checkbox" class="fav" data-i="'+i+'"'+(favoris[p.nom]?' checked':'')+' aria-label="Ajouter aux favoris"><h2>'+nomAffiche(p.nom)+'</h2>'+(nb?'<div class="pastilles">':'')+(sg?'<img class="sig filtre" data-filtre="signature" role="button" tabindex="0" src="'+LOGO_SIGNATURE+'" alt="Pizza Signature" title="Pizza Signature">':'')+(vg?'<img class="vege filtre" data-filtre="vege" role="button" tabindex="0" src="images/picto-vege.png" alt="Pizza végé" title="Pizza végé">':'')+(nb?'</div>':'')+
+    const apres=(()=>{const v=p.apresVege&&filtres.has("vege"),a=v?p.apresVege:p.apres;return a?'<p class="cuisson"><b>Après cuisson'+(v?' (version végé)':'')+' :</b><br> '+formaterIngredients(a)+'</p>':''})();
+    return '<div class="carte t'+(n%4)+'"><details>'+
+    '<summary><h2><span class="num">'+n+'</span>'+nomAffiche(p.nom)+'</h2>'+
+    (nb?'<div class="pastilles">'+(sg?'<img class="sig filtre" data-filtre="signature" role="button" tabindex="0" src="'+LOGO_SIGNATURE+'" alt="Pizza Signature" title="Pizza Signature">':'')+(vg?'<img class="vege filtre" data-filtre="vege" role="button" tabindex="0" src="images/picto-vege.png" alt="Pizza végé" title="Pizza végé">':'')+'</div>':'')+
+    '</summary><div class="contenu">'+
+    '<input type="checkbox" class="fav" data-i="'+i+'"'+(favoris[p.nom]?' checked':'')+' aria-label="Ajouter aux favoris">'+
     '<span class="etiquette filtre '+p.base+'" data-filtre="'+p.base+'" role="button" tabindex="0" title="Voir toutes les pizzas '+(p.base==="creme"?"base crème":"base tomate")+'">'+(p.base==="creme"?"Base crème":"Base tomate")+'</span>'+
-    '<p><b>Avant cuisson :</b><br> '+formaterIngredients(p.avant)+'</p>'+
-    (()=>{const v=p.apresVege&&filtres.has("vege"),a=v?p.apresVege:p.apres;return a?'<p class="cuisson"><b>Après cuisson'+(v?' (version végé)':'')+' :</b><br> '+formaterIngredients(a)+'</p>':''})()+
-    etoiles(p)+'</div>';
+    '<p><b>Avant cuisson :</b><br> '+formaterIngredients(p.avant)+'</p>'+apres+
+    (p.preparation?'<p class="prepa"><b>Préparation :</b><br> '+p.preparation.replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</p>':'')+
+    etoiles(p)+'</div></details></div>';
 }
+
+/* Toucher un créateur ou un logo dans l'en-tête d'une carte : on filtre, sans plier ni déplier la carte */
+document.addEventListener("click",e=>{
+    if(e.target.closest("summary")&&e.target.closest(".createur, .filtre"))e.preventDefault();
+});
 
 document.addEventListener("click",e=>{
     const b=e.target.closest(".etoiles button");
