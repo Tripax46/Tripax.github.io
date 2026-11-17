@@ -125,7 +125,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .carte summary::after { content: "\25BE"; flex: none; color: #5a3a22; font-size: 20px; transition: transform .2s; }
 .carte details[open] > summary::after { transform: rotate(180deg); }
 .carte h2 { flex: 1; min-width: 0; margin: 0; font-size: 18px; line-height: 1.35; }
-.num { display: inline-flex; align-items: center; justify-content: center; min-width: 1.9em; height: 1.9em; padding: 0 .45em; margin-right: .5em; border-radius: 999px; background: #5a3a22; color: #fffdf8; font-size: .85em; font-weight: bold; vertical-align: .1em; }
+.num { margin-right: .4em; }
 .carte .pastilles { position: static; width: auto; flex: none; flex-direction: row; gap: 6px; font-size: 18px; pointer-events: auto; }
 .carte .pastilles img { height: 2.4em; }
 .contenu { position: relative; padding: 8px 14px 10px; border-top: 1px dashed var(--bord); animation: deplie .25s ease; }
@@ -737,7 +737,7 @@ function carte(p){
     const sg=!/\((?:Ooni|Camion Jaune)\)/.test(p.nom),vg=sansViande(p),nb=(sg?1:0)+(vg?1:0);
     const apres=(()=>{const v=p.apresVege&&filtres.has("vege"),a=v?p.apresVege:p.apres;return a?'<p class="cuisson"><b>Après cuisson'+(v?' (version végé)':'')+' :</b><br> '+formaterIngredients(a)+'</p>':''})();
     return '<div class="carte"><details>'+
-    '<summary><h2><span class="num">'+n+'</span>'+nomAffiche(p.nom)+'</h2>'+
+    '<summary><h2><span class="num">'+n+'.</span>'+nomAffiche(p.nom)+'</h2>'+
     (nb?'<div class="pastilles">'+(sg?'<img class="sig filtre" data-filtre="signature" role="button" tabindex="0" src="'+LOGO_SIGNATURE+'" alt="Pizza Signature" title="Pizza Signature">':'')+(vg?'<img class="vege filtre" data-filtre="vege" role="button" tabindex="0" src="images/picto-vege.png" alt="Pizza végé" title="Pizza végé">':'')+'</div>':'')+
     '</summary><div class="contenu">'+
     '<input type="checkbox" class="fav" data-i="'+i+'"'+(favoris[p.nom]?' checked':'')+' aria-label="Ajouter aux favoris">'+
