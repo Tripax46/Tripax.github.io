@@ -163,7 +163,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
     let musique = null, ouvertureFaite = false, ouvertureEnCours = false;
     let musiqueBanniere = null, videosEnLecture = new Set();
     const getMusique = () => { if (!musique) musique = new Audio('musique.mp3'); return musique; };
-    // À l'ouverture de l'application : la musique (14 s) est jouée UNE SEULE FOIS, sans boucle.
+    // À l'ouverture de l'application : la musique (6,5 s) est jouée UNE SEULE FOIS, sans boucle.
     // Si le navigateur bloque le son automatique (iPhone, Safari...), elle démarre au premier toucher.
     // Cas 1 : le navigateur autorise le son automatique -> la musique démarre à l'ouverture (une seule fois),
     //         et l'écran d'accueil se ferme 6 s plus tard (ou au clic).
