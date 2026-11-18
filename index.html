@@ -167,11 +167,7 @@ header h1 { margin: 0; padding: 16px; font-size: 22px; color: #b3261e; }
 .carte details[open] > summary::after { transform: rotate(180deg); }
 .carte summary::after { order: -1; margin: 0 2px 0 0; }
 .carte .pastilles { gap: 4px; }
-.coeur { -webkit-appearance: none; appearance: none; flex: none; width: 44px; height: 44px; margin: 0; padding: 0; border: 0; background-color: transparent; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='none' stroke='%23a34b3d' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 100% 100%; cursor: pointer; transition: transform .15s; -webkit-tap-highlight-color: transparent; font-family: inherit; font-weight: bold; font-size: 14px; line-height: 1; color: #5a3a22; display: flex; align-items: center; justify-content: center; padding: 0 0 3px; }
-.coeur.on { color: #fff; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e0245e' stroke='%23e0245e' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E"); }
-.coeur:active { transform: scale(.85); }
-.coeur.bat { animation: battement 1s ease-in-out; }
-@media (prefers-reduced-motion: reduce) { .coeur.bat { animation-duration: .01s; } .carte summary::after { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .carte summary::after { transition: none; } }
 </style>
 <style id="luxe">
 /* ===== Présentation unifiée « luxe » : même palette et mêmes composants sur Pizzas, Pâtes, Crèmes et Favoris =====
@@ -250,6 +246,13 @@ header h1 { color: var(--bordeaux); font-family: var(--serif); }
 .contenu .fav { top: 6px; bottom: auto; right: 2px; }
 .contenu .etiquette { margin: 11px 0; }
 .contenu .etoiles { margin-right: 0; min-height: 0; }
+
+/* Numéro de la pizza : simple chiffre (plus de cœur autour). Quand on coche le cœur de la recette dépliée,
+   il devient rose-rouge et fait exactement la même animation « battement » que le cœur */
+.carte .num { flex: none; display: inline-block; font-family: var(--serif); font-weight: 700; font-size: 18px; line-height: 1.35; color: var(--texte); transition: color .2s; }
+.carte .num.on { color: #e0245e; }
+.carte .num.bat { animation: battement 1s ease-in-out; }
+@media (prefers-reduced-motion: reduce) { .carte .num.bat { animation-duration: .01s; } }
 </style>
 </head>
 <body>
@@ -860,7 +863,7 @@ function carte(p){
     const sg=!/\((?:Ooni|Camion Jaune)\)/.test(p.nom),vg=sansViande(p),nb=(sg?1:0)+(vg?1:0);
     const apres=(()=>{const v=p.apresVege&&filtres.has("vege"),a=v?p.apresVege:p.apres;return a?'<p class="cuisson"><b>Après cuisson'+(v?' (version végé)':'')+' :</b><br> '+formaterIngredients(a)+'</p>':''})();
     return '<div class="carte"><details>'+
-    '<summary><button type="button" class="coeur'+(favoris[p.nom]?' on':'')+'" data-i="'+i+'" aria-label="Pizza '+n+' : ajouter aux favoris">'+n+'</button><h2>'+nomAffiche(p.nom)+'</h2>'+
+    '<summary><span class="num'+(favoris[p.nom]?' on':'')+'" data-i="'+i+'">'+n+'.</span><h2>'+nomAffiche(p.nom)+'</h2>'+
     (nb?'<div class="pastilles">'+(sg?'<img class="sig filtre" data-filtre="signature" role="button" tabindex="0" src="'+LOGO_SIGNATURE+'" alt="Pizza Signature" title="Pizza Signature">':'')+(vg?'<img class="vege filtre" data-filtre="vege" role="button" tabindex="0" src="images/picto-vege.png" alt="Pizza végé" title="Pizza végé">':'')+'</div>':'')+
     '</summary><div class="contenu">'+
     '<input type="checkbox" class="fav" data-i="'+i+'"'+(favoris[p.nom]?' checked':'')+' aria-label="Ajouter aux favoris">'+
@@ -885,24 +888,15 @@ document.addEventListener("click",e=>{
     document.querySelectorAll('.etoiles[data-i="'+b.parentNode.dataset.i+'"] button').forEach(x=>x.classList.toggle("on",+x.dataset.n<=(notes[p.nom]||0)));
 });
 
-/* Cœur de l'en-tête (carte fermée) : bascule la case des favoris de la carte, sans plier ni déplier la recette */
-document.addEventListener("click",e=>{
-    const h=e.target.closest&&e.target.closest(".coeur");
-    if(!h)return;
-    e.preventDefault();
-    const cb=h.closest(".carte").querySelector(".contenu .fav");
-    if(cb){cb.checked=!cb.checked;cb.dispatchEvent(new Event("change",{bubbles:true}));}
-});
-
 document.addEventListener("change",e=>{
     const c=e.target.closest(".fav");
     if(!c)return;
     const p=pizzas[+c.dataset.i];
     if(c.checked)favoris[p.nom]=1;else delete favoris[p.nom];
     sauverFav();
-    document.querySelectorAll('.fav[data-i="'+c.dataset.i+'"], .coeur[data-i="'+c.dataset.i+'"]').forEach(x=>{x.checked=c.checked;x.classList.toggle("on",c.checked)});
+    document.querySelectorAll('.fav[data-i="'+c.dataset.i+'"], .num[data-i="'+c.dataset.i+'"]').forEach(x=>{x.checked=c.checked;x.classList.toggle("on",c.checked)});
     afficherFavoris();
-    if(c.checked)document.querySelectorAll('.fav[data-i="'+c.dataset.i+'"], .coeur[data-i="'+c.dataset.i+'"]').forEach(x=>{
+    if(c.checked)document.querySelectorAll('.fav[data-i="'+c.dataset.i+'"], .num[data-i="'+c.dataset.i+'"]').forEach(x=>{
         x.classList.remove("bat");void x.offsetWidth;x.classList.add("bat");
         x.addEventListener("animationend",()=>x.classList.remove("bat"),{once:true});
     });
