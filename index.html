@@ -252,7 +252,17 @@ header h1 { color: var(--bordeaux); font-family: var(--serif); }
 .carte .num { flex: none; display: inline-block; font-family: var(--serif); font-weight: 700; font-size: 18px; line-height: 1.35; color: var(--texte); transition: color .2s; }
 .carte .num.on { color: #e0245e; }
 .carte .num.bat { animation: battement 1s ease-in-out; }
-@media (prefers-reduced-motion: reduce) { .carte .num.bat { animation-duration: .01s; } }
+@media (prefers-reduced-motion: reduce) { .carte .num.bat, .carte h2.nom-pizza.bat { animation-duration: .01s; } }
+
+/* Nom de la pizza : même couleur et même animation « battement » que le cœur et le numéro (le nom grossit à partir de sa gauche) */
+.carte h2.nom-pizza { transition: color .2s; transform-origin: left center; }
+.carte h2.nom-pizza.on { color: #e0245e; }
+/* Le nom du créateur reste toujours vert, dans la liste comme dans les favoris */
+.carte h2.nom-pizza .createur, .carte h2.nom-pizza.on .createur { color: var(--vert); }
+/* Onglet Favoris : numéro et nom s'affichent normalement (ni rose-rouge, ni animation) */
+#liste-favoris .carte .num.on, #liste-favoris .carte h2.nom-pizza.on { color: var(--texte); }
+#liste-favoris .carte .num.bat, #liste-favoris .carte h2.nom-pizza.bat { animation: none; }
+.carte h2.nom-pizza.bat { animation: battement 1s ease-in-out; }
 </style>
 </head>
 <body>
@@ -863,7 +873,7 @@ function carte(p){
     const sg=!/\((?:Ooni|Camion Jaune)\)/.test(p.nom),vg=sansViande(p),nb=(sg?1:0)+(vg?1:0);
     const apres=(()=>{const v=p.apresVege&&filtres.has("vege"),a=v?p.apresVege:p.apres;return a?'<p class="cuisson"><b>Après cuisson'+(v?' (version végé)':'')+' :</b><br> '+formaterIngredients(a)+'</p>':''})();
     return '<div class="carte"><details>'+
-    '<summary><span class="num'+(favoris[p.nom]?' on':'')+'" data-i="'+i+'">'+n+'.</span><h2>'+nomAffiche(p.nom)+'</h2>'+
+    '<summary><span class="num'+(favoris[p.nom]?' on':'')+'" data-i="'+i+'">'+n+'.</span><h2 class="nom-pizza'+(favoris[p.nom]?' on':'')+'" data-i="'+i+'">'+nomAffiche(p.nom)+'</h2>'+
     (nb?'<div class="pastilles">'+(sg?'<img class="sig filtre" data-filtre="signature" role="button" tabindex="0" src="'+LOGO_SIGNATURE+'" alt="Pizza Signature" title="Pizza Signature">':'')+(vg?'<img class="vege filtre" data-filtre="vege" role="button" tabindex="0" src="images/picto-vege.png" alt="Pizza végé" title="Pizza végé">':'')+'</div>':'')+
     '</summary><div class="contenu">'+
     '<input type="checkbox" class="fav" data-i="'+i+'"'+(favoris[p.nom]?' checked':'')+' aria-label="Ajouter aux favoris">'+
@@ -894,9 +904,9 @@ document.addEventListener("change",e=>{
     const p=pizzas[+c.dataset.i];
     if(c.checked)favoris[p.nom]=1;else delete favoris[p.nom];
     sauverFav();
-    document.querySelectorAll('.fav[data-i="'+c.dataset.i+'"], .num[data-i="'+c.dataset.i+'"]').forEach(x=>{x.checked=c.checked;x.classList.toggle("on",c.checked)});
+    document.querySelectorAll('.fav[data-i="'+c.dataset.i+'"], .num[data-i="'+c.dataset.i+'"], .nom-pizza[data-i="'+c.dataset.i+'"]').forEach(x=>{x.checked=c.checked;x.classList.toggle("on",c.checked)});
     afficherFavoris();
-    if(c.checked)document.querySelectorAll('.fav[data-i="'+c.dataset.i+'"], .num[data-i="'+c.dataset.i+'"]').forEach(x=>{
+    if(c.checked)document.querySelectorAll('.fav[data-i="'+c.dataset.i+'"], .num[data-i="'+c.dataset.i+'"], .nom-pizza[data-i="'+c.dataset.i+'"]').forEach(x=>{
         x.classList.remove("bat");void x.offsetWidth;x.classList.add("bat");
         x.addEventListener("animationend",()=>x.classList.remove("bat"),{once:true});
     });
