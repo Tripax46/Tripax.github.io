@@ -789,8 +789,8 @@ header h1 { color: var(--bordeaux); font-family: var(--serif); }
 </main>
 <script>
 const pizzas = [];
-// Fonction de normalisation incluant le traitement des ligatures
-function norm(t){return t.toLowerCase().replace(/œ/g,"oe").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+// Fonction de normalisation incluant le traitement des ligatures et des apostrophes (’ = ')
+function norm(t){return t.toLowerCase().replace(/œ/g,"oe").replace(/[\u2018\u2019\u02bc]/g,"'").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
 
 const filtres=new Set();
 const champ=document.getElementById("recherche");
@@ -831,9 +831,9 @@ function formaterIngredients(texte) {
 }
 
 /* Onglet Végé : pizzas sans viande, sans charcuterie ni poisson (détection par mots-clés dans les ingrédients) */
-const VIANDE=/\b(?:jambon|jamon|prosciutto|speck|bacon|lard|lardo|lardons|pancetta|guanciale|poitrine|ventreche|saucisse|saucisson|salsiccia|salame|salami|soppressata|spianata|nduja|chorizo|pepperoni|mortadell\w*|bresaola|coppa|capocollo|culatello|cotechino|porchetta|lonzo|cervelas|knack|wurst|rillette|andouille|boudin|foie|merguez|kebab|viande|hache|boeuf|manzo|veau|vitello|agneau|agnello|mouton|porc|pork|maiale|cochon|poulet|pollo|dinde|tacchino|volaille|pintade|pigeon\w*|canard|anatra|magret|lapin|sanglier|cinghiale|gibier|polpette|stracotto|escargot|gratton|angus|steak|entrecote|cotelette|rosbif|tartare|anchois|acciughe|colatura|sardine|thon|tonno|saumon|salmone|truite|morue|baccala|maquereau|espadon|poisson|cabillaud|seriole|daurade|turbot|lotte|rouget|merlu|hareng|crevette|gambas|gambero|gamberi|scampi|langoustine|homard|crabe|ecrevisse|moule|palourde|vongole|calamar|encornet|poulpe|polpo|seiche|huitre|ostrica|petoncle|capesante|saint-jacques|saint jacques|coquillage|bulot|oursin|frutti di mare|fruits de mer|tarama|caviar|bottarga|poutargue|surimi|grisons|biscotto|gesier|tripe|trippa)(?:s|x)?\b/;
+const VIANDE=/\b(?:jambon|jamon|prosciutto|speck|bacon|lard|lardo|lardons|pancetta|guanciale|poitrine|ventreche|saucisse|saucisson|salsiccia|salame|salami|soppressata|spianata|nduja|chorizo|pepperoni|mortadell\w*|bresaola|coppa|capocollo|culatello|cotechino|porchetta|lonzo|cervelas|knack|\w*wurst|rillette|andouille|boudin|foie|merguez|kebab|viande|boeuf|manzo|veau|vitello|agneau|agnello|mouton|porc|pork|maiale|cochon|poulet|pollo|dinde|tacchino|volaille|pintade|pigeon\w*|canard|anatra|magret|lapin|sanglier|cinghiale|gibier|polpette|stracotto|escargot|gratton|angus|steak|entrecote|cotelette|rosbif|tartare|anchois|acciughe|colatura|sardine|thon|tonno|saumon|salmone|truite|morue|baccala|maquereau|espadon|poisson|haddock|cabillaud|seriole|daurade|turbot|lotte|rouget|merlu|hareng|crevette|gambas|gambero|gamberi|scampi|langoustine|homard|crabe|ecrevisse|moule|palourde|vongole|calamar|encornet|poulpe|polpo|seiche|huitre|ostrica|petoncle|capesante|saint-jacques|saint jacques|coquillage|bulot|oursin|frutti di mare|fruits de mer|tarama|caviar|bottarga|poutargue|surimi|grisons|biscotto|gesier|tripe|trippa)(?:s|x)?\b/;
 function apresVege(p){return p.apresVege||p.apres}
-function sansViande(p){return !VIANDE.test(norm(p.avant+" "+apresVege(p)))}
+function sansViande(p){return !VIANDE.test(norm(p.avant+" "+apresVege(p)).replace(/nduja vegetale/g,""))} /* « nduja végétale » = sans viande */
 function estSignature(p){return !/\((?:Ooni|Camion Jaune)\)/.test(p.nom)}
 
 function afficher(){

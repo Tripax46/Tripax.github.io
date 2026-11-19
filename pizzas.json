@@ -1284,7 +1284,7 @@
   "apres": ""
  },
  {
-  "nom": "Moules (OIGNONS) FROMAGE (Camion Jaune)",
+  "nom": "Moules (oignons) fromage (Camion Jaune)",
   "base": "tomate",
   "avant": "moules, oignons, fromage",
   "apres": ""
@@ -1358,7 +1358,7 @@
  {
   "nom": "Napo (Camion Jaune)",
   "base": "tomate",
-  "avant": "tomate, fraîche, mozzarella, basilic, parmesan",
+  "avant": "tomate fraîche, mozzarella, basilic, parmesan",
   "apres": ""
  },
  {
@@ -2637,5 +2637,11 @@
   "base": "tomate",
   "avant": "sauce tomate, mozzarella, crème bisque de homard, gambas fraîches (x2), Saint-Jacques fraîches (x2), crevettes, moules",
   "apres": "beurre ail et persil"
+ },
+ {
+  "nom": "La pizza d'automne (Fafa)",
+  "base": "creme",
+  "avant": "Crème de potimarron maison, Mozzarella fior di latte, Pancetta, Pointe crème, Pesto d'ail des ours, Noix, Crumble de parmesan",
+  "apres": ""
  }
 ]
